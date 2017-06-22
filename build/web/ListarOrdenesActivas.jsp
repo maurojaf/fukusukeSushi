@@ -94,7 +94,7 @@
                 <br>  
                 <c:if test="${not empty success}">
                         <div class="alert alert-success">
-                            <strong>Success!</strong> <c:out value="${success}" />.
+                            <strong>OK!</strong> <c:out value="${success}" />.
                         </div>
                     </c:if>
                     <c:if test="${not empty error}">
@@ -153,7 +153,7 @@
                             <td> 
 
                                 <a class="btn btn-xs btn-info" href="editarOrden?order=${item.orderID}" ><i class="fa fa-pencil"></i> </a>
-                                <a class="btn btn-xs btn-danger" href="borrarUsuario?user=${item.orderID}"><i class="fa fa-close"></i></a>
+                                <a class="btn btn-xs btn-danger" href="borrarOrden?order=${item.orderID}"><i class="fa fa-close"></i></a>
 
                             </td>
                         </tr>

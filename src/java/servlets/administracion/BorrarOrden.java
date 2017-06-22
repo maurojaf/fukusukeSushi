@@ -22,8 +22,8 @@ import models.ModeloOrders;
  *
  * @author mauricioatenas
  */
-@WebServlet(name = "EditarOrden", urlPatterns = {"/editarOrden"})
-public class EditarOrden extends HttpServlet {
+@WebServlet(name = "BorrarOrden", urlPatterns = {"/borrarOrden"})
+public class BorrarOrden extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,7 +38,7 @@ public class EditarOrden extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            request.getRequestDispatcher("/EditarOrden.jsp").forward(request, response);
+          request.getRequestDispatcher("/BorrarOrdenes.jsp").forward(request, response);  
         }
     }
 
@@ -67,19 +67,36 @@ public class EditarOrden extends HttpServlet {
             rd.forward(request, response);
         }
         
+        
         String id = request.getParameter("order");
         int identify = Integer.parseInt(id);
         
         ModeloOrders ordenModel = new ModeloOrders();
         Orders orden = ordenModel.getOrden(identify);
         
-        request.setAttribute("order", orden); 
+        request.setAttribute("borrar", orden);   
         
+        if (request.getParameterMap().containsKey("confirmar")) {
+            String confirmar = "0";
+            confirmar = request.getParameter("confirmar");
+            
+            boolean resultado = ordenModel.borrarOrden(orden);
         
-        
-        
-        
-        
+        if (resultado) {
+            request.setAttribute("success", "Se ah borrado correctamente la Orden");
+            ServletContext context= getServletContext();
+            RequestDispatcher rd= context.getRequestDispatcher("/listarOrdenes");
+            rd.forward(request, response);
+        }else{
+            request.setAttribute("error", "Oops, algo salio mal.");
+        }
+            
+            
+            
+            ServletContext context= getServletContext();
+            RequestDispatcher rd= context.getRequestDispatcher("/listarOrdenes");
+            rd.forward(request, response);
+        }
         
         processRequest(request, response);
     }
@@ -102,23 +119,10 @@ public class EditarOrden extends HttpServlet {
         ModeloOrders ordenModel = new ModeloOrders();
         Orders order = ordenModel.getOrden(identify);
         
-        String monto = request.getParameter("monto");
-        String direccion  = request.getParameter("direccion");                        
-        String telefono = request.getParameter("telefono");
-        String correo = request.getParameter("correo");
-        
-        //int precioInt = Integer.parseInt(precio);
-        
-        order.setOrderAmount(Float.parseFloat(monto));
-        order.setOrderShipAddress(direccion);
-        order.setOrderPhone(telefono);
-        order.setOrderEmail(correo);
-        
-        
-        boolean resultado = ordenModel.updateOrden(order);
+        boolean resultado = ordenModel.borrarOrden(order);
         
         if (resultado) {
-            request.setAttribute("success", "Se actualizó correctamente la orden número: " + order.getOrderID());
+            request.setAttribute("success", "Se ah borrado correctamente la Orden");
             ServletContext context= getServletContext();
             RequestDispatcher rd= context.getRequestDispatcher("/listarOrdenes");
             rd.forward(request, response);
@@ -126,14 +130,6 @@ public class EditarOrden extends HttpServlet {
             request.setAttribute("error", "Oops, algo salio mal.");
         }
         request.setAttribute("orden", order);
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
