@@ -88,9 +88,9 @@
         <br></br>
         <div class="container">
             <div>
-                <div class="pull-right">
-                    <a class="btn btn-lg btn-info" href="agregarUsuario"><i class="fa fa-plus"></i> </a>
-                </div>
+<!--                <div class="pull-right">
+                    <a class="btn btn-lg btn-info" href="agregarUsuario"><i class="fa fa-plus"></i> Agregar Nuevo Registro </a>
+                </div>-->
                 <br>  
                 <c:if test="${not empty success}">
                         <div class="alert alert-success">
@@ -111,43 +111,49 @@
                         <th>Direccion de envio</th>
                         <th>Telefono Contacto</th>                        
                         <th>Correo </th>
-                        <th>Estado envio</th>                
+                        <th>Estado envio</th>
+                        <th>Fecha de la Orden</th>
                         <th>Detalles de la Orden </th>
                         <th>Acciones</th>
                                                
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="item" items="${usuarios}">
+                    <c:forEach var="item" items="${ordenes}">
                         
                         <tr>
                             <td>
-                                <c:out value = "${item.userEmail}"/>
+                                <c:out value = "${item.orderUserID}"/>
                             </td>                                         
                             <td>
-                                <c:out value = "${item.userPassword}"/>
+                                <c:out value = "${item.orderAmount}"/>
                             </td> 
                             <td>
-                                <c:out value = "${item.userFirstName}"/>
+                                <c:out value = "${item.orderShipAddress}"/>
                             </td> 
                             <td>
-                                <c:out value = "${item.userLastName}"/>
+                                <c:out value = "${item.orderPhone}"/>
                             </td> 
                             <td>
-                                <c:out value = "${item.userPhone}"/>
+                                <c:out value = "${item.orderEmail}"/>
                             </td> 
                             <td>
-                                <c:out value = "${item.userAddress}"/>
+                                
+                                <c:out value = "${item.orderShipped? 'Entregada':'Pendiente'} "/>
                             </td>
                             <td>
-                                <a class="btn btn-xs btn-info" href="borrarUsuario?user=${item.userID}"><i class="fa fa-close"></i></a>
+                                
+                                <c:out value = "${item.orderDate}"/>
+                            </td>
+                            <td>
+                                <a class="btn btn-xs btn-info" href="borrarUsuario?order=${item.orderID}"><i class="fa fa"></i>Detalle de Orden</a>
                             </td>
                             
                             
                             <td> 
 
-                                <a class="btn btn-xs btn-info" href="editarUsuarios?user=${item.userID}" ><i class="fa fa-pencil"></i> </a>
-                                <a class="btn btn-xs btn-danger" href="borrarUsuario?user=${item.userID}"><i class="fa fa-close"></i></a>
+                                <a class="btn btn-xs btn-info" href="editarOrden?order=${item.orderID}" ><i class="fa fa-pencil"></i> </a>
+                                <a class="btn btn-xs btn-danger" href="borrarUsuario?user=${item.orderID}"><i class="fa fa-close"></i></a>
 
                             </td>
                         </tr>

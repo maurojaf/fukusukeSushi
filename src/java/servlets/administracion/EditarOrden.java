@@ -5,6 +5,7 @@
  */
 package servlets.administracion;
 
+import classes.Orders;
 import classes.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,14 +16,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import models.ModeloUsers;
+import models.ModeloOrders;
 
 /**
  *
  * @author mauricioatenas
  */
-@WebServlet(name = "EditarUsuarios", urlPatterns = {"/editarUsuarios"})
-public class EditarUsuarios extends HttpServlet {
+@WebServlet(name = "EditarOrden", urlPatterns = {"/editarOrden"})
+public class EditarOrden extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,7 +38,7 @@ public class EditarUsuarios extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            request.getRequestDispatcher("/EditarUsuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("/EditarOrden.jsp").forward(request, response);
         }
     }
 
@@ -53,6 +54,7 @@ public class EditarUsuarios extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         Users login = (Users) request.getSession().getAttribute("Autentificacion");
         
         if (login instanceof Users) {
@@ -65,15 +67,17 @@ public class EditarUsuarios extends HttpServlet {
             rd.forward(request, response);
         }
         
-        
-        String id = request.getParameter("user");
+        String id = request.getParameter("order");
         int identify = Integer.parseInt(id);
         
-        ModeloUsers usuarioModel = new ModeloUsers();
-        Users usuario = usuarioModel.listaUsuarios(identify);
+        ModeloOrders ordenModel = new ModeloOrders();
+        Orders orden = ordenModel.getOrden(identify);
         
-        request.setAttribute("user", usuario);
-             
+        request.setAttribute("order", orden); 
+        
+        
+        
+        
         
         
         
@@ -92,39 +96,42 @@ public class EditarUsuarios extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String id = request.getParameter("user");
+        String id = request.getParameter("order");
         int identify = Integer.parseInt(id);
         
-        ModeloUsers usuarioModel = new ModeloUsers();
-        Users user = usuarioModel.listaUsuarios(identify);
+        ModeloOrders ordenModel = new ModeloOrders();
+        Orders order = ordenModel.getOrden(identify);
         
-        String correo = request.getParameter("correo");
-        String password  = request.getParameter("password");                        
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
+        String monto = request.getParameter("monto");
+        String direccion  = request.getParameter("direccion");                        
         String telefono = request.getParameter("telefono");
-        String direccion = request.getParameter("direccion");
+        String correo = request.getParameter("correo");
         
         //int precioInt = Integer.parseInt(precio);
         
-        user.setUserEmail(correo);
-        user.setUserPassword(password);
-        user.setUserFirstName(nombre);
-        user.setUserLastName(apellido);
-        user.setUserPhone(telefono);
-        user.setUserAddress(direccion);
+        order.setOrderAmount(Float.parseFloat(monto));
+        order.setOrderShipAddress(direccion);
+        order.setOrderPhone(telefono);
+        order.setOrderEmail(correo);
         
-        boolean resultado = usuarioModel.actualizarUsuarios(user);
+        
+        boolean resultado = ordenModel.updateOrden(order);
         
         if (resultado) {
-            request.setAttribute("success", "Se actualizó correctamente el usuario: " + user.getUserFirstName());
+            request.setAttribute("OK", "Se actualizó correctamente la orden n&uacute;mero: " + order.getOrderID());
             ServletContext context= getServletContext();
-            RequestDispatcher rd= context.getRequestDispatcher("/listar");
+            RequestDispatcher rd= context.getRequestDispatcher("/listarOrdenes");
             rd.forward(request, response);
         }else{
             request.setAttribute("error", "Oops, algo salio mal.");
         }
-        request.setAttribute("usuario", user);
+        request.setAttribute("orden", order);
+        
+        
+        
+        
+        
+        
         
         
         

@@ -82,8 +82,8 @@
         <br></br>
         <div class="container">
             <div>
-                <div class="pull-right">
-                    <a class="btn btn-lg btn-info" href="agregar"><i class="fa fa-plus"></i> </a>
+                <div class="pull-right" id="botonAgregar" hidden="">
+                    <a class="btn btn-lg btn-info"  href="agregar" ><i class="fa fa-plus"></i>  Agregar Nuevo Registro</a>
                 </div>
                 <br>  
                 <c:if test="${not empty success}">
@@ -98,6 +98,7 @@
                     </c:if>
                 
                 <div style='text-align: center;margin-bottom: 18px;' id='loadgif'><i class='fa fa-spinner fa-spin fa-3x fa-fw'></i></div>
+                <div></div>
                 <table id="datables" class="table table-striped" hidden="">
                     <thead>
                     <tr>
@@ -166,6 +167,7 @@
       setTimeout(function() {
           $("#datables").show();
           $("#datables_wrapper").show();
+          $("#botonAgregar").show();
           $("#loadgif").hide();
       }, 1000);
 

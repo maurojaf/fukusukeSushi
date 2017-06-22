@@ -24,11 +24,11 @@ public class Orders {
     private float OrderShipping;
     //private float OrderTax;
     private String OrderEmail	;
-    private Date OrderDate;
+    private String OrderDate;
     private boolean OrderShipped;
     private String OrderTrackingNumber;
 
-    public Orders(int OrderID, int OrderUserID, float OrderAmount, String OrderShipName, String OrderShipAddress, String OrderPhone, float OrderShipping, String OrderEmail, Date OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
+    public Orders(int OrderID, int OrderUserID, float OrderAmount, String OrderShipName, String OrderShipAddress, String OrderPhone, float OrderShipping, String OrderEmail, String OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
         this.OrderID = OrderID;
         this.OrderUserID = OrderUserID;
         this.OrderAmount = OrderAmount;
@@ -153,11 +153,11 @@ public class Orders {
         this.OrderEmail = OrderEmail;
     }
 
-    public Date getOrderDate() {
+    public String getOrderDate() {
         return OrderDate;
     }
 
-    public void setOrderDate(Date OrderDate) {
+    public void setOrderDate(String OrderDate) {
         this.OrderDate = OrderDate;
     }
 

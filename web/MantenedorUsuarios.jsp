@@ -88,8 +88,8 @@
         <br></br>
         <div class="container">
             <div>
-                <div class="pull-right">
-                    <a class="btn btn-lg btn-info" href="agregarUsuario"><i class="fa fa-plus"></i> </a>
+                <div class="pull-right" id="botonAgregar" hidden="">
+                    <a class="btn btn-lg btn-info" href="agregarUsuario"><i class="fa fa-plus"></i> Agregar Nuevo Registro </a>
                 </div>
                 <br>  
                 <c:if test="${not empty success}">
@@ -177,6 +177,7 @@
       setTimeout(function() {
           $("#datables").show();
           $("#datables_wrapper").show();
+          $("#botonAgregar").show();
           $("#loadgif").hide();
       }, 1000);
 
