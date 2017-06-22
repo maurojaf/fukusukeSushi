@@ -18,35 +18,50 @@ public class Orders {
     private float OrderAmount;
     private String OrderShipName;
     private String OrderShipAddress;
-    private String OrderCity;
-    private String OrderCountry;
+    //private String OrderCity;
+    //private String OrderCountry;
     private String OrderPhone;
     private float OrderShipping;
-    private float OrderTax;
+    //private float OrderTax;
     private String OrderEmail	;
     private Date OrderDate;
     private boolean OrderShipped;
     private String OrderTrackingNumber;
 
-    public Orders(int OrderID, int OrderUserID, float OrderAmount, String OrderShipName, String OrderShipAddress, String OrderCity, String OrderCountry, String OrderPhone, float OrderShipping, float OrderTax, String OrderEmail, Date OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
+    public Orders(int OrderID, int OrderUserID, float OrderAmount, String OrderShipName, String OrderShipAddress, String OrderPhone, float OrderShipping, String OrderEmail, Date OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
         this.OrderID = OrderID;
         this.OrderUserID = OrderUserID;
         this.OrderAmount = OrderAmount;
         this.OrderShipName = OrderShipName;
         this.OrderShipAddress = OrderShipAddress;
-        this.OrderCity = OrderCity;
-        this.OrderCountry = OrderCountry;
         this.OrderPhone = OrderPhone;
         this.OrderShipping = OrderShipping;
-        this.OrderTax = OrderTax;
         this.OrderEmail = OrderEmail;
         this.OrderDate = OrderDate;
         this.OrderShipped = OrderShipped;
         this.OrderTrackingNumber = OrderTrackingNumber;
     }
+
+    //public Orders(int OrderID, int OrderUserID, float OrderAmount, String OrderShipName, String OrderShipAddress, String OrderCity, String OrderCountry, String OrderPhone, float OrderShipping, float OrderTax, String OrderEmail, Date OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
+      //  this.OrderID = OrderID;
+        //this.OrderUserID = OrderUserID;
+       // this.OrderAmount = OrderAmount;
+       // this.OrderShipName = OrderShipName;
+       // this.OrderShipAddress = OrderShipAddress;
+        //this.OrderCity = OrderCity;
+        //this.OrderCountry = OrderCountry;
+       // this.OrderPhone = OrderPhone;
+       // this.OrderShipping = OrderShipping;
+        //this.OrderTax = OrderTax;
+        //this.OrderEmail = OrderEmail;
+       // this.OrderDate = OrderDate;
+        //this.OrderShipped = OrderShipped;
+        //this.OrderTrackingNumber = OrderTrackingNumber;
+   // }
     
     public Orders()
     {
+        
     }
     
 
@@ -90,21 +105,21 @@ public class Orders {
         this.OrderShipAddress = OrderShipAddress;
     }
 
-    public String getOrderCity() {
-        return OrderCity;
-    }
+    //public String getOrderCity() {
+      //  return OrderCity;
+   // }
 
-    public void setOrderCity(String OrderCity) {
-        this.OrderCity = OrderCity;
-    }
+    //public void setOrderCity(String OrderCity) {
+      //  this.OrderCity = OrderCity;
+    //}
 
-    public String getOrderCountry() {
-        return OrderCountry;
-    }
+    //public String getOrderCountry() {
+      //  return OrderCountry;
+    //}
 
-    public void setOrderCountry(String OrderCountry) {
-        this.OrderCountry = OrderCountry;
-    }
+   // public void setOrderCountry(String OrderCountry) {
+     //   this.OrderCountry = OrderCountry;
+    //}
 
     public String getOrderPhone() {
         return OrderPhone;
@@ -122,13 +137,13 @@ public class Orders {
         this.OrderShipping = OrderShipping;
     }
 
-    public float getOrderTax() {
-        return OrderTax;
-    }
+    //public float getOrderTax() {
+      //  return OrderTax;
+    //}
 
-    public void setOrderTax(float OrderTax) {
-        this.OrderTax = OrderTax;
-    }
+   // public void setOrderTax(float OrderTax) {
+     //   this.OrderTax = OrderTax;
+    //}
 
     public String getOrderEmail() {
         return OrderEmail;

@@ -102,7 +102,8 @@
                             <strong>Error!</strong> <c:out value="${error}" />.
                         </div>
                     </c:if>
-                <table id="example" class="table table-striped">
+                <div style='text-align: center;margin-bottom: 18px;' id='loadgif'><i class='fa fa-spinner fa-spin fa-3x fa-fw'></i></div>
+                <table id="datables" class="table table-striped" hidden="">
                     <thead>
                     <tr>
                         <th>Correo</th>
@@ -157,6 +158,39 @@
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-2.2.4/jszip-3.1.3/pdfmake-0.1.27/dt-1.10.15/b-1.3.1/b-colvis-1.3.1/b-flash-1.3.1/b-html5-1.3.1/b-print-1.3.1/cr-1.3.3/fc-3.2.2/fh-3.1.2/kt-2.2.1/r-2.1.1/rg-1.0.0/rr-1.2.0/se-1.2.2/datatables.min.js"></script>       
+   <script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#datables').DataTable({
+            
+            dom: 'Bfrtip',
+            buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+             "info": false,
+             "paging": true,
+             "initComplete": function() {
+             }
+        })
+        
+     $("#datables_wrapper").hide();
+      setTimeout(function() {
+          $("#datables").show();
+          $("#datables_wrapper").show();
+          $("#loadgif").hide();
+      }, 1000);
+
+    
+        
+        
+        
+
+    });
+</script>
+    
+    
+    
+    
     <script>
         $(document).ready(function() 
  {

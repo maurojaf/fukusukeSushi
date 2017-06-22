@@ -5,9 +5,11 @@
  */
 package servlets.administracion;
 
+import classes.Orders;
 import classes.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -15,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.ModeloOrders;
 
 /**
  *
@@ -36,6 +39,13 @@ public class ListarOrdenes extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
+        ModeloOrders ordenModelo = new ModeloOrders();
+            ArrayList<Orders> listado = ordenModelo.getAllOrdenes();
+        
+            request.setAttribute("ordenes", listado);
+            
+            
         request.getRequestDispatcher("/ListarOrdenesActivas.jsp").forward(request, response);
         }
     }
