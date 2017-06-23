@@ -36,7 +36,7 @@
                         <div class="form-group row col-md-12">
                             <div class="row col-md-8">
                                 <label for="" class="control-label">Correo</label>
-                                <input type="text" class="form-control" id="correo" required/>
+                                <input type="text" class="form-control" id="correo" name="correo" required/>
                                    
                             </div>
                             <div class="col-md-2">
@@ -53,21 +53,21 @@
                         </div>
                         <div class="form-group">
                             <label for="" class="control-label">Nombre</label>
-                            <input type="text" class="form-control" name="nombre" />
+                            <input type="text" class="form-control" name="nombre" required />
                         </div>
 
                         <div class="form-group">
                             <label for="" class="control-label">Apellido</label>
-                            <input type="text" class="form-control" name="apellido" />
+                            <input type="text" class="form-control" name="apellido" required />
                         </div>
 
                         <div class="form-group">
                             <label for="" class="control-label">Tel&eacute;fono</label>
-                            <input type="text" class="form-control" name="telefono" />
+                            <input type="text" class="form-control" name="telefono" required/>
                         </div>
                         <div class="form-group">
                             <label for="" class="control-label">Direcci&oacute;n</label>
-                            <input type="text" class="form-control" name="direccion" />
+                            <input type="text" class="form-control" name="direccion" required/>
                         </div>
                         <div class="form-group">
                             <a href="listar" class="btn btn-danger" role="button">Cancelar</a>
