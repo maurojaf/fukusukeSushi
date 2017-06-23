@@ -37,10 +37,11 @@
                             <div class="row col-md-8">
                                 <label for="" class="control-label">Correo</label>
                                 <input type="text" class="form-control" id="correo" required/>
-                                <div class="">
-                                    <button type="button" id="verificador1" class="btn btn-primary">Verificar Correo</button>
-                                </div>    
+                                   
                             </div>
+                            <div class="col-md-2">
+                                    <button type="button" id="verificador1" class="btn btn-primary" style="margin-top: 24px">Verificar Correo</button>
+                                </div> 
                         </div>
                         <div class="form-group">
                             <p>
@@ -86,18 +87,42 @@
     <script type="text/javascript">
 
                                 $(document).ready(function () {
+                                    $( "#correo" ).keyup(function() {
+                                        //alert( "Handler for .keyup() called." );
+                                        if(!$("#botonVerificado").prop('disabled')){
+                                            //alert("asd");
+                                            $("#botonVerificado").prop('disabled',true);
+                                            
+                                        }
+//                                        if (!$("#botonVerificado").prop('disabled'))
+//                                        {
+//                                            $("#botonVerificado").attr('disabled');
+//                                        }
+                                        
+                                        
+                                      });
+                                    
+                                    
+                                    
+                                    
                                     $("#verificador1").click(function () {
                                         var correo = $("#correo").val();
                                         $.post("http://apilayer.net/api/check?access_key=7ee4434c7dc4b78fa1d642acf8555183&email=" + correo + "&smtp=1&format=1",
                                                 function (data) {
-                                                    alert(data.smtp_check);
+                                                    
+                                                    
                                                     if (data.smtp_check) {
-                                                        $("#botonVerificado").attr("disable", false);
+                                                        
+                                                        alert("Correo verificado, ahora puede guardar el nuevo registro");
+                                                        $("#botonVerificado").removeAttr('disabled');
+                                                        
+
 
                                                     } else
                                                     {
-                                                        
+                                                        alert("Correo no existe");
                                                     }
+                                                    
 
                                                 });
                                     });
