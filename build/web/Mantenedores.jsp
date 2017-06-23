@@ -68,6 +68,9 @@
                             <a href="listarOrdenes">Ordenes</a>
                         </li>
                         <li>
+                            <a href="reportes">Reporte</a>
+                        </li>
+                        <li>
                             <a href="CerrarSesion">Cerrar Sesion</a>
                         </li>
                         
