@@ -33,9 +33,14 @@
                         </div>
                     </c:if>
                     <form action="agregarUsuario" method="POST" enctype="form-data">
-                        <div class="form-group">
-                            <label for="" class="control-label">Correo</label>
-                            <input type="text" class="form-control" name="correo" required/>
+                        <div class="form-group row col-md-12">
+                            <div class="row col-md-8">
+                                <label for="" class="control-label">Correo</label>
+                                <input type="text" class="form-control" id="correo" required/>
+                                <div class="">
+                                    <button type="button" id="verificador1" class="btn btn-primary">Verificar Correo</button>
+                                </div>    
+                            </div>
                         </div>
                         <div class="form-group">
                             <p>
@@ -65,7 +70,7 @@
                         </div>
                         <div class="form-group">
                             <a href="listar" class="btn btn-danger" role="button">Cancelar</a>
-                            <input type="submit" class="btn btn-primary pull-right" name="nombre" />
+                            <input type="submit" id="botonVerificado" class="btn btn-primary pull-right" disabled name="nombre" />
                         </div>
 
                     </form>
@@ -77,14 +82,36 @@
         <br></br>
         <br></br>
     </body>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-        function mouseoverPass(obj) {
-            var obj = document.getElementById('myPassword');
-            obj.type = "text";
-        }
-        function mouseoutPass(obj) {
-            var obj = document.getElementById('myPassword');
-            obj.type = "password";
-        }
+
+                                $(document).ready(function () {
+                                    $("#verificador1").click(function () {
+                                        var correo = $("#correo").val();
+                                        $.post("http://apilayer.net/api/check?access_key=7ee4434c7dc4b78fa1d642acf8555183&email=" + correo + "&smtp=1&format=1",
+                                                function (data) {
+                                                    alert(data.smtp_check);
+                                                    if (data.smtp_check) {
+                                                        $("#botonVerificado").attr("disable", false);
+
+                                                    } else
+                                                    {
+                                                        
+                                                    }
+
+                                                });
+                                    });
+                                });
+
+
+
+                                function mouseoverPass(obj) {
+                                    var obj = document.getElementById('myPassword');
+                                    obj.type = "text";
+                                }
+                                function mouseoutPass(obj) {
+                                    var obj = document.getElementById('myPassword');
+                                    obj.type = "password";
+                                }
     </script>
 </html>

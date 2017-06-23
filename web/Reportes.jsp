@@ -110,9 +110,9 @@
         <table id="datables" class="table table-striped" hidden="">
             <thead>
                 <tr>
-                    <th>Monto Orden</th>
-                    <th>Fecha Orden</th>
                     <th>Numero Orden</th>
+                    <th>Fecha Orden</th>
+                    
                     <th>Nombre Producto</th>
                     <th>Producto Precio</th>                        
 
@@ -123,14 +123,12 @@
 
                     <tr>
                         <td>
-                            <c:out value = "${item.orderAmount}"/>
+                            <c:out value = "${item.detailOrderID}"/>
                         </td>                                         
                         <td>
                             <c:out value = "${item.orderDate}"/>
                         </td> 
-                        <td>
-                            <c:out value = "${item.detailOrderID}"/>
-                        </td>
+                        
                         <td>
                             <c:out value = "${item.productName}"/>
                         </td>

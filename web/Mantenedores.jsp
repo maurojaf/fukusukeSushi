@@ -91,7 +91,7 @@
                 <br>  
                 <c:if test="${not empty success}">
                         <div class="alert alert-success">
-                            <strong>Success!</strong> <c:out value="${success}" />.
+                            <strong>OK!!</strong> <c:out value="${success}" />.
                         </div>
                     </c:if>
                     <c:if test="${not empty error}">
