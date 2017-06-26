@@ -16,17 +16,17 @@ public class Products {
     private int ProductID;
     private String ProductSKU;
     private String ProductName;
-    private float ProductPrice;
-    private float ProductWeight;
+    private int ProductPrice;
+    private int ProductWeight;
     private String ProductLongDesc;
     private String ProductThumb;
     private String ProductImage;
     private int ProductCategoryID;
     private Date ProductUpdateDate;
-    private float ProductStock;
+    private int ProductStock;
     private boolean ProductLive;
 
-    public Products(int ProductID, String ProductSKU, String ProductName, float ProductPrice, float ProductWeight, String ProductLongDesc, String ProductThumb, String ProductImage, int ProductCategoryID, Date ProductUpdateDate, float ProductStock, boolean ProductLive) {
+    public Products(int ProductID, String ProductSKU, String ProductName, int ProductPrice, int ProductWeight, String ProductLongDesc, String ProductThumb, String ProductImage, int ProductCategoryID, Date ProductUpdateDate, int ProductStock, boolean ProductLive) {
         this.ProductID = ProductID;
         //this.ProductSKU = null;
         this.ProductName = ProductName;
@@ -69,19 +69,19 @@ public class Products {
         this.ProductName = ProductName;
     }
 
-    public float getProductPrice() {
+    public int getProductPrice() {
         return ProductPrice;
     }
 
-    public void setProductPrice(float ProductPrice) {
+    public void setProductPrice(int ProductPrice) {
         this.ProductPrice = ProductPrice;
     }
 
-    public float getProductWeight() {
+    public int getProductWeight() {
         return ProductWeight;
     }
 
-    public void setProductWeight(float ProductWeight) {
+    public void setProductWeight(int ProductWeight) {
         this.ProductWeight = ProductWeight;
     }
 
@@ -125,11 +125,11 @@ public class Products {
         this.ProductUpdateDate = ProductUpdateDate;
     }
 
-    public float getProductStock() {
+    public int getProductStock() {
         return ProductStock;
     }
 
-    public void setProductStock(float ProductStock) {
+    public void setProductStock(int ProductStock) {
         this.ProductStock = ProductStock;
     }
 

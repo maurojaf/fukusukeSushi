@@ -102,9 +102,9 @@ public class EditarProductoServlet extends HttpServlet {
         //int precioInt = Integer.parseInt(precio);
         
         prod.setProductName(nombre);
-        prod.setProductPrice(Float.parseFloat(precio));
+        prod.setProductPrice(Integer.parseInt(precio));
         prod.setProductLongDesc(descripcion);
-        prod.setProductStock(Float.parseFloat(stock));
+        prod.setProductStock(Integer.parseInt(stock));
         prod.setProductImage(imagen);
         
         boolean resultado = productoModel.update(prod);

@@ -27,7 +27,7 @@ public class ModeloProducts extends Conexion {
             pst = getConnection().prepareCall(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
-                productos.add(new Products(rs.getInt("ProductID"), rs.getString("ProductSKU"), rs.getString("ProductName"), rs.getFloat("ProductPrice"), rs.getFloat("ProductWeight"), rs.getString("ProductLongDesc"), rs.getString("ProductThumb"), rs.getString("ProductImage"), rs.getInt("ProductCategoryID"), rs.getDate("ProductUpdateDate"), rs.getFloat("ProductStock"), rs.getBoolean("ProductLive")));
+                productos.add(new Products(rs.getInt("ProductID"), rs.getString("ProductSKU"), rs.getString("ProductName"), rs.getInt("ProductPrice"), rs.getInt("ProductWeight"), rs.getString("ProductLongDesc"), rs.getString("ProductThumb"), rs.getString("ProductImage"), rs.getInt("ProductCategoryID"), rs.getDate("ProductUpdateDate"), rs.getInt("ProductStock"), rs.getBoolean("ProductLive")));
             }
 
         } catch (Exception e) {
@@ -60,7 +60,7 @@ public class ModeloProducts extends Conexion {
             pst.setInt(1, id);
             rs = pst.executeQuery();
             while (rs.next()) {
-                producto = new Products(rs.getInt("ProductID"), rs.getString("ProductSKU"), rs.getString("ProductName"), rs.getFloat("ProductPrice"), rs.getFloat("ProductWeight"), rs.getString("ProductLongDesc"), rs.getString("ProductThumb"), rs.getString("ProductImage"), rs.getInt("ProductCategoryID"), rs.getDate("ProductUpdateDate"), rs.getFloat("ProductStock"), rs.getBoolean("ProductLive"));
+                producto = new Products(rs.getInt("ProductID"), rs.getString("ProductSKU"), rs.getString("ProductName"), rs.getInt("ProductPrice"), rs.getInt("ProductWeight"), rs.getString("ProductLongDesc"), rs.getString("ProductThumb"), rs.getString("ProductImage"), rs.getInt("ProductCategoryID"), rs.getDate("ProductUpdateDate"), rs.getInt("ProductStock"), rs.getBoolean("ProductLive"));
             }
 
         } catch (Exception e) {
