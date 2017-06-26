@@ -109,7 +109,7 @@ public class EditarOrden extends HttpServlet {
         
         //int precioInt = Integer.parseInt(precio);
         
-        order.setOrderAmount(Float.parseFloat(monto));
+        order.setOrderAmount(Integer.parseInt(monto));
         order.setOrderShipAddress(direccion);
         order.setOrderPhone(telefono);
         order.setOrderEmail(correo);

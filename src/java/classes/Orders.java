@@ -15,20 +15,20 @@ public class Orders {
     
     private int OrderID;
     private int OrderUserID;
-    private float OrderAmount;
+    private int OrderAmount;
     private String OrderShipName;
     private String OrderShipAddress;
     //private String OrderCity;
     //private String OrderCountry;
     private String OrderPhone;
-    private float OrderShipping;
-    //private float OrderTax;
+    private int OrderShipping;
+    //private int OrderTax;
     private String OrderEmail	;
     private String OrderDate;
     private boolean OrderShipped;
     private String OrderTrackingNumber;
 
-    public Orders(int OrderID, int OrderUserID, float OrderAmount, String OrderShipName, String OrderShipAddress, String OrderPhone, float OrderShipping, String OrderEmail, String OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
+    public Orders(int OrderID, int OrderUserID, int OrderAmount, String OrderShipName, String OrderShipAddress, String OrderPhone, int OrderShipping, String OrderEmail, String OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
         this.OrderID = OrderID;
         this.OrderUserID = OrderUserID;
         this.OrderAmount = OrderAmount;
@@ -42,7 +42,7 @@ public class Orders {
         this.OrderTrackingNumber = OrderTrackingNumber;
     }
 
-    //public Orders(int OrderID, int OrderUserID, float OrderAmount, String OrderShipName, String OrderShipAddress, String OrderCity, String OrderCountry, String OrderPhone, float OrderShipping, float OrderTax, String OrderEmail, Date OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
+    //public Orders(int OrderID, int OrderUserID, int OrderAmount, String OrderShipName, String OrderShipAddress, String OrderCity, String OrderCountry, String OrderPhone, int OrderShipping, int OrderTax, String OrderEmail, Date OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
       //  this.OrderID = OrderID;
         //this.OrderUserID = OrderUserID;
        // this.OrderAmount = OrderAmount;
@@ -81,11 +81,11 @@ public class Orders {
         this.OrderUserID = OrderUserID;
     }
 
-    public float getOrderAmount() {
+    public int getOrderAmount() {
         return OrderAmount;
     }
 
-    public void setOrderAmount(float OrderAmount) {
+    public void setOrderAmount(int OrderAmount) {
         this.OrderAmount = OrderAmount;
     }
 
@@ -129,19 +129,19 @@ public class Orders {
         this.OrderPhone = OrderPhone;
     }
 
-    public float getOrderShipping() {
+    public int getOrderShipping() {
         return OrderShipping;
     }
 
-    public void setOrderShipping(float OrderShipping) {
+    public void setOrderShipping(int OrderShipping) {
         this.OrderShipping = OrderShipping;
     }
 
-    //public float getOrderTax() {
+    //public int getOrderTax() {
       //  return OrderTax;
     //}
 
-   // public void setOrderTax(float OrderTax) {
+   // public void setOrderTax(int OrderTax) {
      //   this.OrderTax = OrderTax;
     //}
 
