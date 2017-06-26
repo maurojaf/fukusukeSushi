@@ -33,10 +33,25 @@
                         </div>
                     </c:if>
                     <form action="editarUsuarios?user=${user.userID}" method="POST" enctype="form-data">
-                        <div class="form-group">
+<!--                        <div class="form-group">
                             <label for="" class="control-label">Correo</label>
                             <input type="text" class="form-control" name="correo" value="${user.userEmail}" autocomplete="off" required/>
+                        </div>-->
+                        <div class="form-group row col-md-12">
+                            <div class="row col-md-8">
+                                <label for="" class="control-label">Correo</label>
+                                <input type="text" class="form-control" id="correo" name="correo" value="${user.userEmail}" autocomplete="off" required/>
+                                   
+                            </div>
+                            <div class="col-md-2">
+                                    <button type="button" id="verificador1" class="btn btn-primary" style="margin-top: 24px">Verificar Correo</button>
+                                </div> 
                         </div>
+                        
+                        
+                        
+                        
+                        
                         <div class="form-group">
                             <p>
                                 <label for="" class="control-label">Contrase&ntilde;a</label>
@@ -63,7 +78,7 @@
                         </div>
                         <div class="form-group">
                             <a href="listar" class="btn btn-danger" role="button">Cancelar</a>
-                            <input type="submit" class="btn btn-primary pull-right" name="enviar" />
+                            <input type="submit" id="botonVerificado" class="btn btn-primary pull-right" name="enviar" disabled/>
                         </div>
                     </form>
                 </div>

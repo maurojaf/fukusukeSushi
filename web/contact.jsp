@@ -260,7 +260,7 @@
 
     <!-- Google Map -->
     <div class="container mt-60">
-      <div id="google-map" class="gmap" data-address="Plaza de Maipú, Santiago, Chile"></div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1583.724487002828!2d-70.7716756613706!3d-33.48399030647646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c2e6dbefeffd%3A0x8eaecd7073babb38!2sMar+de+Chile+516%2C+Maip%C3%BA%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses-419!2scl!4v1498509946241" width="1100" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
 
     <!-- Contact -->
@@ -292,14 +292,14 @@
 
             <div class="address-wrap">
               <h4 class="uppercase">Dirección</h4>
-              <h6>Local 01, Maipú</h6>
-              <address class="address">Dirección XXXXXXXXX, Maipú, Santiago - Chile.</address>
+              <h6>Mar de Chile, 516</h6>
+              <address class="address">Maipú, Santiago - Chile.</address>
 
             </div>
 
             <h4 class="uppercase">Información de Contacto</h4>
             <ul class="contact-info-list">
-              <li><span>Teléfono: </span><a href="tel:+1-888-1554-456-123">+ 1-888-1554-456-123</a></li>
+              <li><span>Teléfono: </span><a href="tel:+1-888-1554-456-123">+ 56 227 625 080 </a></li>
               <li><span>Correo: </span><a href="mailto:themesupport@gmail.com" class="sliding-link">contacto@fukusuke.cl</a></li>
             </ul>
 
