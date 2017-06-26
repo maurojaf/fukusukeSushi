@@ -47,11 +47,6 @@
                                     <button type="button" id="verificador1" class="btn btn-primary" style="margin-top: 24px">Verificar Correo</button>
                                 </div> 
                         </div>
-                        
-                        
-                        
-                        
-                        
                         <div class="form-group">
                             <p>
                                 <label for="" class="control-label">Contrase&ntilde;a</label>
