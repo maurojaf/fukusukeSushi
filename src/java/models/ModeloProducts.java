@@ -23,8 +23,8 @@ public class ModeloProducts extends Conexion {
         ResultSet rs = null;
 
         try {
-            String sql = "call seleccionarProducts()";
-            pst = getConnection().prepareCall(sql);
+            String sql = "SELECT * FROM products";
+            pst = getConnection().prepareStatement(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
                 productos.add(new Products(rs.getInt("ProductID"), rs.getString("ProductSKU"), rs.getString("ProductName"), rs.getInt("ProductPrice"), rs.getInt("ProductWeight"), rs.getString("ProductLongDesc"), rs.getString("ProductThumb"), rs.getString("ProductImage"), rs.getInt("ProductCategoryID"), rs.getDate("ProductUpdateDate"), rs.getInt("ProductStock"), rs.getBoolean("ProductLive")));
