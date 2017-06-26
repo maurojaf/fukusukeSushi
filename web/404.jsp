@@ -114,7 +114,7 @@
                       <button type="submit" class="search-button">
                         <i class="icon icon_search"></i>
                       </button>
-                    </form>
+                    </form> 
                   </div>
 
                   <!-- Logo -->
