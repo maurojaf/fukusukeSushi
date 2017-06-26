@@ -3,13 +3,12 @@
     Created on : 12-06-2017, 0:12:33
     Author     : Felipe
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>SUSHI FUKUSUKE | Inicio</title>
-
+   
   <meta charset="utf-8">
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -54,15 +53,14 @@
           <div class="top-bar-line">
             <div class="row">
               <div class="top-bar-links">
-                <ul class="col-sm-8 top-bar-acc">
+                <ul class="col-sm-6 top-bar-acc">
                   <li class="top-bar-link"><a href="login.jsp">Iniciar Sesión / Registrarse</a></li>
                   <li class="top-bar-link"><a href="shop-cart.jsp">Carrito</a></li>
                   <li class="top-bar-link"><a href="faq.jsp">Preguntas Frecuentes</a></li>
                   <li class="top-bar-link"><a href="contact.jsp">Contacto</a></li>
-                  <li class="top-bar-link"><a href="login">Administración</a></li>
                 </ul>
 
-                <ul class="col-sm-4 text-right top-bar-currency-language">
+                <ul class="col-sm-6 text-right top-bar-currency-language">
                   <li>
                     <div class="social-icons">
                       <a href="#"><i class="fa fa-twitter"></i></a>
@@ -117,7 +115,7 @@
                     </form>
                   </div>
 
-                  <!-- Logo -->
+                 <!-- Logo -->
                   <div class="logo-container">
                     <div class="logo-wrap text-center">
                       <a href="index.jsp">
@@ -125,6 +123,7 @@
                       </a>
                     </div>
                   </div>
+
 
                   <!-- Cart -->
                   <div class="nav-cart-wrap hidden-sm hidden-xs">
@@ -139,17 +138,17 @@
 
                           <div class="nav-cart-item clearfix">
                             <div class="nav-cart-img">
-                              <a href="#">
-                                <img src="img/shop/cart_small_1.jpg" alt="">
+                              <a href="">
+                                <img src="img/productos/producto1.jpg" alt="" width="50">
                               </a>
                             </div>
                             <div class="nav-cart-title">
                               <a href="#">
-                                Ladies Bag
+                               Promoción 3
                               </a>
                               <div class="nav-cart-price">
                                 <span>1 x</span>
-                                <span>1250.00</span>
+                                <span>7.990</span>
                               </div>
                             </div>
                             <div class="nav-cart-remove">
@@ -160,16 +159,16 @@
                           <div class="nav-cart-item clearfix">
                             <div class="nav-cart-img">
                               <a href="#">
-                                <img src="img/shop/cart_small_2.jpg" alt="">
+                                <img src="img/productos/producto2.jpg" alt="" width="50">
                               </a>
                             </div>
                             <div class="nav-cart-title">
                               <a href="#">
-                                Sequin Suit longer title
+                                Promoción 2
                               </a>
                               <div class="nav-cart-price">
                                 <span>1 x</span>
-                                <span>1250.00</span>
+                                <span>9.990</span>
                               </div>
                             </div>
                             <div class="nav-cart-remove">
@@ -181,7 +180,7 @@
 
                         <div class="nav-cart-summary">
                           <span>Subtotal</span>
-                          <span class="total-price">$1799.00</span>
+                          <span class="total-price">$</span>
                         </div>
 
                         <div class="nav-cart-actions mt-20">
@@ -192,8 +191,8 @@
                     </div>
                     <div class="menu-cart-amount right">
                       <span>
-                        Cart /
-                        <a href="#"> $1299.50</a>
+                        Carrito /
+                        <a href="#"> $ </a>
                       </span>
                     </div>
                   </div> <!-- end cart -->
@@ -219,7 +218,7 @@
                     <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                     <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                     <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                    <li class="dropdown"><a href="blog-standard.jsp">Blog</a></li>
+                    <li class="dropdown"><a href="#">Blog</a></li>
                     <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                     <li class="mobile-links">
@@ -270,7 +269,7 @@
                   <div class="hero-lines">
                     <h1 class="hero-heading white large">MIÉRCOLES DE PROMOS!</h1>
                   </div>
-                  <a href="#" class="btn btn-lg btn-white"><span>Ver Promociones</span></a>
+                  <a href="" class="btn btn-lg btn-white"><span>Ver Promociones</span></a>
                 </div>
               </li>
               <li>
@@ -311,6 +310,7 @@
         <div class="row heading-row">
           <div class="col-md-12 text-center">
             <h2 class="heading uppercase"><small>Nuevos Productos</small></h2>
+            
           </div>
         </div>
 
@@ -318,25 +318,107 @@
           <div class="col-md-3 col-xs-6">
             <div class="product-item">
               <div class="product-img">
-                <a href="#">
-                  <img src="img/shop/shop_item_2.jpg" alt="">
-                  <img src="img/shop/shop_item_2_back.jpg" alt="" class="back-img">
+                <a href="">
+                  <img src="img/productos/producto1.jpg" alt="">
+                  <img src="img/productos/producto1.jpg" alt="" class="back-img">
                 </a>
-                <a href="#" class="product-quickview">Ver Detalles</a>
+           <!--  <a href="#" class="product-quickview">Ver Detalles</a>-->
               </div>
               <div class="product-details">
                 <h3>
-                  <p>Nombre del producto</p>
+                  <p>Promoción 10</p>
                 </h3>
                 <span class="price">
                   <ins>
-                    <span class="ammount">$219.00</span>
+                    <span class="ammount">$ 14.990</span>
                   </ins>
                 </span>
               </div>
             </div>
+              
+              
+              
+              
+          </div>
+             <div class="col-md-3 col-xs-6">
+            <div class="product-item">
+              <div class="product-img">
+                <a href="">
+                  <img src="img/productos/producto4.jpg" alt="">
+                  <img src="img/productos/producto4.jpg" alt="" class="back-img">
+                </a>
+                <!--  <a href="#" class="product-quickview">Ver Detalles</a>-->
+              </div>
+              <div class="product-details">
+                <h3>
+                  <p>Promoción 7</p>
+                </h3>
+                <span class="price">
+                  <ins>
+                    <span class="ammount">$ 13.990</span>
+                  </ins>
+                </span>
+              </div>
+            </div>
+              
+              
+                 
+              
+          </div>
+             <div class="col-md-3 col-xs-6">
+            <div class="product-item">
+              <div class="product-img">
+                <a href="#">
+                  <img src="img/productos/producto7.jpg" alt="">
+                  <img src="img/productos/producto7.jpg" alt="" class="back-img">
+                </a>
+                <!--  <a href="#" class="product-quickview">Ver Detalles</a>-->
+              </div>
+              <div class="product-details">
+                <h3>
+                  <p>Promoción 8</p>
+                </h3>
+                <span class="price">
+                  <ins>
+                    <span class="ammount">$ 17.990</span>
+                  </ins>
+                </span>
+              </div>
+            </div>
+              
+              
+              
+              
+          </div>
+             <div class="col-md-3 col-xs-6">
+            <div class="product-item">
+              <div class="product-img">
+                <a href="#">
+                  <img src="img/productos/producto2.jpg" alt="">
+                  <img src="img/productos/producto2.jpg" alt="" class="back-img">
+                </a>
+              <!--  <a href="#" class="product-quickview">Ver Detalles</a>-->
+              </div>
+              <div class="product-details">
+                <h3>
+                  <p>Promoción 9</p>
+                </h3>
+                <span class="price">
+                  <ins>
+                    <span class="ammount">$ 10.990</span>
+                  </ins>
+                </span>
+              </div>
+            </div>
+              
+              
+              
+              
           </div>
         </div> <!-- end row -->
+        
+
+        
       </div>
     </section> <!-- end new arrivals -->
 
@@ -370,25 +452,98 @@
             <div class="product-item">
               <div class="product-img">
                 <a href="#">
-                  <img src="img/shop/shop_item_5.jpg" alt="">
-                  <img src="img/shop/shop_item_5_back.jpg" alt="" class="back-img">
+                  <img src="img/productos/producto6.jpg" alt="">
+                  <img src="img/productos/producto6.jpg" alt="" class="back-img">
                 </a>
-                <a href="#" class="product-quickview">Ver Detalles</a>
+               <!-- <a href="#" class="product-quickview">Ver Detalles</a>-->
               </div>
 
               <div class="product-details">
                 <h3>
-                  <p>Nombre del producto</p>
+                  <p>Promoción 6</p>
                 </h3>
                 <span class="price">
                   <ins>
-                    <span class="ammount">$399.00</span>
+                    <span class="ammount">$ 9.990</span>
                   </ins>
                 </span>
               </div>
             </div>
           </div>
 
+            <div class="col-md-3 col-xs-6 animated-from-left">
+            <div class="product-item">
+              <div class="product-img">
+                <a href="#">
+                  <img src="img/productos/producto7.jpg" alt="">
+                  <img src="img/productos/producto7.jpg" alt="" class="back-img">
+                </a>
+               <!-- <a href="#" class="product-quickview">Ver Detalles</a>-->
+              </div>
+
+              <div class="product-details">
+                <h3>
+                  <p>Promoción 7</p>
+                </h3>
+                <span class="price">
+                  <ins>
+                    <span class="ammount">$ 8.990</span>
+                  </ins>
+                </span>
+              </div>
+            </div>
+          </div>
+            
+            
+            <div class="col-md-3 col-xs-6 animated-from-left">
+            <div class="product-item">
+              <div class="product-img">
+                <a href="#">
+                  <img src="img/productos/producto3.jpg" alt="">
+                  <img src="img/productos/producto3.jpg" alt="" class="back-img">
+                </a>
+               <!-- <a href="#" class="product-quickview">Ver Detalles</a>-->
+              </div>
+
+              <div class="product-details">
+                <h3>
+                  <p>Promoción 3</p>
+                </h3>
+                <span class="price">
+                  <ins>
+                    <span class="ammount">$ 7.990</span>
+                  </ins>
+                </span>
+              </div>
+            </div>
+          </div>
+            
+            
+            <div class="col-md-3 col-xs-6 animated-from-left">
+            <div class="product-item">
+              <div class="product-img">
+                <a href="#">
+                  <img src="img/productos/producto5.jpg" alt="">
+                  <img src="img/productos/producto5.jpg" alt="" class="back-img">
+                </a>
+               <!-- <a href="#" class="product-quickview">Ver Detalles</a>-->
+              </div>
+
+              <div class="product-details">
+                <h3>
+                  <p>Promoción 5</p>
+                </h3>
+                <span class="price">
+                  <ins>
+                    <span class="ammount">$ 10.990</span>
+                  </ins>
+                </span>
+              </div>
+            </div>
+          </div>
+            
+            
+            
 
 
             </div>
@@ -518,7 +673,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="widget">
                 <h5 class="widget-title uppercase">SUSHI FUKUSUKE</h5>
-                <p class="mb-0">A-ha Shop is a very slick and clean e-commerce template with endless possibilities. Creating an awesome clothes store with this Theme is easy than you can imagine.</p>
+                <p class="mb-0">Somos una pequeña organización que se dedica a la preparación y venta de sushi, en donde día a día nos esforzamos al máximo para entregar el mejor servicio para todos nuestros clientes.</p>
               </div>
             </div>
 

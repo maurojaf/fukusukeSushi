@@ -3,11 +3,11 @@
     Created on : 12-06-2017, 0:15:28
     Author     : Felipe
 --%>
+<%@page import="classes.Products"%>
 <%@page import="controllers.ControladorProducto"%>
-<%@page import="classes.Producto"%>
 <%
     int id = Integer.parseInt(request.getParameter("id"));
-    Producto producto = new ControladorProducto().getProducto(id);
+    Products producto = new ControladorProducto().getProducto(id);
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -130,6 +130,7 @@
                       </a>
                     </div>
                   </div>
+
 
                   <!-- Cart -->
                   <div class="nav-cart-wrap hidden-sm hidden-xs">
@@ -278,7 +279,7 @@
 
               <div class="gallery-cell">
                 <a href="img/shop/single_img_1.jpg" class="lightbox-img">
-                    <img src="<%=producto.getImg_producto()%>" alt="" />
+                    <img src="<%=producto.getProductImage() %>" alt="" />
                   <i class="icon arrow_expand"></i>
                 </a>
               </div>
@@ -331,17 +332,17 @@
           </div> <!-- end col img slider -->
 
           <div class="col-sm-6 col-xs-12 product-description-wrap">
-            <h1 class="product-title"><%= producto.getNombre()%></h1>
+            <h1 class="product-title"><%= producto.getProductName() %></h1>
             <span class="rating">
               <a href="#">3 Reviews</a>
             </span>
             <form action="agregarProducto" method="post">
             <span class="price">
               <ins>
-                <span class="ammount">$ <%=producto.getPrecio()%></span>
+                <span class="ammount">$ <%=producto.getProductPrice() %></span>
               </ins>
             </span>
-            <p class="product-description"><%= producto.getDescripcion()%></p>
+            <p class="product-description"><%= producto.getProductLongDesc() %></p>
 
 
 
@@ -357,15 +358,15 @@
               </li>
               <li>
                 <div class="quantity buttons_added">
-                    <input name="idproducto" type="hidden" value="<%= producto.getId()%>"/>
+                    <input name="idproducto" type="hidden" value="<%= producto.getProductID() %>"/>
                   <input type="button" value="-" class="minus" /><input id="txt-cantidad" name="cantidad" type="number" step="1" min="0" value="1" title="Qty" class="input-text qty text" /><input type="button" value="+" class="plus" />
                 </div>
               </li>
             </ul>
             </form>
             <div class="product_meta">
-              <span class="sku">SKU: <a href="#"><%=producto.getSku()%></a></span>
-              <span class="posted_in">Category: <a href="#"><%=producto.getCategoria()%></a></span>
+              <span class="sku">SKU: <a href="#"><%=producto.getProductSKU() %></a></span>
+              <span class="posted_in">Category: <a href="#"> </a></span>
               <span class="tagged_as">Tags: <a href="#">Elegant</a>, <a href="#">Bag</a></span>
             </div>
 
@@ -399,7 +400,7 @@
 
                 <div class="tab-pane fade in active" id="tab-description">
                   <p>
-                 <%= producto.getDescripcion()%>
+                 <%= producto.getProductLongDesc()  %>
                   </p>
                 </div>
 
@@ -409,15 +410,15 @@
                     <tbody>
                       <tr>
                         <th>SKU</th>
-                        <td><%= producto.getSku()%></td>
+                        <td><%= producto.getProductSKU() %></td>
                       </tr>
                       <tr>
                         <th>Categoria</th>
-                        <td><%= producto.getCategoria()%></td>
+                        <td>...</td>
                       </tr>
                       <tr>
                         <th>Precio</th>
-                        <td>$ <%= producto.getPrecio()%></td>
+                        <td>$ <%= producto.getProductPrice() %></td>
                       </tr>
                     </tbody>
                   </table>

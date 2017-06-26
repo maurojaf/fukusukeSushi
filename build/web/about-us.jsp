@@ -54,15 +54,14 @@
           <div class="top-bar-line">
             <div class="row">
               <div class="top-bar-links">
-                <ul class="col-sm-8 top-bar-acc">
+                <ul class="col-sm-6 top-bar-acc">
                   <li class="top-bar-link"><a href="login.jsp">Iniciar Sesión / Registrarse</a></li>
                   <li class="top-bar-link"><a href="shop-cart.jsp">Carrito</a></li>
                   <li class="top-bar-link"><a href="faq.jsp">Preguntas Frecuentes</a></li>
                   <li class="top-bar-link"><a href="contact.jsp">Contacto</a></li>
-                  <li class="top-bar-link"><a href="Mantenedores.jsp">Administración</a></li>
                 </ul>
 
-                <ul class="col-sm-4 text-right top-bar-currency-language">
+                <ul class="col-sm-6 text-right top-bar-currency-language">
                   <li>
                     <div class="social-icons">
                       <a href="#"><i class="fa fa-twitter"></i></a>
@@ -127,7 +126,7 @@
                   </div>
 
                   <!-- Cart -->
-                  <div class="nav-cart-wrap hidden-sm hidden-xs">
+                                  <div class="nav-cart-wrap hidden-sm hidden-xs">
                     <div class="nav-cart right">
                       <div class="nav-cart-outer">
                         <div class="nav-cart-inner">
@@ -139,17 +138,17 @@
 
                           <div class="nav-cart-item clearfix">
                             <div class="nav-cart-img">
-                              <a href="#">
-                                <img src="img/shop/cart_small_1.jpg" alt="">
+                              <a href="">
+                                <img src="img/productos/producto1.jpg" alt="" width="50">
                               </a>
                             </div>
                             <div class="nav-cart-title">
                               <a href="#">
-                                Ladies Bag
+                               Promoción 3
                               </a>
                               <div class="nav-cart-price">
                                 <span>1 x</span>
-                                <span>1250.00</span>
+                                <span>7.990</span>
                               </div>
                             </div>
                             <div class="nav-cart-remove">
@@ -160,16 +159,16 @@
                           <div class="nav-cart-item clearfix">
                             <div class="nav-cart-img">
                               <a href="#">
-                                <img src="img/shop/cart_small_2.jpg" alt="">
+                                <img src="img/productos/producto2.jpg" alt="" width="50">
                               </a>
                             </div>
                             <div class="nav-cart-title">
                               <a href="#">
-                                Sequin Suit longer title
+                                Promoción 2
                               </a>
                               <div class="nav-cart-price">
                                 <span>1 x</span>
-                                <span>1250.00</span>
+                                <span>9.990</span>
                               </div>
                             </div>
                             <div class="nav-cart-remove">
@@ -181,7 +180,7 @@
 
                         <div class="nav-cart-summary">
                           <span>Subtotal</span>
-                          <span class="total-price">$1799.00</span>
+                          <span class="total-price">$</span>
                         </div>
 
                         <div class="nav-cart-actions mt-20">
@@ -192,8 +191,8 @@
                     </div>
                     <div class="menu-cart-amount right">
                       <span>
-                        Cart /
-                        <a href="#"> $1299.50</a>
+                        Carrito /
+                        <a href="#"> $ </a>
                       </span>
                     </div>
                   </div> <!-- end cart -->
@@ -219,7 +218,7 @@
                     <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                     <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                     <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                    <li class="dropdown"><a href="blog-standard.jsp">Blog</a></li>
+                    <li class="dropdown"><a href="#">Blog</a></li>
                     <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                     <li class="mobile-links">
@@ -310,7 +309,7 @@
 
 
     <!-- Our Team -->
-    <section class="section-wrap our-team pb-50">
+  <!--  <section class="section-wrap our-team pb-50">
       <div class="container">
 
         <div class="row heading-row">
@@ -332,7 +331,7 @@
               </div>
             </div>
           </div> <!-- end team member -->
-
+<!--
           <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
@@ -345,7 +344,7 @@
               </div>
             </div>
           </div> <!-- end team member -->
-
+<!--
           <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
@@ -358,7 +357,7 @@
               </div>
             </div>
           </div> <!-- end team member -->
-
+<!--
           <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
@@ -371,10 +370,11 @@
               </div>
             </div>
           </div> <!-- end team member -->
-
+<!--
         </div>
       </div>
-    </section> <!-- end our team -->
+    </section> <!-- end our team --> 
+  
 
     <!-- Divider -->
     <div class="container">
@@ -409,8 +409,8 @@
 
           <div class="item">
             <div class="container testimonial">
-              <p class="testimonial-text">I’am amazed, I should say thank you so much for your awesome template. Design is so good and neat, every detail has been taken care these team are realy amazing and talented! I will work only with enigma agency.</p>
-              <span class="uppercase">Clint Eastwood / Amazon</span>
+              <p class="testimonial-text">Es mi local de sushi favorito!! tienen las mejores promociones y los productos son exquisitos.</p>
+              <span class="uppercase">Luís Tapia</span>
             </div>
           </div>
 
@@ -523,7 +523,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="widget">
                 <h5 class="widget-title uppercase">SUSHI FUKUSUKE</h5>
-                <p class="mb-0">A-ha Shop is a very slick and clean e-commerce template with endless possibilities. Creating an awesome clothes store with this Theme is easy than you can imagine.</p>
+                <p class="mb-0">Somos una pequeña organización que se dedica a la preparación y venta de sushi, en donde día a día nos esforzamos al máximo para entregar el mejor servicio para todos nuestros clientes.</p>
               </div>
             </div>
 

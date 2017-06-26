@@ -4,6 +4,15 @@
     Author     : Felipe
 --%>
 
+<%@page import="classes.Products"%>
+<%@page import="controllers.ControladorProducto"%>
+<%@page import="classes.Articulo"%>
+<%@page import="java.util.ArrayList"%>
+<%@page session="true"%>
+<%
+    HttpSession sesion = request.getSession(true);
+        ArrayList<Articulo> articulos = sesion.getAttribute("carrito") == null ? null : (ArrayList) sesion.getAttribute("carrito");
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,15 +63,14 @@
           <div class="top-bar-line">
             <div class="row">
               <div class="top-bar-links">
-                <ul class="col-sm-8 top-bar-acc">
+                <ul class="col-sm-6 top-bar-acc">
                   <li class="top-bar-link"><a href="login.jsp">Iniciar Sesión / Registrarse</a></li>
                   <li class="top-bar-link"><a href="shop-cart.jsp">Carrito</a></li>
                   <li class="top-bar-link"><a href="faq.jsp">Preguntas Frecuentes</a></li>
                   <li class="top-bar-link"><a href="contact.jsp">Contacto</a></li>
-                  <li class="top-bar-link"><a href="Mantenedores.jsp">Administración</a></li>
                 </ul>
 
-                <ul class="col-sm-4 text-right top-bar-currency-language">
+                <ul class="col-sm-6 text-right top-bar-currency-language">
                   <li>
                     <div class="social-icons">
                       <a href="#"><i class="fa fa-twitter"></i></a>
@@ -139,17 +147,17 @@
 
                           <div class="nav-cart-item clearfix">
                             <div class="nav-cart-img">
-                              <a href="#">
-                                <img src="img/shop/cart_small_1.jpg" alt="">
+                              <a href="">
+                                <img src="img/productos/producto1.jpg" alt="" width="50">
                               </a>
                             </div>
                             <div class="nav-cart-title">
                               <a href="#">
-                                Ladies Bag
+                               Promoción 3
                               </a>
                               <div class="nav-cart-price">
                                 <span>1 x</span>
-                                <span>1250.00</span>
+                                <span>7.990</span>
                               </div>
                             </div>
                             <div class="nav-cart-remove">
@@ -160,16 +168,16 @@
                           <div class="nav-cart-item clearfix">
                             <div class="nav-cart-img">
                               <a href="#">
-                                <img src="img/shop/cart_small_2.jpg" alt="">
+                                <img src="img/productos/producto2.jpg" alt="" width="50">
                               </a>
                             </div>
                             <div class="nav-cart-title">
                               <a href="#">
-                                Sequin Suit longer title
+                                Promoción 2
                               </a>
                               <div class="nav-cart-price">
                                 <span>1 x</span>
-                                <span>1250.00</span>
+                                <span>9.990</span>
                               </div>
                             </div>
                             <div class="nav-cart-remove">
@@ -181,7 +189,7 @@
 
                         <div class="nav-cart-summary">
                           <span>Subtotal</span>
-                          <span class="total-price">$1799.00</span>
+                          <span class="total-price">$</span>
                         </div>
 
                         <div class="nav-cart-actions mt-20">
@@ -192,8 +200,8 @@
                     </div>
                     <div class="menu-cart-amount right">
                       <span>
-                        Cart /
-                        <a href="#"> $1299.50</a>
+                        Carrito /
+                        <a href="#"> $ </a>
                       </span>
                     </div>
                   </div> <!-- end cart -->
@@ -219,7 +227,7 @@
                     <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                     <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                     <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                    <li class="dropdown"><a href="blog-standard.jsp">Blog</a></li>
+                    <li class="dropdown"><a href="#">Blog</a></li>
                     <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                     <li class="mobile-links">
@@ -284,7 +292,7 @@
               </div>
             </div>
 
-            <form name="checkout" class="checkout ecommerce-checkout row">
+            
 
 
 
@@ -299,21 +307,24 @@
                       <div class="row">
                         <div class="col-sm-5 col-sm-offset-1 mb-40">
                           <div class="login">
+                              <form action="shop-checkout.jsp" method="post" name="frm-login">
                             <h4 class="uppercase">Iniciar Sesión</h4>
                             <p class="form-row form-row-wide">
                               <label>nombre de usuario o correo
                                 <abbr class="required" title="required">*</abbr>
                               </label>
-                              <input type="text" class="input-text" placeholder="" value="">
+                              <input type="text" class="input-text" placeholder="" value="" name="txtUsuario">
                             </p>
                             <p class="form-row form-row-wide">
                               <label>contraseña
                                 <abbr class="required" title="required">*</abbr>
                               </label>
-                              <input type="text" class="input-text" placeholder="" value="">
+                              <input type="text" class="input-text" placeholder="" value=""  name="txtContra">
                             </p>
-                            <input type="submit" value="Iniciar Sesión" class="btn">
+                            <input type="submit" value="Iniciar Sesión" class="btn" name="btnIngresar">
                             <input type="checkbox" class="input-checkbox" id="remember" name="remember" value="1">
+                              </form>
+                              
                           </div>
                         </div>
                       </div>
@@ -336,26 +347,34 @@
 
 
               <div class="col-md-4">
+                   
+                  
                 <div class="order-review-wrap ecommerce-checkout-review-order" id="order_review">
                   <h2 class="heading uppercase mb-30">Detalle de la Orden</h2>
                   <table class="table shop_table ecommerce-checkout-review-order-table">
                     <tbody>
+                        <%
+                        ControladorProducto cp = new ControladorProducto();
+                        int total = 0;
+                        if(articulos!=null){
+                        for(Articulo a: articulos){
+                           Products producto = cp.getProducto(a.getIdProducto());
+                           
+                          total += a.getCantidad() * producto.getProductPrice();
+
+                    %>
                       <tr>
-                        <th>Business Suit<span class="count"> x 1</span></th>
+                        <th><%=producto.getProductName() %><span class="count"> &nbsp; &nbsp; &nbsp; x <%= a.getCantidad()%></span></th>
                         <td>
-                          <span class="amount">$599.00</span>
+                          <span class="amount">$ <%=producto.getProductPrice() * a.getCantidad()%></span>
                         </td>
                       </tr>
-                      <tr>
-                        <th>California Dress<span class="count"> x 1</span></th>
-                        <td>
-                          <span class="amount">$1299.00</span>
-                        </td>
-                      </tr>
+                      <%}}%>
+                      
                       <tr class="cart-subtotal">
                         <th>Subtotal</th>
                         <td>
-                          <span class="amount">$1799.00</span>
+                          <span class="amount">$ <%=total%></span>
                         </td>
                       </tr>
                       <tr class="shipping">
@@ -367,17 +386,18 @@
                       <tr class="order-total">
                         <th><strong>Total</strong></th>
                         <td>
-                          <strong><span class="amount">$1799.00</span></strong>
+                          <strong><span class="amount">$ <%=total%></span></strong>
                         </td>
                       </tr>
                     </tbody>
+                    
                   </table>
 
                   <div id="payment" class="ecommerce-checkout-payment">
                     <h2 class="heading uppercase mb-30">Método de Pago</h2>
                     <ul class="payment_methods methods">
 
-                      <li class="payment_method_bacs">
+                     <!-- <li class="payment_method_bacs">
                         <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked">
                         <label for="payment_method_bacs">Trasnferencia electrónica.</label>
                         <div class="payment_box payment_method_bacs">
@@ -386,7 +406,7 @@
                             <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" id="place_order" value="Place order">
                           </div>
                         </div>
-                      </li>
+                      </li>-->
 
 
 
@@ -394,11 +414,11 @@
                         <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal">
                         <label for="payment_method_paypal">Tarjeta de Crédito o Débito</label>
 
-                        <img src="img/shop/paypal.png" alt="">
+                       <!-- <img src="img/shop/paypal.png" alt="">-->
                         <div class="payment_box payment_method_paypal">
                           <p>Pague directamente con su tarjeta de Crédito o Débito, a través de XXXXXXX.</p>
                           <div class="form-row place-order">
-                            <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" id="place_order" value="Place order">
+                            <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" id="place_order" value="Finalizar Compra">
                           </div>
                         </div>
 
@@ -410,6 +430,7 @@
                   </div>
                 </div>
               </div> <!-- end order review -->
+              
             </form>
 
           </div> <!-- end ecommerce -->
@@ -465,7 +486,8 @@
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="widget">
                 <h5 class="widget-title uppercase">SUSHI FUKUSUKE</h5>
-                <p class="mb-0">A-ha Shop is a very slick and clean e-commerce template with endless possibilities. Creating an awesome clothes store with this Theme is easy than you can imagine.</p>
+                <p class="mb-0">Somos una pequeña organización que se dedica a la preparación y venta de sushi, en donde día a día nos esforzamos al máximo para entregar el mejor servicio para todos nuestros clientes.
+                </p>
               </div>
             </div>
 

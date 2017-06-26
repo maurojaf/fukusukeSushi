@@ -3,7 +3,7 @@
     Created on : 12-06-2017, 0:13:17
     Author     : Felipe
 --%>
-<%@page import="classes.Producto"%>
+<%@page import="classes.Products"%>
 <%@page import="controllers.ControladorProducto"%>
 <%@page import="classes.Articulo"%>
 <%@page import="java.util.ArrayList"%>
@@ -134,6 +134,8 @@
                       </a>
                     </div>
                   </div>
+
+                  
 
                   <!-- Cart -->
                   <div class="nav-cart-wrap hidden-sm hidden-xs">
@@ -290,9 +292,9 @@
                         int total = 0;
                         if(articulos!=null){
                         for(Articulo a: articulos){
-                           Producto producto = cp.getProducto(a.getIdProducto());
+                           Products producto = cp.getProducto(a.getIdProducto());
                            
-                          total += a.getCantidad() * producto.getPrecio();
+                          total += a.getCantidad() * producto.getProductPrice();
 
                     %>
                     
@@ -306,18 +308,18 @@
                   <tr class="cart_item">
                     <td class="product-thumbnail">
                       <a href="#">
-                          <img src="<%= producto.getImg_producto()%>" alt="">
+                          <img src="<%= producto.getProductImage() %>" alt="">
                       </a>
                     </td>
                     <td class="product-name">
-                      <a href="#"><%= producto.getNombre()%></a>
+                      <a href="#"><%= producto.getProductName()%></a>
                      <!-- <ul>
                         <li>Size: XL</li>
                         <li>Color: White</li>
                       </ul>-->
                     </td>
                     <td class="product-price">
-                      <span class="amount">$ <%= producto.getPrecio()%> </span>
+                      <span class="amount">$ <%= producto.getProductPrice() %> </span>
                     </td>
                     <td class="product-quantity">
                       <div class="quantity buttons_added">
@@ -325,10 +327,10 @@
                       </div>
                     </td>
                     <td class="product-subtotal">
-                      <span class="amount">$ <%=producto.getPrecio() * a.getCantidad()%></span>
+                      <span class="amount">$ <%=producto.getProductPrice() * a.getCantidad()%></span>
                     </td>
                     <td class="product-remove">
-                        <span id="idarticulo" style="display:none;"><%= producto.getId()%></span>
+                        <span id="idarticulo" style="display:none;"><%= producto.getProductID() %></span>
                       <a href="" class="remove"  title="Eliminar este producto del carrito" id="deleteitem" > <i class="icon icon_close"  ></i>
                       </a>
                     </td>

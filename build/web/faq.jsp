@@ -54,15 +54,14 @@
           <div class="top-bar-line">
             <div class="row">
               <div class="top-bar-links">
-                <ul class="col-sm-8 top-bar-acc">
+                <ul class="col-sm-6 top-bar-acc">
                   <li class="top-bar-link"><a href="login.jsp">Iniciar Sesión / Registrarse</a></li>
                   <li class="top-bar-link"><a href="shop-cart.jsp">Carrito</a></li>
                   <li class="top-bar-link"><a href="faq.jsp">Preguntas Frecuentes</a></li>
                   <li class="top-bar-link"><a href="contact.jsp">Contacto</a></li>
-                  <li class="top-bar-link"><a href="Mantenedores.jsp">Administración</a></li>
                 </ul>
 
-                <ul class="col-sm-4 text-right top-bar-currency-language">
+                <ul class="col-sm-6 text-right top-bar-currency-language">
                   <li>
                     <div class="social-icons">
                       <a href="#"><i class="fa fa-twitter"></i></a>
@@ -126,8 +125,9 @@
                     </div>
                   </div>
 
+
                   <!-- Cart -->
-                  <div class="nav-cart-wrap hidden-sm hidden-xs">
+                   <div class="nav-cart-wrap hidden-sm hidden-xs">
                     <div class="nav-cart right">
                       <div class="nav-cart-outer">
                         <div class="nav-cart-inner">
@@ -139,17 +139,17 @@
 
                           <div class="nav-cart-item clearfix">
                             <div class="nav-cart-img">
-                              <a href="#">
-                                <img src="img/shop/cart_small_1.jpg" alt="">
+                              <a href="">
+                                <img src="img/productos/producto1.jpg" alt="" width="50">
                               </a>
                             </div>
                             <div class="nav-cart-title">
                               <a href="#">
-                                Ladies Bag
+                               Promoción 3
                               </a>
                               <div class="nav-cart-price">
                                 <span>1 x</span>
-                                <span>1250.00</span>
+                                <span>7.990</span>
                               </div>
                             </div>
                             <div class="nav-cart-remove">
@@ -160,16 +160,16 @@
                           <div class="nav-cart-item clearfix">
                             <div class="nav-cart-img">
                               <a href="#">
-                                <img src="img/shop/cart_small_2.jpg" alt="">
+                                <img src="img/productos/producto2.jpg" alt="" width="50">
                               </a>
                             </div>
                             <div class="nav-cart-title">
                               <a href="#">
-                                Sequin Suit longer title
+                                Promoción 2
                               </a>
                               <div class="nav-cart-price">
                                 <span>1 x</span>
-                                <span>1250.00</span>
+                                <span>9.990</span>
                               </div>
                             </div>
                             <div class="nav-cart-remove">
@@ -181,7 +181,7 @@
 
                         <div class="nav-cart-summary">
                           <span>Subtotal</span>
-                          <span class="total-price">$1799.00</span>
+                          <span class="total-price">$</span>
                         </div>
 
                         <div class="nav-cart-actions mt-20">
@@ -192,8 +192,8 @@
                     </div>
                     <div class="menu-cart-amount right">
                       <span>
-                        Cart /
-                        <a href="#"> $1299.50</a>
+                        Carrito /
+                        <a href="#"> $ </a>
                       </span>
                     </div>
                   </div> <!-- end cart -->
@@ -219,7 +219,7 @@
                     <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                     <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                     <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                    <li class="dropdown"><a href="blog-standard.jsp">Blog</a></li>
+                    <li class="dropdown"><a href="#">Blog</a></li>
                     <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                     <li class="mobile-links">
@@ -265,17 +265,18 @@
         <div class="row">
 
           <div class="col-sm-8">
-            <h2 class="uppercase mb-20">delivery questions</h2>
+            <h2 class="uppercase mb-20">Preguntas de Envío</h2>
             <div class="toggle">
               <div class="acc-panel">
-                <a href="#">how to track my delivery?</a>
+                <a href="#">Cuál es el rango de entrega para un producto?</a>
               </div>
               <div class="panel-content">
-                <p>Amadea Theme is a very slick and clean e-commerce template with endless possibilities. Creating an awesome website. Amadea Theme is a very slick and clean e-commerce template with endless possibilities.
+                <p>
+                    Momentaneamente sólo hacemos entregas dentro de un radio de 3 Kilometros a la redonda de nuestro local.
                 </p>
               </div>
-              <div class="acc-panel">
-                <a href="#">where can I find tracking number?</a>
+              <!--<div class="acc-panel">
+                <a href="#">?</a>
               </div>
               <div class="panel-content">
                 <p>We possess within us two minds. So far I have written only of the conscious mind. I would now like to introduce you to your second mind, the hidden and mysterious subconscious. Our subconscious mind contains such power.
@@ -290,23 +291,27 @@
               </div>
             </div> <!-- end toggle -->
 
-            <h2 class="uppercase mb-20 mt-80">payment questions</h2>
+            <h2 class="uppercase mb-20 mt-80">Preguntas del Pago</h2>
             <div class="toggle mb-80">
               <div class="acc-panel">
-                <a href="#">what payment methods do you accept?</a>
+                <a href="#">Cuáles son los métodos de pagos disponible?</a>
               </div>
               <div class="panel-content">
-                <p>Amadea Theme is a very slick and clean e-commerce template with endless possibilities. Creating an awesome website. Amadea Theme is a very slick and clean e-commerce template with endless possibilities.
+                <p>
+                    Dentro de nuestro local, sólo se aceptan pagos en efectivo y 
+                    en nuestro nuevo sitio web los métodos de pagos disponibles son: Tarjetas de Débito o Crédito.
+                    
                 </p>
               </div>
               <div class="acc-panel">
-                <a href="#">how to pay via credit card?</a>
+                <a href="#">Cómo puedo pagar con Tarjeta de Crédito o Débito?</a>
               </div>
               <div class="panel-content">
-                <p>We possess within us two minds. So far I have written only of the conscious mind. I would now like to introduce you to your second mind, the hidden and mysterious subconscious. Our subconscious mind contains such power.
+                <p>
+                    Debes estar registrado
                 </p>
               </div>
-              <div class="acc-panel">
+              <!--<div class="acc-panel">
                 <a href="#">what credit cards do you accept?</a>
               </div>
               <div class="panel-content">
@@ -321,17 +326,17 @@
                 </p>
               </div>
             </div> <!-- end toggle -->
-          </div> <!-- end col -->
-
+         <!-- </div> <!-- end col -->
+         <br><br>
           <div class="col-sm-3 col-sm-offset-1">
-            <h2 class="uppercase mb-30">support</h2>
+            <h2 class="uppercase mb-30">Ayuda</h2>
             <div class="service-item-box mb-30">
               <div class="icon-holder">
                 <i class="fa fa-phone"></i>
               </div>
               <div class="service-text">
-                <h3>phone</h3>
-                <p>+1 (800) 2056 778</p>
+                <h3>Teléfono</h3>
+                <p>+22 (123) 456 789</p>
               </div>
             </div>
             <div class="service-item-box mb-30">
@@ -339,15 +344,16 @@
                 <i class="fa fa-envelope-o"></i>
               </div>
               <div class="service-text">
-                <h3>email</h3>
-                <p>ahasupport@gmail.com</p>
+                <h3>correo</h3>
+                <p>contacto@fukusuke.cl</p>
               </div>
             </div>
-            <div class="service-item-box mb-40">
+            <br><br>
+           <!-- <div class="service-item-box mb-40">
               <div class="icon-holder">
                 <i class="fa fa-skype"></i>
               </div>
-              <div class="service-text">
+             <div class="service-text">
                 <h3>skype</h3>
                 <p>AhaSupport</p>
               </div>
@@ -356,7 +362,7 @@
 
         </div>
 
-        <div class="row">
+       <!-- <div class="row">
           <div class="col-sm-12">
             <div class="call-to-action">
               <h5 class="uppercase">You want to get this theme now?</h5>
@@ -364,7 +370,7 @@
             </div>
           </div>
         </div>
-
+-->
       </div>
     </section> <!-- end faq -->
 
@@ -414,7 +420,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="widget">
                 <h5 class="widget-title uppercase">SUSHI FUKUSUKE</h5>
-                <p class="mb-0">A-ha Shop is a very slick and clean e-commerce template with endless possibilities. Creating an awesome clothes store with this Theme is easy than you can imagine.</p>
+                <p class="mb-0">Somos una pequeña organización que se dedica a la preparación y venta de sushi, en donde día a día nos esforzamos al máximo para entregar el mejor servicio para todos nuestros clientes.</p>
               </div>
             </div>
 
