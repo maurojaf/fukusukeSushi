@@ -51,7 +51,8 @@
                         </div>
                         <div class="form-group">
                             <label for="" class="control-label">Selecciona Archivo</label>
-                            <input type="file" name="image" value="${producto.productImage}">
+                            <input type="file" name="image" id="FilUploader" value="${producto.productImage}" >
+<!--                            <input type="file" name="image" value="">-->
                         </div>
                         <div class="form-group">
                             <a href="productos" class="btn btn-danger" role="button">Cancelar</a>
@@ -66,4 +67,16 @@
         <br></br>
         <br></br>
     </body>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript"> 
+    $("#FilUploader").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'png ', 'gif', 'bmp'];
+        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+            alert("Solo se pueden subir archivos de imagen : "+fileExtension.join(', '));            
+            $("#FilUploader").val("");
+        }
+    });
+    </script>
+    
+    
 </html>

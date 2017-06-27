@@ -26,7 +26,7 @@ public class  ModeloUsers extends Conexion {
         
 
         try {
-            String sql = "SELECT * FROM Users WHERE UserEmail = ? AND UserPassword = ?";
+            String sql = "SELECT * FROM Users WHERE UserEmail = ? AND UserPassword = ? AND UserEmailVerified = 1";
             pst = getConnection().prepareStatement(sql);
             pst.setString(1, correo);
             pst.setString(2, contrasena);

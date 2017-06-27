@@ -53,11 +53,12 @@
 
                         <div class="form-group">
                             <label for="" class="control-label">Selecciona Archivo</label>
-                            <input type="file" name="archivoupload">
+                            <input type="file" id="FilUploader" name="image"/>
+<!--                            <input type="file" name="image"/>-->
                         </div>
                         <div class="form-group">
                             <a href="productos" class="btn btn-danger" role="button">Cancelar</a>
-                            <input type="submit" hover="comprueba_extension(this.form, this.form.archivoupload.value) class="btn btn-primary pull-right" name="nombre" />
+                            <input type="submit" onclick="comprueba_extension(this.form, this.form.image.value)" class="btn btn-primary pull-right" name="nombre" />
                         </div>
 
                     </form>
@@ -70,10 +71,23 @@
         <br></br>
     </body>
     <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
+    
+    <script type="text/javascript"> 
+    $("#FilUploader").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'png ', 'gif', 'bmp'];
+        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+            alert("Solo se pueden subir archivos de imagen : "+fileExtension.join(', '));            
+            $("#FilUploader").val("");
+        }
+    });
+    </script>
+    
+    
+    
+<!--    <script type="text/javascript">
         
         function comprueba_extension(formulario, archivo) {
-            extensiones_permitidas = new Array(".png", ".jpg");
+            extensiones_permitidas = new Array(".png ", ".jpg ", ".jpeg ", ".bmp ");
             mierror = "";
             if (!archivo) {
                 //Si no tengo archivo, es que no se ha seleccionado un archivo en el formulario 
@@ -103,7 +117,7 @@
             alert(mierror);
             return 0;
         }
-    </script>
+    </script>-->
 
 
 
