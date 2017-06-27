@@ -11,7 +11,7 @@
 <%@page session="true"%>
 <%
     HttpSession sesion = request.getSession(true);
-        ArrayList<Articulo> articulos = sesion.getAttribute("carrito") == null ? null : (ArrayList) sesion.getAttribute("carrito");
+    ArrayList<Articulo> articulos = sesion.getAttribute("carrito") == null ? null : (ArrayList) sesion.getAttribute("carrito");
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -307,8 +307,8 @@
                       <div class="row">
                         <div class="col-sm-5 col-sm-offset-1 mb-40">
                           <div class="login">
-                              <form action="accesoCliente" method="post" name="frm-login">
-                            <h4 class="uppercase">Iniciar Sesión</h4>
+                              <form action="accesoCliente" method="post">
+                            <h4 class="uppercase" >Iniciar Sesión</h4>
                             <p class="form-row form-row-wide">
                               <label for="email">Correo
                                 <abbr class="required" title="required">*</abbr>
@@ -316,10 +316,10 @@
                               <input type="email" class="input-text" placeholder="" value="" id="email" name="email">
                             </p>
                             <p class="form-row form-row-wide">
-                              <label>contraseña
+                              <label for="pass">contraseña
                                 <abbr class="required" title="required">*</abbr>
                               </label>
-                              <input type="text" class="input-text" placeholder="" value=""  name="txtContra">
+                              <input type="password" class="input-text" placeholder="" value=""  name="pass">
                             </p>
                             <input type="submit" value="Iniciar Sesión" class="btn" name="btnIngresar">
                             <input type="checkbox" class="input-checkbox" id="remember" name="remember" value="1">
