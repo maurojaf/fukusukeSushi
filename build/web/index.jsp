@@ -147,7 +147,7 @@
                                Promoción 3
                               </a>
                               <div class="nav-cart-price">
-                                <span>1 x</span>
+                                <span>2 x</span>
                                 <span>7.990</span>
                               </div>
                             </div>
