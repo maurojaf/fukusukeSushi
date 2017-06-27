@@ -17,6 +17,10 @@ import java.util.ArrayList;
  * @author Felipe
  */
 public class ModeloOrders extends Conexion {
+    
+    
+    
+    
 
     public ArrayList<Orders> getAllOrdenes() {
         ArrayList<Orders> ordenes = new ArrayList<>();
