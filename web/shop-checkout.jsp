@@ -318,6 +318,10 @@
                             <p class="form-row form-row-wide">
                               <label for="pass">contraseña
                                 <abbr class="required" title="required">*</abbr>
+                                
+                                
+                                
+                                
                               </label>
                               <input type="password" class="input-text" placeholder="" value=""  name="pass">
                             </p>
