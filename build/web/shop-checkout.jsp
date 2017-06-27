@@ -307,13 +307,13 @@
                       <div class="row">
                         <div class="col-sm-5 col-sm-offset-1 mb-40">
                           <div class="login">
-                              <form action="shop-checkout.jsp" method="post" name="frm-login">
+                              <form action="accesoCliente" method="post" name="frm-login">
                             <h4 class="uppercase">Iniciar Sesión</h4>
                             <p class="form-row form-row-wide">
-                              <label>nombre de usuario o correo
+                              <label for="email">Correo
                                 <abbr class="required" title="required">*</abbr>
                               </label>
-                              <input type="text" class="input-text" placeholder="" value="" name="txtUsuario">
+                              <input type="email" class="input-text" placeholder="" value="" id="email" name="email">
                             </p>
                             <p class="form-row form-row-wide">
                               <label>contraseña

@@ -43,6 +43,46 @@ public class ModeloCliente extends Conexion {
             } catch (Exception e) {
             }
 
-        }
+        }        
     }
+    
+    public Usuario login(String correo, String contrasena) {
+        Usuario cliente = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+       
+        try {
+            String sql = "SELECT * FROM clientes WHERE correo = ? AND contrasena = ?";
+            pst = getConnection().prepareStatement(sql);
+            pst.setString(1, correo);
+            pst.setString(2, contrasena);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                cliente = new Usuario(rs.getString("nombre"), rs.getString("rut"), rs.getString("direccion"), rs.getString("comuna"), rs.getString("provincia"), rs.getString("region"),rs.getString("fecha_nacimiento"), rs.getString("sexo"), rs.getString("correo"), rs.getString("telefono"), rs.getString("contrasena"));
+            }
+
+        } catch (Exception e) {
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pst != null) {
+                    rs.close();
+                }
+                if (getConnection() != null) {
+                    getConnection().close();
+                }
+            } catch (Exception e) {
+            }
+        }
+
+        return cliente;
+    }
+    
+    
+    
+    
+    
+    
 }

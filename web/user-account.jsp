@@ -3,8 +3,9 @@
     Created on : 12-06-2017, 0:13:56
     Author     : Felipe
 --%>
-<%@page import="models.ModeloUsuario"%>
-<%@page import="classes.Producto"%>
+
+
+<%@page import="classes.Usuario"%>
 <%@page import="controllers.ControladorProducto"%>
 <%@page import="classes.Articulo"%>
 <%@page import="java.util.ArrayList"%>
@@ -67,7 +68,7 @@
                   <li class="top-bar-link"><a href="user-account.jsp">Mi cuenta</a></li>
                   <li class="top-bar-link"><a href="orders.jsp">Mis Ordenes</a></li>
                   <li class="top-bar-link"><a href="shop-cart.jsp">Carrito</a></li>
-                  <li class="top-bar-link"><a href="contact.jsp">Cerrar Sesión</a></li>
+                  <li class="top-bar-link"><a href="cerrarSesionCliente">Cerrar Sesión</a></li>
                 </ul>
 
                 <ul class="col-sm-6 text-right top-bar-currency-language">
@@ -261,6 +262,7 @@
         <div class="title-holder">
           <div class="title-text">
             <h1 class="uppercase">Mi cuenta</h1>
+           
           </div>
         </div>
       </div>
@@ -316,51 +318,59 @@
                 </div>
 
                 <div class="tab-pane fade" id="tab-info">
+            <%
+                
+            HttpSession sessionStatus = request.getSession();
+            Usuario usuario = (Usuario)sessionStatus.getAttribute("Autentificacion");
+            
+            %>
                   <table class="table">
-
+                      
                     <tbody>
                       <tr>
                         <th>Nombre</th>
-                        <td> Felipe Sepúlveda</td>
+                        <td> <%=usuario.getNombre()%></td>
                       </tr>
                       <tr>
                         <th>Rut</th>
-                        <td>18.702.634-2</td>
+                        <td><%= usuario.getRut() %> </td>
                       </tr>
                       <tr>
                         <th>Dirección</th>
-                        <td>Avenida Laguna sur 1121 </td>
+                        <td><%= usuario.getDireccion() %></td>
                       </tr>
                       <tr>
                         <th>Comuna</th>
-                        <td>Pudahuel</td>
+                        <td><%= usuario.getComuna() %></td>
                       </tr>
                       <tr>
                         <th>Provincia</th>
-                        <td>Provincia de Santiago </td>
+                        <td><%= usuario.getProvincia()%> </td>
                       </tr>
                       <tr>
                         <th>Región</th>
-                        <td>Región Metropolitana</td>
+                        <td><%= usuario.getRegion() %></td>
                       </tr>
                       <tr>
                         <th>Fecha de Nacimiento</th>
-                        <td>11-12-1993</td>
+                        <td><%= usuario.getFecha_nacimiento()%></td>
                       </tr>
                       <tr>
                         <th>Sexo</th>
-                        <td>Masculino</td>
+                        <td><%= usuario.getSexo()%></td>
                       </tr>
                       <tr>
                         <th>Correo</th>
-                        <td>fei.sepulveda@alumnos.duoc.cl</td>
+                        <td><%= usuario.getCorreo()%></td>
                       </tr>
                       <tr>
                         <th>Teléfono</th>
-                        <td>+569 6606 1992</td>
+                        <td><%= usuario.getTelefono()%></td>
                       </tr>
                     </tbody>
                   </table>
+                      
+                      <%;%>
                 </div>
 
    

@@ -272,23 +272,23 @@
                     <div class="row">
                         <div class="col-sm-5 col-sm-offset-1 mb-40">
                             <div class="login">
-                                <form action="login.jsp" method="post">
+                                <form action="accesoCliente" method="post">
                                 <h4 class="uppercase">Iniciar Sesión</h4>
                                 <p class="form-row form-row-wide">
-                                    <label>Nombre de usuario
+                                    <label for="email" >Correo
                                         <abbr class="required" title="required">*</abbr>
                                     </label>
-                                    <input type="text" class="input-text" placeholder="" value="" name="txtUsuario">
+                                    <input type="email" class="input-text" id="email" placeholder="" value="" name="email">
                                 </p>
                                 <p class="form-row form-row-wide">
-                                    <label>Contraseña
+                                    <label for="Pass">Contraseña
                                         <abbr class="required" title="required">*</abbr>
                                     </label>
-                                    <input type="password" class="input-text" placeholder="" value="" name="txtContra">
+                                    <input type="password" class="input-text" id="pass" placeholder="" value="" name="pass">
                                 </p>
                                 <input type="submit" value="Iniciar Sesión" class="btn" name="btnIngresar">
                                 </form>
-                                
+                                 
                             </div>
                         </div>
                         <div class="col-sm-5">
