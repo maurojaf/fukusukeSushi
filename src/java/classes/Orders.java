@@ -5,6 +5,7 @@
  */
 package classes;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Date;
 public class Orders {
     
     private int OrderID;
-    private int OrderUserID;
+    private int OrderIDCliente;
     private int OrderAmount;
     private String OrderShipName;
     private String OrderShipAddress;
@@ -27,10 +28,11 @@ public class Orders {
     private String OrderDate;
     private boolean OrderShipped;
     private String OrderTrackingNumber;
+    private ArrayList<Articulo> detalles;
 
-    public Orders(int OrderID, int OrderUserID, int OrderAmount, String OrderShipName, String OrderShipAddress, String OrderPhone, int OrderShipping, String OrderEmail, String OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
+    public Orders(int OrderID, int OrderIDCliente, int OrderAmount, String OrderShipName, String OrderShipAddress, String OrderPhone, int OrderShipping, String OrderEmail, String OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
         this.OrderID = OrderID;
-        this.OrderUserID = OrderUserID;
+        this.OrderIDCliente = OrderIDCliente;
         this.OrderAmount = OrderAmount;
         this.OrderShipName = OrderShipName;
         this.OrderShipAddress = OrderShipAddress;
@@ -40,28 +42,13 @@ public class Orders {
         this.OrderDate = OrderDate;
         this.OrderShipped = OrderShipped;
         this.OrderTrackingNumber = OrderTrackingNumber;
+        this.detalles = new ArrayList<>();
+            
     }
-
-    //public Orders(int OrderID, int OrderUserID, int OrderAmount, String OrderShipName, String OrderShipAddress, String OrderCity, String OrderCountry, String OrderPhone, int OrderShipping, int OrderTax, String OrderEmail, Date OrderDate, boolean OrderShipped, String OrderTrackingNumber) {
-      //  this.OrderID = OrderID;
-        //this.OrderUserID = OrderUserID;
-       // this.OrderAmount = OrderAmount;
-       // this.OrderShipName = OrderShipName;
-       // this.OrderShipAddress = OrderShipAddress;
-        //this.OrderCity = OrderCity;
-        //this.OrderCountry = OrderCountry;
-       // this.OrderPhone = OrderPhone;
-       // this.OrderShipping = OrderShipping;
-        //this.OrderTax = OrderTax;
-        //this.OrderEmail = OrderEmail;
-       // this.OrderDate = OrderDate;
-        //this.OrderShipped = OrderShipped;
-        //this.OrderTrackingNumber = OrderTrackingNumber;
-   // }
     
     public Orders()
     {
-        
+        this.detalles = new ArrayList<>();
     }
     
 
@@ -73,12 +60,12 @@ public class Orders {
         this.OrderID = OrderID;
     }
 
-    public int getOrderUserID() {
-        return OrderUserID;
+    public int getOrderIDCliente() {
+        return OrderIDCliente;
     }
 
-    public void setOrderUserID(int OrderUserID) {
-        this.OrderUserID = OrderUserID;
+    public void setOrderIDCliente(int OrderIDCliente) {
+        this.OrderIDCliente = OrderIDCliente;
     }
 
     public int getOrderAmount() {
@@ -176,7 +163,27 @@ public class Orders {
     public void setOrderTrackingNumber(String OrderTrackingNumber) {
         this.OrderTrackingNumber = OrderTrackingNumber;
     }
+
+    public ArrayList<Articulo> getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(ArrayList<Articulo> detalles) {
+        this.detalles = detalles;
+    }
     
+    public void agregarDetalle(Articulo detalle){
+        detalles.add(detalle);
+    }
     
+    public int totalOrder(){
+        int total = 0;
+        
+        for(Articulo detalle : detalles){
+            total += detalle.getSubtotal();
+        }
+        
+        return total;
+    }
     
 }

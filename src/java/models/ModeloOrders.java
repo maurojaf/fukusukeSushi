@@ -5,22 +5,19 @@
  */
 package models;
 
+import classes.Articulo;
 import classes.Orders;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
-
 
 /**
  *
  * @author Felipe
  */
 public class ModeloOrders extends Conexion {
-    
-    
-    
-    
 
     public ArrayList<Orders> getAllOrdenes() {
         ArrayList<Orders> ordenes = new ArrayList<>();
@@ -60,7 +57,7 @@ public class ModeloOrders extends Conexion {
         ResultSet rs = null;
 
         try {
-            String sql = "SELECT * FROM orders WHERE OrderID = ?";            
+            String sql = "SELECT * FROM orders WHERE OrderID = ?";
             pst = getConnection().prepareStatement(sql);
             pst.setInt(1, id);
             rs = pst.executeQuery();
@@ -87,46 +84,66 @@ public class ModeloOrders extends Conexion {
         return orden;
     }
 
-    //public boolean guardarOrdenes(Orders orden) {
-      //  boolean resultado = false;
-       // PreparedStatement pst = null;
+    public boolean guardarOrden(Orders orden) {
+        boolean resultado = false;
+        PreparedStatement pst = null;
+        int orderId = 0;
+        
+        try {
+            String sql = "INSERT INTO orders (orderIDCliente, OrderAmount, OrderShipAddress, OrderEmail, OrderPhone,  OrderShipped) VALUES (?, ?, ?, ?, ?, ?)";
+            pst = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            
+            pst.setInt(1, orden.getOrderIDCliente());
+            pst.setFloat(2, orden.totalOrder());
+            pst.setString(3, orden.getOrderShipAddress());
+            pst.setString(4, orden.getOrderEmail());
+            pst.setString(5, orden.getOrderPhone());
+            pst.setBoolean(6, false);
 
-//        try {
-//            String sql = "INSERT INTO orders (OrderAmount, OrderShipName, OrderShipAddress, OrderPhone, OrderShipping, OrderEmail, OrderDate, OrderShipped,OrderTrackingNumber) VALUES (?, ?, ?, ?, ?, ?)";
-//            pst = getConnection().prepareStatement(sql);
-//         
-//            pst.setString(1, producto.getProductName());
-//            pst.setFloat(2, producto.getProductPrice());            
-//            pst.setString(3, producto.getProductLongDesc());            
-//            pst.setString(4, producto.getProductImage());                       
-//            pst.setFloat(5, producto.getProductStock());            
-//            pst.setBoolean(6, producto.isProductLive());
-//            
-//
-//            pst.execute();
-//            resultado = true;
-//
-//        } catch (Exception e) {
-//            System.out.println(e.getStackTrace());
-//            System.out.println(e.getMessage());
-//        } finally {
-//            try {
-//                if (pst != null) {
-//                    pst.close();
-//                }
-//                if (!getConnection().isClosed()) {
-//                    getConnection().close();
-//                }
-//            } catch (Exception e) {
-//                System.out.println(e.getStackTrace());
-//                System.out.println(e.getMessage());
-//            }
-//        }
-//        return resultado;
-//    }
-//    
-    
-    
+            pst.executeUpdate();
+
+            ResultSet rs = pst.getGeneratedKeys();
+            rs.next();
+            orderId = rs.getInt(1);
+
+            String detallesQuery = "INSERT INTO orderdetails (DetailOrderID, DetailProductID, DetailQuantity) VALUES (?,?,?)";
+            PreparedStatement stmt = getConnection().prepareStatement(detallesQuery);
+            
+            for (Articulo detalle : orden.getDetalles()) {
+                stmt.setInt(1, orderId);
+                stmt.setInt(2, detalle.getIdProducto());
+                stmt.setInt(3, detalle.getCantidad());
+                
+                stmt.execute();
+            }
+            
+            resultado = true;
+
+        } catch (Exception e) {
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+            try{
+                PreparedStatement statement = getConnection().prepareStatement("DELETE FROM Orders WHERE  OrderId = ?");
+                statement.setInt(1, orderId);
+                statement.execute();
+            }catch(Exception ex){
+            }
+        } finally {
+            try {
+                if (pst != null) {
+                    pst.close();
+                }
+                if (!getConnection().isClosed()) {
+                    getConnection().close();
+                }
+            } catch (Exception e) {
+                System.out.println(e.getStackTrace());
+                System.out.println(e.getMessage());
+            }
+        }
+        return resultado;
+    }
+
     public boolean borrarOrden(Orders orden) {
         boolean resultado = false;
         PreparedStatement pst = null;
@@ -161,9 +178,6 @@ public class ModeloOrders extends Conexion {
         }
         return resultado;
     }
-    
-    
-    
 
     public boolean updateOrden(Orders orden) {
         boolean resultado = false;
@@ -176,17 +190,17 @@ public class ModeloOrders extends Conexion {
 
             String sql = "UPDATE orders SET OrderAmount=?,OrderShipAddress=?,OrderPhone=?,OrderEmail=?, OrderShipped=? WHERE OrderID = ?";
             pst = getConnection().prepareStatement(sql);
-            
+
             pst.setInt(1, orden.getOrderAmount());
             pst.setString(2, orden.getOrderShipAddress());
-            
+
             pst.setString(3, orden.getOrderPhone());
-            
+
             pst.setString(4, orden.getOrderEmail());
-           
+
             //pst.setDate(8, (java.sql.Date) producto.getProductUpdateDate());
-            pst.setBoolean(5, orden.isOrderShipped());            
-            
+            pst.setBoolean(5, orden.isOrderShipped());
+
             pst.setInt(6, orden.getOrderID());
 
             pst.execute();

@@ -55,7 +55,12 @@
             <div class="row">
               <div class="top-bar-links">
                 <ul class="col-sm-8 top-bar-acc">
-                  <li class="top-bar-link"><a href="login.jsp">Iniciar Sesión / Registrarse</a></li>
+                  <c:if test="${autenticated}">
+                        <li class="top-bar-link"><a href="user-account.jsp">Mi cuenta</a></li>
+                    </c:if>
+                    <c:if test="${not autenticated}">
+                        <li class="top-bar-link"><a href="login.jsp">Iniciar Sesión / Registrarse</a></li>
+                    </c:if>
                   <li class="top-bar-link"><a href="shop-cart.jsp">Carrito</a></li>
                   <li class="top-bar-link"><a href="faq.jsp">Preguntas Frecuentes</a></li>
                   <li class="top-bar-link"><a href="contact.jsp">Contacto</a></li>

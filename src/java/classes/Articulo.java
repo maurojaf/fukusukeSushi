@@ -13,10 +13,45 @@ public class Articulo {
     
     private int idProducto;
     private int cantidad;
-
-    public Articulo(int idProducto, int cantidad) {
+    private int orderID;
+    private int subtotal;
+    private Products producto;
+    
+    public Articulo(int idProducto, int cantidad, int orderID, int subtotal) {
         this.idProducto = idProducto;
         this.cantidad = cantidad;
+        this.orderID = orderID;
+        this.subtotal = subtotal;
+    }
+
+    public Articulo() {
+    }
+
+    public Articulo(int idproducto, int cantidad) {
+        this.idProducto = idProducto;
+        this.cantidad = cantidad;
+        
+    }
+    
+
+    public int getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
+    }
+
+    public int getSubtotal() {
+        if (producto instanceof Products) {
+            this.subtotal = producto.getProductPrice() * this.cantidad;
+        }
+        
+        return subtotal;
+    }
+
+    public void setSubtotal(int subtotal) {
+        this.subtotal = subtotal;
     }
 
     /**
@@ -46,10 +81,14 @@ public class Articulo {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    
-    
-    
-    
-    
+
+    public Products getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Products producto) {
+        this.idProducto = producto.getProductID();
+        this.producto = producto;
+    }
     
 }

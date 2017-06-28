@@ -6,6 +6,7 @@
 package servlets;
 
 import classes.Articulo;
+import classes.Products;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import models.ModeloProducts;
 
 /**
  *
@@ -54,9 +56,14 @@ public class AddCart extends HttpServlet {
             
         }
         
-        
         if(!flag){
-            articulos.add(new Articulo (idproducto,cantidad));
+            ModeloProducts productoModel = new ModeloProducts();
+            Products producto = productoModel.getAllProductos(idproducto);
+            
+            Articulo articulo = new Articulo (idproducto,cantidad);
+            articulo.setProducto(producto);
+            
+            articulos.add(articulo);
         }
         
         sesion.setAttribute("carrito", articulos);

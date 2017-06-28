@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/felipesepulveda/fukusukeSushi/web/user-account.jsp</file>
-            <file>file:/Users/felipesepulveda/fukusukeSushi/web/shop-cart.jsp</file>
-            <file>file:/Users/felipesepulveda/fukusukeSushi/web/login.jsp</file>
-            <file>file:/Users/felipesepulveda/fukusukeSushi/web/shop-catalog.jsp</file>
-            <file>file:/Users/felipesepulveda/fukusukeSushi/web/orders.jsp</file>
-            <file>file:/Users/felipesepulveda/fukusukeSushi/web/shop-collections.jsp</file>
-            <file>file:/Users/felipesepulveda/fukusukeSushi/src/java/servlets/accesoCliente.java</file>
-            <file>file:/Users/felipesepulveda/fukusukeSushi/web/LoginIntranet.jsp</file>
-            <file>file:/Users/felipesepulveda/fukusukeSushi/web/shop-checkout.jsp</file>
+            <file>file:/Users/mauricioatenas/ProyectoSushi/web/shop-cart.jsp</file>
+            <file>file:/Users/mauricioatenas/ProyectoSushi/web/Mantenedores.jsp</file>
+            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/AddCart.java</file>
+            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/ObtenerOrden.java</file>
+            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/models/ModeloOrders.java</file>
         </group>
     </open-files>
 </project-private>
