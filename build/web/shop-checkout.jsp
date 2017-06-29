@@ -140,7 +140,7 @@
                                         <div class="logo-container">
                                             <div class="logo-wrap text-center">
                                                 <a href="index.jsp">
-                                                    <img src="img/logo_dark.png" >
+                                                    <img src="img/logo.jpg" >
                                                 </a>
                                             </div>
                                         </div>
@@ -417,7 +417,7 @@
                                                         <p>Pague directamente con su tarjeta de Crédito o Débito, a través de XXXXXXX.</p>
                                                         <div class="form-row place-order">
                                                             <form action="obtenerOrden" method="POST">
-                                                                <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" value="Finalizar Compra">
+                                                                <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" value="Finalizar Compra" >
                                                             </form>
                                                         </div>
                                                     </div>

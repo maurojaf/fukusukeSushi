@@ -135,7 +135,7 @@
                                         <div class="logo-container">
                                             <div class="logo-wrap text-center">
                                                 <a href="index.jsp">
-                                                    <img src="img/logo_dark.png" >
+                                                    <img src="img/logo.jpg" >
                                                 </a>
                                             </div>
                                         </div>
@@ -152,7 +152,7 @@
                                                 <div class="nav-cart-container">
                                                     <div class="nav-cart-items">
 
-                                                        <div class="nav-cart-item clearfix">
+<!--                                                        <div class="nav-cart-item clearfix">
                                                             <div class="nav-cart-img">
                                                                 <a href="#">
                                                                     <img src="img/shop/cart_small_1.jpg" alt="">
@@ -190,14 +190,14 @@
                                                             <div class="nav-cart-remove">
                                                                 <a href="#"><i class="icon icon_close"></i></a>
                                                             </div>
-                                                        </div>
+                                                        </div>-->
 
                                                     </div> <!-- end cart items -->
 
-                                                    <div class="nav-cart-summary">
+<!--                                                    <div class="nav-cart-summary">
                                                         <span>Subtotal</span>
                                                         <span class="total-price">$1799.00</span>
-                                                    </div>
+                                                    </div>-->
 
                                                     <div class="nav-cart-actions mt-20">
                                                         <a href="shop-cart.jsp" class="btn btn-md btn-dark"><span>Ver Carro</span></a>
@@ -206,9 +206,12 @@
                                                 </div>
                                             </div>
                                             <div class="menu-cart-amount right">
+                                                <div class="" style="float: left;margin-right: 40px;">
+                                                    <a href="img/productos/menu_descargable.jpg" download style="margin-left: 40px" class=" btn btn-xs btn-red"><span><strong>Descarga Nuestro Men&uacute;</strong></span></a>    
+                                                </div>
                                                 <span>
-                                                    Cart /
-                                                    <a href="#"> $1299.50</a>
+                                                    Carrito /
+<!--                                                    <a href="#"> $1299.50</a>-->
                                                 </span>
                                             </div>
                                         </div> <!-- end cart -->

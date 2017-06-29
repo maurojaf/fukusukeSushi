@@ -133,10 +133,10 @@
                                         </div>
 
                                         <!-- Logo -->
-                                        <div class="logo-container">
+                                       <div class="logo-container">
                                             <div class="logo-wrap text-center">
                                                 <a href="index.jsp">
-                                                    <img src="img/logo_dark.png" >
+                                                    <img src="img/logo.jpg" >
                                                 </a>
                                             </div>
                                         </div>

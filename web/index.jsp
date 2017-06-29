@@ -113,12 +113,12 @@
 
                                         <!-- Search -->
                                         <div class="nav-search hidden-sm hidden-xs">
-                                            <form method="get">
+<!--                                            <form method="get">
                                                 <input type="search" class="form-control" placeholder="Buscar...">
                                                 <button type="submit" class="search-button">
                                                     <i class="icon icon_search"></i>
                                                 </button>
-                                            </form>
+                                            </form>-->
                                         </div>
 
                                         <!-- Logo -->
@@ -201,12 +201,12 @@
                                             </div>
                                             
                                             <div class="menu-cart-amount right">
-                                                <div class="" style="float: left;margin-right: 60px;">
+                                                <div class="" style="float: left;margin-right: 40px;">
                                                     <a href="img/productos/menu_descargable.jpg" download style="margin-left: 40px" class=" btn btn-xs btn-red"><span><strong>Descarga Nuestro Men&uacute;</strong></span></a>    
                                                 </div>     
                                                 <span>
                                                     Carrito /
-                                                    <a href="#"> $ </a>
+<!--                                                    <a href="#"> $ </a>-->
                                                 </span>
                                             </div>
                                         </div> <!-- end cart -->

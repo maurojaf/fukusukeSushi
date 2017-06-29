@@ -71,6 +71,9 @@
                             <a href="listar">Usuarios</a>
                         </li>
                         <li>
+                            <a href="listarClientes">Clientes</a>
+                        </li>
+                        <li>
                             <a href="listarOrdenes">Ordenes</a>
                         </li>
                         <li>
