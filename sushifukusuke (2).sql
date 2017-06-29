@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-06-2017 a las 04:53:42
+-- Tiempo de generación: 29-06-2017 a las 22:50:46
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -30,6 +30,35 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `nuevoCliente` (IN `_nombre` VARCHAR
 END$$
 
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id_cliente` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `rut` varchar(12) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `comuna` varchar(50) NOT NULL,
+  `provincia` varchar(80) NOT NULL,
+  `region` varchar(100) NOT NULL,
+  `fecha_nacimiento` varchar(15) NOT NULL,
+  `sexo` varchar(10) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `telefono` varchar(12) NOT NULL,
+  `contrasena` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id_cliente`, `nombre`, `rut`, `direccion`, `comuna`, `provincia`, `region`, `fecha_nacimiento`, `sexo`, `correo`, `telefono`, `contrasena`) VALUES
+(6, 'Mauricio Atenas', '181202092', 'Estepa Alta 05704', 'Lo Prado', 'Provincia de Melipilla', 'Region Metropolitana', '1992-05-15', 'Masculino', 'maurojaf@gmail.com', '961914768', 'mauro1992'),
+(7, 'Mauricio Atenas', '181202092', 'Estepa Alta 05704', 'Lo Prado', 'Provincia de Melipilla', 'Region Metropolitana', '1992-05-15', 'Masculino', 'maurojaf@gmail.com', '961914768', 'mauro1992');
 
 -- --------------------------------------------------------
 
@@ -190,7 +219,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`ProductID`, `ProductSKU`, `ProductName`, `ProductPrice`, `ProductWeight`, `ProductCartDesc`, `ProductShortDesc`, `ProductLongDesc`, `ProductThumb`, `ProductImage`, `ProductCategoryID`, `ProductUpdateDate`, `ProductStock`, `ProductLive`, `ProductUnlimited`, `ProductLocation`) VALUES
-(992, NULL, 'Producto De Prueba 1', 3000, NULL, NULL, NULL, 'esta', NULL, 'FukusukeSushi.pptx', NULL, '2017-06-19 16:16:45', 10, 0, 1, NULL),
+(992, NULL, 'Producto De Prueba 1', 3000, NULL, NULL, NULL, 'esta', NULL, 'logo.jpg', NULL, '2017-06-19 16:16:45', 10, 0, 1, NULL),
 (993, NULL, 'Producto De Prueba 1', 3000, NULL, NULL, NULL, 'esta', NULL, 'FukusukeSushi.pptx', NULL, '2017-06-19 16:21:38', 10, 0, 1, NULL),
 (1002, NULL, 'Bollo de sabores', 500, NULL, NULL, NULL, 'Bollo baÃ?Â±ado en chocolate con cubierta de frambueza', NULL, 'Foto2.jpeg', NULL, '2017-06-26 22:55:20', 10, 0, 1, NULL),
 (996, NULL, 'Roll de Canela', 8500, NULL, NULL, NULL, 'Exiquito roll de canela, envuelto en canela relleno de canela', NULL, NULL, NULL, '2017-06-26 20:07:27', 20, 0, 1, NULL),
@@ -251,6 +280,12 @@ INSERT INTO `users` (`UserID`, `UserEmail`, `UserPassword`, `UserFirstName`, `Us
 --
 
 --
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id_cliente`);
+
+--
 -- Indices de la tabla `optiongroups`
 --
 ALTER TABLE `optiongroups`
@@ -302,6 +337,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
+--
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `optiongroups`
 --
