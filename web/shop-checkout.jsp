@@ -281,7 +281,7 @@
                 <div class="container relative">
                     <div class="row">
 
-                        <c:if test="${autenticated}">
+                        <c:if test="${not autenticated.booleanValue}">
                             <div class="ecommerce col-xs-12">
                                 <div class="alert alert-info fade in alert-dismissible" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -338,7 +338,7 @@
                                 </div> <!-- end col -->
                             </c:if>
 
-                            <c:if test="${autenticated}">
+                            <c:if test="${autenticated.booleanValue}">
                                 <div class="col-md-12">    
                                 </c:if>
                                 <c:if test="${not autenticated}">
