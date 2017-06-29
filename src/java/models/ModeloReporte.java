@@ -31,8 +31,7 @@ public class ModeloReporte extends Conexion {
                     + "FROM orders AS a "
                     + "INNER JOIN OrderDetails AS b ON a.OrderID = b.DetailOrderID "
                     + "INNER JOIN products AS c ON b.DetailProductID = c.ProductID "
-                    + "WHERE OrderShipped = 1 "
-                    + "AND CONVERT( OrderDate , DATE)"
+                    + "WHERE CONVERT( OrderDate , DATE)"                    
                     + "= ? AND ?";
             pst = getConnection().prepareStatement(sql);
             pst.setString(1, fInicio);

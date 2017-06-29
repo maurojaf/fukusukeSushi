@@ -58,7 +58,7 @@ public class ModeloCliente extends Conexion {
             pst.setString(2, contrasena);
             rs = pst.executeQuery();
             while (rs.next()) {
-                cliente = new Usuario(rs.getString("nombre"), rs.getString("rut"), rs.getString("direccion"), rs.getString("comuna"), rs.getString("provincia"), rs.getString("region"),rs.getString("fecha_nacimiento"), rs.getString("sexo"), rs.getString("correo"), rs.getString("telefono"), rs.getString("contrasena"));
+                cliente = new Usuario(rs.getInt("id_cliente"), rs.getString("nombre"), rs.getString("rut"), rs.getString("direccion"), rs.getString("comuna"), rs.getString("provincia"), rs.getString("region"),rs.getString("fecha_nacimiento"), rs.getString("sexo"), rs.getString("correo"), rs.getString("telefono"), rs.getString("contrasena"));
             }
 
         } catch (Exception e) {

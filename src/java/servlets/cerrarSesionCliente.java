@@ -64,8 +64,8 @@ public class cerrarSesionCliente extends HttpServlet {
         
         */
         
-        request.getRequestDispatcher("login.jsp").forward(request, response);
-        processRequest(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+        
         
     }
 

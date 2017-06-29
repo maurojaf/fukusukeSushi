@@ -2,12 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/web/shop-cart.jsp</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/web/Mantenedores.jsp</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/AddCart.java</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/ObtenerOrden.java</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/models/ModeloOrders.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

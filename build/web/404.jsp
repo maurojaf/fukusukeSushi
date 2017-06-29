@@ -56,7 +56,8 @@
               <div class="top-bar-links">
                 <ul class="col-sm-8 top-bar-acc">
                   <c:if test="${autenticated}">
-                        <li class="top-bar-link"><a href="user-account.jsp">Mi cuenta</a></li>
+                        <li class="top-bar-link"><a href="user-account.jsp"><strong>Mi cuenta</strong></a></li>
+                                        <li class="top-bar-link"><a href="cerrarSesionCliente"><strong>Cerrar Sesi&oacute;n</strong></a></li>
                     </c:if>
                     <c:if test="${not autenticated}">
                         <li class="top-bar-link"><a href="login.jsp">Iniciar Sesión / Registrarse</a></li>

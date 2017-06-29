@@ -59,7 +59,8 @@
               <div class="top-bar-links">
                 <ul class="col-sm-8 top-bar-acc">
                   <% if (session.getAttribute("Autentificacion") instanceof Usuario ){ %>
-                                            <li class="top-bar-link"><a href="user-account.jsp">Mi cuenta</a></li>
+                                            <li class="top-bar-link"><a href="user-account.jsp"><strong>Mi cuenta</strong></a></li>
+                                        <li class="top-bar-link"><a href="cerrarSesionCliente"><strong>Cerrar Sesi&oacute;n</strong></a></li>
                                        <% }else{ %>   
                                             <li class="top-bar-link"><a href="login.jsp">Iniciar Sesión / Registrarse</a></li>
                                         <% } %> 

@@ -55,11 +55,10 @@ public class CerrarSesion extends HttpServlet {
             
         request.setAttribute("error", "Su sesion se ha cerrado correctamente");
         request.getSession().removeAttribute("Autentificacion");
-        ServletContext context= getServletContext();
-            RequestDispatcher rd= context.getRequestDispatcher("/login");
-            
-            
-            rd.forward(request, response);
+        ServletContext context = getServletContext();
+        RequestDispatcher rd = context.getRequestDispatcher("/login");
+
+        rd.forward(request, response);
     
         
         

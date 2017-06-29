@@ -68,13 +68,14 @@
                             <div class="row">
                                 <div class="top-bar-links">
                                     <ul class="col-sm-6 top-bar-acc">
-                                        
-                                        <% if (sesion.getAttribute("Autentificacion") instanceof Usuario ){ %>
-                                            <li class="top-bar-link"><a href="user-account.jsp">Mi cuenta</a></li>
-                                       <% }else{ %>   
-                                            <li class="top-bar-link"><a href="login.jsp">Iniciar Sesión / Registrarse</a></li>
-                                        <% } %>       
-                                                
+
+                                        <% if (sesion.getAttribute("Autentificacion") instanceof Usuario) { %>
+                                        <li class="top-bar-link"><a href="user-account.jsp"><strong>Mi cuenta</strong></a></li>
+                                        <li class="top-bar-link"><a href="cerrarSesionCliente"><strong>Cerrar Sesi&oacute;n</strong></a></li>
+                                            <% } else { %>   
+                                        <li class="top-bar-link"><a href="login.jsp">Iniciar Sesión / Registrarse</a></li>
+                                            <% } %>       
+
                                         <li class="top-bar-link"><a href="orders.jsp">Mis Ordenes</a></li>
                                         <li class="top-bar-link"><a href="shop-cart.jsp">Carrito</a></li>
                                         <li class="top-bar-link"><a href="cerrarSesionCliente">Cerrar Sesión</a></li>
@@ -309,24 +310,24 @@
                                         <div class="col-md-12">
                                             <div class="tabs tabs-bb">
                                                 <ul class="nav nav-tabs">
-                                                    <li class="active">
-                                                        <a href="#tab-description" data-toggle="tab">Inicio</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#tab-info" data-toggle="tab">Mis Datos</a>
-                                                    </li>
+                                                    <!--                                                    <li class="active">
+                                                                                                            <a href="#tab-description" data-toggle="tab"></a>
+                                                                                                        </li>-->
+                                                    <!--                                                    <li>
+                                                                                                            <a href="#tab-info" data-toggle="tab">Mis Datos</a>
+                                                                                                        </li>-->
                                                 </ul> <!-- end tabs -->
 
                                                 <!-- tab content -->
                                                 <div class="tab-content">
+                                                    <!--
+                                                                                                        <div class="tab-pane fade in active" id="tab-description">
+                                                                                                            <p>
+                                                    
+                                                                                                            </p>
+                                                                                                        </div>-->
 
-                                                    <div class="tab-pane fade in active" id="tab-description">
-                                                        <p>
-
-                                                        </p>
-                                                    </div>
-
-                                                    <div class="tab-pane fade" id="tab-info">
+                                                    <div class="" id="tab-info">
                                                         <%
                                                             HttpSession sessionStatus = request.getSession();
                                                             Usuario usuario = (Usuario) sessionStatus.getAttribute("Autentificacion");

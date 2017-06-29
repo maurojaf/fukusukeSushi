@@ -12,6 +12,8 @@ import classes.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -88,10 +90,12 @@ public class ObtenerOrden extends HttpServlet {
         }else{
             request.setAttribute("error", "No se ha podido procesar su compra. Intente nuevamente.");
         }
-                
-        
-        response.sendRedirect("shop-cart.jsp");
-//         processRequest(request, response);
+            //response.sendRedirect("shop-chekout.jsp");    
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
+//        ServletContext context = getServletContext();
+//        RequestDispatcher rd = context.getRequestDispatcher("/mostrarBoleta'");
+//        rd.forward(request, response);
+        processRequest(request, response);
     }
 
     /**

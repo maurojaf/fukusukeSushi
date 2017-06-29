@@ -126,7 +126,7 @@
                         
                         <tr>
                             <td>
-                                <c:out value = "${item.orderUserID}"/>
+                                <c:out value = "${item.orderIDCliente}"/>
                             </td>                                         
                             <td>
                                 <c:out value = "${item.orderAmount}"/>

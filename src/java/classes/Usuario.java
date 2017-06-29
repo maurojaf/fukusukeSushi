@@ -116,7 +116,8 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-    public Usuario(String nombre, String rut, String direccion, String Comuna, String provincia, String region, String fecha_nacimiento, String sexo, String correo, String telefono, String contrasena) {
+    public Usuario(int id, String nombre, String rut, String direccion, String Comuna, String provincia, String region, String fecha_nacimiento, String sexo, String correo, String telefono, String contrasena) {
+        this.id = id;
         this.nombre = nombre;
         this.rut = rut;
         this.direccion = direccion;
