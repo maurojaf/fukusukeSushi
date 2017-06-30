@@ -29,7 +29,7 @@ public class ModeloOrders extends Conexion {
             pst = getConnection().prepareCall(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
-                ordenes.add(new Orders(rs.getInt("OrderID"), rs.getInt("OrderUserID"), rs.getInt("OrderAmount"), rs.getString("OrderShipName"), rs.getString("OrderShipAddress"), rs.getString("OrderPhone"), rs.getInt("OrderShipping"), rs.getString("OrderEmail"), rs.getString("OrderDate"), rs.getBoolean("OrderShipped"), rs.getString("OrderTrackingNumber")));
+                ordenes.add(new Orders(rs.getInt("OrderID"), rs.getInt("orderIDCliente"), rs.getInt("OrderAmount"), rs.getString("OrderShipName"), rs.getString("OrderShipAddress"), rs.getString("OrderPhone"), rs.getInt("OrderShipping"), rs.getString("OrderEmail"), rs.getString("OrderDate"), rs.getBoolean("OrderShipped"), rs.getString("OrderTrackingNumber")));
             }
 
         } catch (Exception e) {
@@ -62,7 +62,7 @@ public class ModeloOrders extends Conexion {
             pst.setInt(1, id);
             rs = pst.executeQuery();
             while (rs.next()) {
-                orden = new Orders(rs.getInt("OrderID"), rs.getInt("OrderUserID"), rs.getInt("OrderAmount"), rs.getString("OrderShipName"), rs.getString("OrderShipAddress"), rs.getString("OrderPhone"), rs.getInt("OrderShipping"), rs.getString("OrderEmail"), rs.getString("OrderDate"), rs.getBoolean("OrderShipped"), rs.getString("OrderTrackingNumber"));
+                orden = new Orders(rs.getInt("OrderID"), rs.getInt("orderIDCliente"), rs.getInt("OrderAmount"), rs.getString("OrderShipName"), rs.getString("OrderShipAddress"), rs.getString("OrderPhone"), rs.getInt("OrderShipping"), rs.getString("OrderEmail"), rs.getString("OrderDate"), rs.getBoolean("OrderShipped"), rs.getString("OrderTrackingNumber"));
             }
 
         } catch (Exception e) {
