@@ -15,7 +15,7 @@ public class Usuario {
     private String nombre;
     private String rut;
     private String direccion;
-    private String Comuna;
+    private String comuna;
     private String provincia;
     private String region;
     private String fecha_nacimiento;
@@ -34,6 +34,10 @@ public class Usuario {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -61,11 +65,11 @@ public class Usuario {
     }
 
     public String getComuna() {
-        return Comuna;
+        return comuna;
     }
 
     public void setComuna(String Comuna) {
-        this.Comuna = Comuna;
+        this.comuna = comuna;
     }
 
     public String getProvincia() {
@@ -116,12 +120,12 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-    public Usuario(int id, String nombre, String rut, String direccion, String Comuna, String provincia, String region, String fecha_nacimiento, String sexo, String correo, String telefono, String contrasena) {
+    public Usuario(int id, String nombre, String rut, String direccion, String comuna, String provincia, String region, String fecha_nacimiento, String sexo, String correo, String telefono, String contrasena) {
         this.id = id;
         this.nombre = nombre;
         this.rut = rut;
         this.direccion = direccion;
-        this.Comuna = Comuna;
+        this.comuna = comuna;
         this.provincia = provincia;
         this.region = region;
         this.fecha_nacimiento = fecha_nacimiento;

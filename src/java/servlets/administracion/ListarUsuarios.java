@@ -45,8 +45,7 @@ public class ListarUsuarios extends HttpServlet {
             ModeloUsers usuarioModelo = new ModeloUsers();
             ArrayList<Users> listado = usuarioModelo.listarTodosUsuarios();
         
-            request.setAttribute("usuarios", listado);
-            
+            request.setAttribute("usuarios", listado);            
             request.getRequestDispatcher("MantenedorUsuarios.jsp").forward(request, response);
         }
     }

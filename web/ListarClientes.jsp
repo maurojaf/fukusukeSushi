@@ -109,36 +109,62 @@
                     <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Descripción</th>
-                        <th>Stock</th>
-                        <th>Imagen</th>                        
-                        <th>Acción</th>
+                        <th>Direccion</th>
+                        <th>Comuna</th>
+                        <th>Region</th>                        
+                        <th>Provincia</th>
+                        <th>Region</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>Sexo</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Contrase&ntilde;a</th>
+                        <th>Acciones</th>
+                        
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="item" items="${productos}">
+                    <c:forEach var="item" items="${clientes}">
                         
                         <tr>
                             <td>
-                                <c:out value = "${item.productName}"/>
-                            </td>                                         
-                            <td>
-                                <c:out value = "${item.productPrice}"/>
+                                <c:out value = "${item.nombre}"/>
                             </td> 
                             <td>
-                                <c:out value = "${item.productLongDesc}"/>
+                                <c:out value = "${item.rut}"/>
                             </td>
                             <td>
-                                <c:out value = "${item.productStock}"/>
+                                <c:out value = "${item.direccion}"/>
                             </td>
                             <td>
-                                <c:out value = "${item.productImage}"/>
+                                <c:out value = "${item.comuna}"/>
+                            </td>
+                            <td>
+                                <c:out value = "${item.provincia}"/>
                             </td> 
+                            <td>
+                                <c:out value = "${item.region}"/>
+                            </td> 
+                            <td>
+                                <c:out value = "${item.fecha_nacimiento}"/>
+                            </td> 
+                            <td>
+                                <c:out value = "${item.sexo}"/>
+                            </td> 
+                            <td>
+                                <c:out value = "${item.correo}"/>
+                            </td> 
+                            <td>
+                                <c:out value = "${item.telefono}"/>
+                            </td> 
+                            <td>
+                                <c:out value = "${item.contrasena}"/>
+                            </td> 
+                            
                             <td> 
 
-                                <a class="btn btn-xs btn-info" href="editar?prod=${item.productID}" ><i class="fa fa-pencil"></i> </a>
-                                <a class="btn btn-xs btn-danger" href="borrar?prod=${item.productID}"><i class="fa fa-close"></i></a>
+                                <a class="btn btn-xs btn-info" href="editar?prod=${item.id}" ><i class="fa fa-pencil"></i> </a>
+                                <a class="btn btn-xs btn-danger" href="borrar?prod=${item.id}"><i class="fa fa-close"></i></a>
 
                             </td>
                         </tr>

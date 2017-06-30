@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/models/ModeloReporte.java</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/web/index.jsp</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/administracion/ListarOrdenes.java</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/web/ListarOrdenesActivas.jsp</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/administracion/Reportes.java</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/administracion/AgregarUsuario.java</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/web/shop-checkout.jsp</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/web/Reportes.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

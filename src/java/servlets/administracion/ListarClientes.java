@@ -5,13 +5,19 @@
  */
 package servlets.administracion;
 
+import classes.Users;
+import classes.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.ModeloCliente;
 
 /**
  *
@@ -32,9 +38,14 @@ public class ListarClientes extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            request.getRequestDispatcher("/ListarClientes.jsp").forward(request, response);
-        }
+      
+            
+            ModeloCliente clienteModelo = new ModeloCliente();
+            ArrayList<Usuario> listado = clienteModelo.listarTodosClientes();
+        
+            request.setAttribute("clientes", listado);
+            request.getRequestDispatcher("ListarClientes.jsp").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -49,6 +60,19 @@ public class ListarClientes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Users login = (Users) request.getSession().getAttribute("Autentificacion");
+        
+        if (login instanceof Users) {
+            
+        }
+        else
+        {
+            ServletContext context= getServletContext();
+            RequestDispatcher rd= context.getRequestDispatcher("/login");
+            rd.forward(request, response);
+        }
+        
+        
         processRequest(request, response);
     }
 
