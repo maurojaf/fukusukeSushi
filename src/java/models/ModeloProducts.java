@@ -27,7 +27,10 @@ public class ModeloProducts extends Conexion {
             pst = getConnection().prepareStatement(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
-                productos.add(new Products(rs.getInt("ProductID"), rs.getString("ProductSKU"), rs.getString("ProductName"), rs.getInt("ProductPrice"), rs.getInt("ProductWeight"), rs.getString("ProductLongDesc"), rs.getString("ProductThumb"), rs.getString("ProductImage"), rs.getInt("ProductCategoryID"), rs.getDate("ProductUpdateDate"), rs.getInt("ProductStock"), rs.getBoolean("ProductLive")));
+                Products prod = new Products(rs.getInt("ProductID"), rs.getString("ProductSKU"), rs.getString("ProductName"), rs.getInt("ProductPrice"), rs.getInt("ProductWeight"), rs.getString("ProductLongDesc"), rs.getString("ProductThumb"), rs.getString("ProductImage"), rs.getInt("ProductCategoryID"), rs.getDate("ProductUpdateDate"), rs.getInt("ProductStock"), rs.getBoolean("ProductLive")); 
+                prod.setImagebyteCode(rs.getBytes("imageBlob"));
+                productos.add(prod);
+                
             }
 
         } catch (Exception e) {
@@ -61,6 +64,8 @@ public class ModeloProducts extends Conexion {
             rs = pst.executeQuery();
             while (rs.next()) {
                 producto = new Products(rs.getInt("ProductID"), rs.getString("ProductSKU"), rs.getString("ProductName"), rs.getInt("ProductPrice"), rs.getInt("ProductWeight"), rs.getString("ProductLongDesc"), rs.getString("ProductThumb"), rs.getString("ProductImage"), rs.getInt("ProductCategoryID"), rs.getDate("ProductUpdateDate"), rs.getInt("ProductStock"), rs.getBoolean("ProductLive"));
+                producto.setImagebyteCode(rs.getBytes("imageBlob"));
+                producto.setImageStream(rs.getBinaryStream("imageBlob"));
             }
 
         } catch (Exception e) {
@@ -87,15 +92,16 @@ public class ModeloProducts extends Conexion {
         PreparedStatement pst = null;
 
         try {
-            String sql = "INSERT INTO products (ProductName, ProductPrice, ProductLongDesc, ProductImage, ProductStock, ProductLive) VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO products (ProductName, ProductPrice, ProductLongDesc, ProductImage, ProductStock, ProductLive, imageBlob) VALUES (?, ?, ?, ?, ?, ?, ?)";
             pst = getConnection().prepareStatement(sql);
          
             pst.setString(1, producto.getProductName());
             pst.setFloat(2, producto.getProductPrice());            
             pst.setString(3, producto.getProductLongDesc());            
             pst.setString(4, producto.getProductImage());                       
-            pst.setFloat(5, producto.getProductStock());            
+            pst.setInt(5, producto.getProductStock());            
             pst.setBoolean(6, producto.isProductLive());
+            pst.setBinaryStream(7, producto.getImageInputStream());
             
 
             pst.execute();

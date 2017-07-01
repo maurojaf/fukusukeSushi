@@ -115,7 +115,21 @@ public class ModeloOrders extends Conexion {
                 stmt.setInt(3, detalle.getCantidad());
                 
                 stmt.execute();
+                
+                String descuentoStock = "UPDATE products SET ProductStock = ? WHERE ProductID = ?";
+                PreparedStatement stmt1 = getConnection().prepareStatement(descuentoStock);
+                
+                int calculoStock = detalle.getProducto().getProductStock() - detalle.getCantidad();
+                
+                stmt1.setInt(1, calculoStock);
+                stmt1.setInt(2, detalle.getProducto().getProductID());
+                
+                stmt1.execute();
+                
             }
+            
+            
+            
             
             resultado = true;
 

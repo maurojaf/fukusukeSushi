@@ -324,7 +324,7 @@
                                         <tr class="cart_item">
                                             <td class="product-thumbnail">
                                                 <a href="#">
-                                                    <img src="<%= producto.getProductImage()%>" alt="">
+                                                    <img src="_render?producto=<%= producto.getProductID()%>" alt="">
                                                 </a>
                                             </td>
                                             <td class="product-name">

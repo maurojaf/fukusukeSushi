@@ -5,6 +5,8 @@
  */
 package classes;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Date;
 
 /**
@@ -25,6 +27,9 @@ public class Products {
     private Date ProductUpdateDate;
     private int ProductStock;
     private boolean ProductLive;
+    private FileInputStream imageStream;
+    private InputStream imageInputStream;
+    private byte[] imagebyteCode;
 
     public Products(int ProductID, String ProductSKU, String ProductName, int ProductPrice, int ProductWeight, String ProductLongDesc, String ProductThumb, String ProductImage, int ProductCategoryID, Date ProductUpdateDate, int ProductStock, boolean ProductLive) {
         this.ProductID = ProductID;
@@ -140,6 +145,25 @@ public class Products {
     public void setProductLive(boolean ProductLive) {
         this.ProductLive = ProductLive;
     }
-    
+
+    public FileInputStream getImageStream() {
+        return imageStream;
+    }
+
+    public void setImageStream(InputStream imageStream) {
+        this.imageInputStream = imageStream;
+    }
+
+    public InputStream getImageInputStream() {
+        return imageInputStream;
+    }
+
+    public byte[] getImagebyteCode() {
+        return imagebyteCode;
+    }
+
+    public void setImagebyteCode(byte[] imagebyteCode) {
+        this.imagebyteCode = imagebyteCode;
+    }
     
 }

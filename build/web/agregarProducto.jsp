@@ -32,7 +32,7 @@
                             <strong>Error!</strong> <c:out value="${error}" />.
                         </div>
                     </c:if>
-                    <form action="agregar" method="POST" enctype="form-data">
+                    <form action="agregar" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="" class="control-label">Nombre</label>
                             <input type="text" class="form-control" name="name" required/>

@@ -285,7 +285,7 @@
 
               <div class="gallery-cell">
                 <a href="img/shop/single_img_1.jpg" class="lightbox-img">
-                    <img src="<%=producto.getProductImage() %>" alt="" />
+                    <img src="_render?producto=<%=producto.getProductID()%>" alt="" />
                   <i class="icon arrow_expand"></i>
                 </a>
               </div>
@@ -365,7 +365,7 @@
               <li>
                 <div class="quantity buttons_added">
                     <input name="idproducto" type="hidden" value="<%= producto.getProductID() %>"/>
-                  <input type="button" value="-" class="minus" /><input id="txt-cantidad" name="cantidad" type="number" step="1" min="0" value="1" title="Qty" class="input-text qty text" /><input type="button" value="+" class="plus" />
+                    <input type="button" value="-" class="minus" id="minus"/><input id="txt-cantidad" name="cantidad" type="number" step="1" min="0" value="1" title="Qty" class="input-text qty text" /><input type="button" value="+" class="plus" id="plus"/>
                 </div>
               </li>
             </ul>
@@ -815,6 +815,42 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/plugins.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
-
+  
+  <script type="text/javascript">
+      $(function(){
+          var stock = <%= producto.getProductStock() %>;
+          
+          var cantidad = $("#txt-cantidad");
+          console.log(cantidad);
+          var plus = $("input[type=button].plus");
+          plus.click(function(){
+            var cant = parseInt(cantidad.val()) + 1;
+            if(cant <= stock){
+                cantidad.val(cant);
+            }else{
+                alert("No existen mas productos en stock");
+            }
+            
+          });
+          var minus = $("input[type=button].minus");
+          minus.click(function(){
+            var cant = parseInt(cantidad.val()) - 1;
+            if(cant > 0){
+                cantidad.val(cant);
+            }
+          });
+          
+          cantidad.on("change", function(){
+              if(cantidad.val() < 0){
+                  cantidad.val(1);
+              }
+              
+              if(cantidad.val() > stock){
+                  cantidad.val(stock);
+                  alert("La cantidad ingresada supera al stock restante. Se ha cambiado el valor al maximo posible");
+              }
+          });
+        });
+  </script>
 </body>
 </html>

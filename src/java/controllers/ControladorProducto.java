@@ -23,7 +23,7 @@ public class ControladorProducto {
 "                    <div class=\"product-item\">\n" +
 "                        <div class=\"product-img\">\n" +
 "                            <!-- <a href=\"#\">-->\n" +
-"                            <img src=\""+producto.getProductImage()+"\" alt=\"\">\n" +
+"                            <img src=\"_render?producto="+producto.getProductID()+"\" alt=\"\">\n" +
 "                            <!--<img src=\"img/shop/shop_item_1_back.jpg\" alt=\"\" class=\"back-img\">-->\n" +
 "                            <!--</a>-->\n" +
 "                            <a href=\"shop-single-product.jsp?id="+producto.getProductID()+"\" class=\"product-quickview\">Ver Detalles</a>\n" +

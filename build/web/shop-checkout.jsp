@@ -16,7 +16,14 @@
 <%
     HttpSession sesion = request.getSession(true);
     ArrayList<Articulo> articulos = sesion.getAttribute("carrito") == null ? null : (ArrayList) sesion.getAttribute("carrito");
-    Boolean autenticated = (session.getAttribute("Autentificacion") instanceof Cliente);
+    Boolean autenticated = (session.getAttribute("Autentificacion") instanceof Usuario);
+    Usuario cliente = null;
+    
+    if(autenticated){
+        cliente = (Usuario) session.getAttribute("Autentificacion");
+    }
+            
+    
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -281,7 +288,7 @@
                 <div class="container relative">
                     <div class="row">
 
-                        <c:if test="${not autenticated.booleanValue}">
+                            <% if (session.getAttribute("Autentificacion") instanceof Usuario) { }else{%>
                             <div class="ecommerce col-xs-12">
                                 <div class="alert alert-info fade in alert-dismissible" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -297,6 +304,7 @@
                                     </div>
                                 </div>
 
+                                
                                 <div class="col-md-8" id="customer_details">
                                     <div>
                                         <!--  <h2 class="heading uppercase mb-30">Dirección de Envío</h2>-->
@@ -336,16 +344,10 @@
                                         <div class="clear"></div>
                                     </div>
                                 </div> <!-- end col -->
-                            </c:if>
+                                <% } %>
 
-                            <c:if test="${autenticated.booleanValue}">
+                            
                                 <div class="col-md-12">    
-                                </c:if>
-                                <c:if test="${not autenticated}">
-                                    <div class="col-md-12">    
-                                    </c:if>
-
-
                                     <div class="order-review-wrap ecommerce-checkout-review-order" id="order_review">
                                         <h2 class="heading uppercase mb-30">Detalle de la Orden</h2>
                                         <table class="table shop_table ecommerce-checkout-review-order-table">
@@ -409,16 +411,34 @@
 
 
                                                 <li class="payment_method_paypal">
-                                                    <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal">
-                                                    <label for="payment_method_paypal">Tarjeta de Crédito o Débito</label>
+<!--                                                    <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal">
+                                                    <label for="payment_method_paypal">Tarjeta de Crédito o Débito</label>-->
 
                                                     <!-- <img src="img/shop/paypal.png" alt="">-->
                                                     <div class="payment_box payment_method_paypal">
-                                                        <p>Pague directamente con su tarjeta de Crédito o Débito, a través de XXXXXXX.</p>
+<!--                                                        <p>Pague directamente con su tarjeta de Crédito o Débito, a través de XXXXXXX.</p>-->
                                                         <div class="form-row place-order">
-                                                            <form action="obtenerOrden" method="POST">
-                                                                <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" value="Finalizar Compra" >
+                                                            <form action="http://www.checkbox.cl/PaymentGateway/pay.php" method="post">
+                                                                <input type=hidden name="comercio_id" value="136">
+                                                                <input type=hidden name="comercio_logo" value="">
+
+                                                                <input type=hidden name="item_nombre" value="pedido de sushi">
+                                                                <input type=hidden name="item_id" value="1016">
+                                                                <input type=hidden name="item_precio" value="<%=total%>">
+
+                                                                <input type=hidden name="url_return" value="">
+                                                                <input type=hidden name="url_cancel" value="">
+                                                                <input type=hidden name="url_h2h" value="">
+
+                                                                <input type=hidden name="cliente_nombres" value="<%= autenticated ? cliente.getNombre() : "" %>">
+                                                                <input type=hidden name="cliente_rut" value="<%= autenticated ? cliente.getRut():"" %>">
+                                                                <input type=hidden name="cliente_email" value="<%= autenticated ? cliente.getCorreo() : "" %>">
+                                                                
+                                                                <input type="submit" value="Pagar Online" class="btn btn-lg"/>
                                                             </form>
+<!--                                                            <form action="obtenerOrden" method="POST">
+                                                                <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" value="Finalizar Compra" >
+                                                            </form>-->
                                                         </div>
                                                     </div>
 
@@ -551,6 +571,5 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
-
     </body>
 </html>
