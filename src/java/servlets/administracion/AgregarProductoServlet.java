@@ -121,7 +121,7 @@ public class AgregarProductoServlet extends HttpServlet {
         prod.setProductPrice(Integer.parseInt(precio));
         prod.setProductLongDesc(descripcion);
         prod.setProductStock(Integer.parseInt(stock));
-        prod.setProductImage(imagen);
+        prod.setProductImage(fileName);
         prod.setImageStream(fileContent);
         
         ModeloProducts productoModel = new ModeloProducts();

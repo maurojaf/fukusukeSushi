@@ -8,14 +8,18 @@ package servlets.administracion;
 import classes.Products;
 import classes.Users;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.nio.file.Paths;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import models.ModeloProducts;
 
 /**
@@ -23,6 +27,7 @@ import models.ModeloProducts;
  * @author mauricioatenas
  */
 @WebServlet(name = "editarProductoServlet", urlPatterns = {"/editar"})
+@MultipartConfig()
 public class EditarProductoServlet extends HttpServlet {
 
     /**
@@ -99,13 +104,18 @@ public class EditarProductoServlet extends HttpServlet {
         String stock = request.getParameter("stock");
         String imagen = request.getParameter("image");
         
+        Part filePart = request.getPart("image");
+        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+        InputStream fileContent = filePart.getInputStream();
+        
         //int precioInt = Integer.parseInt(precio);
         
         prod.setProductName(nombre);
         prod.setProductPrice(Integer.parseInt(precio));
         prod.setProductLongDesc(descripcion);
         prod.setProductStock(Integer.parseInt(stock));
-        prod.setProductImage(imagen);
+        prod.setProductImage(fileName);
+        prod.setImageStream(fileContent);
         
         boolean resultado = productoModel.update(prod);
         

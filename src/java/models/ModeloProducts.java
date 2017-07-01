@@ -175,7 +175,7 @@ public class ModeloProducts extends Conexion {
                 super.connect();
             }
 
-            String sql = "UPDATE products SET ProductName=?,ProductPrice=?,ProductLongDesc=?,ProductImage=?, ProductStock=? WHERE ProductID = ?";
+            String sql = "UPDATE products SET ProductName=?,ProductPrice=?,ProductLongDesc=?,ProductImage=?, ProductStock=?, imageBlob=? WHERE ProductID = ?";
             pst = getConnection().prepareStatement(sql);
             
             pst.setString(1, producto.getProductName());
@@ -187,8 +187,9 @@ public class ModeloProducts extends Conexion {
            
             //pst.setDate(8, (java.sql.Date) producto.getProductUpdateDate());
             pst.setFloat(5, producto.getProductStock());            
+            pst.setBinaryStream(6, producto.getImageInputStream());
+            pst.setInt(7, producto.getProductID());
             
-            pst.setInt(6, producto.getProductID());
 
             pst.execute();
             resultado = true;

@@ -1,4 +1,4 @@
-<%-- 
+9<%-- 
     Document   : addEditProducto
     Created on : 14-jun-2017, 21:49:08
     Author     : mauricioatenas
@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-group">
                             <a href="productos" class="btn btn-danger" role="button">Cancelar</a>
-                            <input type="submit" onclick="comprueba_extension(this.form, this.form.image.value)" class="btn btn-primary pull-right" name="nombre" />
+                            <input type="submit" onclick="comprueba_extension(this.form, this.form.image.value)" class="btn btn-primary pull-right" name="enviar" />
                         </div>
 
                     </form>

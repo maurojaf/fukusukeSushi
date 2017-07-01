@@ -32,7 +32,7 @@
                             <strong>Error!</strong> <c:out value="${error}" />.
                         </div>
                     </c:if>
-                    <form action="editar?prod=${producto.productID}" method="POST" enctype="form-data">
+                    <form action="editar?prod=${producto.productID}" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="" class="control-label">Nombre</label>
                             <input type="text" class="form-control" name="name" value="${producto.productName}"required/>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-group">
                             <a href="productos" class="btn btn-danger" role="button">Cancelar</a>
-                            <input type="submit" class="btn btn-primary pull-right" name="enviar" />
+                            <input type="submit" onclick="comprueba_extension(this.form, this.form.image.value)" class="btn btn-primary pull-right" name="enviar" />
                         </div>
                     </form>
                 </div>

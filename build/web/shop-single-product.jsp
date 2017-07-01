@@ -149,7 +149,7 @@
                       <div class="nav-cart-container">
                         <div class="nav-cart-items">
 
-                          <div class="nav-cart-item clearfix">
+<!--                          <div class="nav-cart-item clearfix">
                             <div class="nav-cart-img">
                               <a href="#">
                                 <img src="img/shop/cart_small_1.jpg" alt="">
@@ -167,9 +167,9 @@
                             <div class="nav-cart-remove">
                               <a href="#"><i class="icon icon_close"></i></a>
                             </div>
-                          </div>
+                          </div>-->
 
-                          <div class="nav-cart-item clearfix">
+<!--                          <div class="nav-cart-item clearfix">
                             <div class="nav-cart-img">
                               <a href="#">
                                 <img src="img/shop/cart_small_2.jpg" alt="">
@@ -187,14 +187,14 @@
                             <div class="nav-cart-remove">
                               <a href="#"><i class="icon icon_close"></i></a>
                             </div>
-                          </div>
+                          </div>-->
 
                         </div> <!-- end cart items -->
 
-                        <div class="nav-cart-summary">
+<!--                        <div class="nav-cart-summary">
                           <span>Subtotal</span>
                           <span class="total-price">$1799.00</span>
-                        </div>
+                        </div>-->
 
                         <div class="nav-cart-actions mt-20">
                           <a href="shop-cart.jsp" class="btn btn-md btn-dark"><span>Ver Carro</span></a>
@@ -204,8 +204,8 @@
                     </div>
                     <div class="menu-cart-amount right">
                       <span>
-                        Cart /
-                        <a href="#"> $1299.50</a>
+                        Carrito /
+<!--                        <a href="#"> $1299.50</a>-->
                       </span>
                     </div>
                   </div> <!-- end cart -->
@@ -289,51 +289,10 @@
                   <i class="icon arrow_expand"></i>
                 </a>
               </div>
-              <div class="gallery-cell">
-                <a href="img/shop/single_img_2.jpg" class="lightbox-img">
-                  <img src="img/shop/single_img_2.jpg" alt="" />
-                  <i class="icon arrow_expand"></i>
-                </a>
-              </div>
-              <div class="gallery-cell">
-                <a href="img/shop/single_img_3.jpg" class="lightbox-img">
-                  <img src="img/shop/single_img_3.jpg" alt="" />
-                  <i class="icon arrow_expand"></i>
-                </a>
-              </div>
-              <div class="gallery-cell">
-                <a href="img/shop/single_img_4.jpg" class="lightbox-img">
-                  <img src="img/shop/single_img_4.jpg" alt="" />
-                  <i class="icon arrow_expand"></i>
-                </a>
-              </div>
-              <div class="gallery-cell">
-                <a href="img/shop/single_img_5.jpg" class="lightbox-img">
-                  <img src="img/shop/single_img_5.jpg" alt="" />
-                  <i class="icon arrow_expand"></i>
-                </a>
-              </div>
+
             </div> <!-- end gallery main -->
 
-            <div class="gallery-thumbs">
 
-              <div class="gallery-cell">
-                <img src="img/shop/single_img_1.jpg" alt="" />
-              </div>
-              <div class="gallery-cell">
-                <img src="img/shop/single_img_2.jpg" alt="" />
-              </div>
-              <div class="gallery-cell">
-                <img src="img/shop/single_img_3.jpg" alt="" />
-              </div>
-              <div class="gallery-cell">
-                <img src="img/shop/single_img_4.jpg" alt="" />
-              </div>
-              <div class="gallery-cell">
-                <img src="img/shop/single_img_5.jpg" alt="" />
-              </div>
-
-            </div> <!-- end gallery thumbs -->
 
           </div> <!-- end col img slider -->
 
@@ -371,9 +330,9 @@
             </ul>
             </form>
             <div class="product_meta">
-              <span class="sku">SKU: <a href="#"><%=producto.getProductSKU() %></a></span>
-              <span class="posted_in">Category: <a href="#"> </a></span>
-              <span class="tagged_as">Tags: <a href="#">Elegant</a>, <a href="#">Bag</a></span>
+              <span class="sku">ID Producto: <a href="#"><%=producto.getProductID() %></a></span>
+<!--              <span class="posted_in">Category: <a href="#"> </a></span>-->
+<!--              <span class="tagged_as">Tags: <a href="#">Elegant</a>, <a href="#">Bag</a></span>-->
             </div>
 
             <div class="socials-share clearfix">
@@ -394,10 +353,10 @@
             <div class="tabs tabs-bb">
               <ul class="nav nav-tabs">
                 <li class="active">
-                  <a href="#tab-description" data-toggle="tab">Description</a>
+                  <a href="#tab-description" data-toggle="tab">Descripción</a>
                 </li>
                 <li>
-                  <a href="#tab-info" data-toggle="tab">Information</a>
+                  <a href="#tab-info" data-toggle="tab">Información</a>
                 </li>
               </ul> <!-- end tabs -->
 
@@ -415,13 +374,13 @@
 
                     <tbody>
                       <tr>
-                        <th>SKU</th>
-                        <td><%= producto.getProductSKU() %></td>
+                          <th>Informaci&oacute;n Nutricional</th>
+                          <td>Sin informaci&oacute;n en este momento</td>
                       </tr>
-                      <tr>
+<!--                      <tr>
                         <th>Categoria</th>
                         <td>...</td>
-                      </tr>
+                      </tr>-->
                       <tr>
                         <th>Precio</th>
                         <td>$ <%= producto.getProductPrice() %></td>
@@ -442,267 +401,7 @@
 
 
     <!-- Related Items -->
-    <section class="section-wrap related-products pt-0">
-      <div class="container">
-        <div class="row heading-row">
-          <div class="col-md-12 text-center">
-            <h2 class="heading uppercase"><small>Related Products</small></h2>
-          </div>
-        </div>
-
-        <div class="row row-10">
-
-          <div id="owl-related-products" class="owl-carousel owl-theme nopadding">
-
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="img/shop/shop_item_1.jpg" alt="">
-                  <img src="img/shop/shop_item_1_back.jpg" alt="" class="back-img">
-                </a>
-                <div class="product-label">
-                  <span class="sale">sale</span>
-                </div>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.jsp">Night Party Dress</a>
-                </h3>
-                <span class="price">
-                  <del>
-                    <span>$388.00</span>
-                  </del>
-                  <ins>
-                    <span class="ammount">$159.99</span>
-                  </ins>
-                </span>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="img/shop/shop_item_2.jpg" alt="">
-                  <img src="img/shop/shop_item_2_back.jpg" alt="" class="back-img">
-                </a>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.jsp">Elegant White Dress</a>
-                </h3>
-                <span class="price">
-                  <ins>
-                    <span class="ammount">$219.00</span>
-                  </ins>
-                </span>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="img/shop/shop_item_3.jpg" alt="">
-                  <img src="img/shop/shop_item_3_back.jpg" alt="" class="back-img">
-                </a>
-                <span class="sold-out valign">out of stock</span>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.jsp">Long Black Dress</a>
-                </h3>
-                <span class="price">
-                  <ins>
-                    <span class="ammount">$99.00</span>
-                  </ins>
-                </span>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="img/shop/shop_item_4.jpg" alt="">
-                  <img src="img/shop/shop_item_4_back.jpg" alt="" class="back-img">
-                </a>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.jsp">Sexy Pink Dress</a>
-                </h3>
-                <span class="price">
-                  <ins>
-                    <span class="ammount">$120.00</span>
-                  </ins>
-                </span>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="img/shop/shop_item_5.jpg" alt="">
-                  <img src="img/shop/shop_item_5_back.jpg" alt="" class="back-img">
-                </a>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.jsp">Minty Dress</a>
-                </h3>
-                <span class="price">
-                  <ins>
-                    <span class="ammount">$399.00</span>
-                  </ins>
-                </span>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="img/shop/shop_item_6.jpg" alt="">
-                  <img src="img/shop/shop_item_6_back.jpg" alt="" class="back-img">
-                </a>
-                <div class="product-label">
-                  <span class="sale">sale</span>
-                </div>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.jsp">Sexy White Dress</a>
-                </h3>
-                <span class="price">
-                  <ins>
-                    <span class="ammount">$119.00</span>
-                  </ins>
-                </span>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="img/shop/shop_item_7.jpg" alt="">
-                  <img src="img/shop/shop_item_7_back.jpg" alt="" class="back-img">
-                </a>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.jsp">Elegant Pink Dress</a>
-                </h3>
-                <span class="price">
-                  <ins>
-                    <span class="ammount">$1379.00</span>
-                  </ins>
-                </span>
-              </div>
-            </div>
-
-            <div class="product-item">
-              <div class="product-img">
-                <a href="#">
-                  <img src="img/shop/shop_item_8.jpg" alt="">
-                  <img src="img/shop/shop_item_8_back.jpg" alt="" class="back-img">
-                </a>
-                <div class="product-label">
-                  <span class="sale">sale</span>
-                </div>
-                <div class="product-actions">
-                  <a href="#" class="product-add-to-compare" data-toggle="tooltip" data-placement="bottom" title="Add to compare">
-                    <i class="fa fa-exchange"></i>
-                  </a>
-                  <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
-                    <i class="fa fa-heart"></i>
-                  </a>
-                </div>
-                <a href="#" class="product-quickview">Quick View</a>
-              </div>
-
-              <div class="product-details">
-                <h3>
-                  <a class="product-title" href="shop-single-product.jsp">Gray California Dress</a>
-                </h3>
-                <span class="price">
-                  <del>
-                    <span>$350.00</span>
-                  </del>
-                  <ins>
-                    <span class="ammount">$150.00</span>
-                  </ins>
-                </span>
-              </div>
-            </div>
-
-          </div> <!-- end owl -->
-
-        </div> <!-- end row -->
-      </div> <!-- end container -->
-    </section> <!-- end related products -->
+     <!-- end related products -->
 
 
     <!-- Footer Type-1 -->

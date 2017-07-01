@@ -21,7 +21,7 @@
     <meta name="description" content=""> </meta>
     <meta name="author" content=""> </meta>
 
-    <title>Registro Usuario - Fukusuke sushi</title>
+    <title>Intranet - Fukusuke sushi</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -88,9 +88,7 @@
         <br></br>
         <div class="container">
             <div>
-                <div class="pull-right" id="botonAgregar" hidden="">
-                    <a class="btn btn-lg btn-info"  href="agregar" ><i class="fa fa-plus"></i>  Agregar Nuevo Registro</a>
-                </div>
+                
                 <br>  
                 <c:if test="${not empty success}">
                         <div class="alert alert-success">
@@ -102,6 +100,11 @@
                             <strong>Error!</strong> <c:out value="${error}" />.
                         </div>
                     </c:if>
+                
+                <div class="pull-right" id="botonAgregar" hidden="">
+                    <a class="btn btn-lg btn-info"  href="agregar" ><i class="fa fa-plus"></i>  Agregar Nuevo Registro</a>
+                </div>
+                 <br></br>
                 
                 <div style='text-align: center;margin-bottom: 18px;' id='loadgif'><i class='fa fa-spinner fa-spin fa-3x fa-fw'></i></div>
                 <div></div>

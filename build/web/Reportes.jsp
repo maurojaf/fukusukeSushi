@@ -21,7 +21,7 @@
     <meta name="description" content=""> </meta>
     <meta name="author" content=""> </meta>
 
-    <title>Registro Usuario - Fukusuke sushi</title>
+    <title>Intranet - Fukusuke sushi</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
