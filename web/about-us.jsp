@@ -115,10 +115,7 @@
                                         <!-- Search -->
                                         <div class="nav-search hidden-sm hidden-xs">
                                             <form method="get">
-                                                <input type="search" class="form-control" placeholder="Buscar...">
-                                                <button type="submit" class="search-button">
-                                                    <i class="icon icon_search"></i>
-                                                </button>
+                                                
                                             </form>
                                         </div>
 
@@ -136,58 +133,20 @@
                                             <div class="nav-cart right">
                                                 <div class="nav-cart-outer">
                                                     <div class="nav-cart-inner">
-                                                        <a href="#" class="nav-cart-icon">2</a>
+                                                        <a href="#" class="nav-cart-icon"></a>
                                                     </div>
                                                 </div>
                                                 <div class="nav-cart-container">
-                                                    <div class="nav-cart-items">
+<!--                                                    
 
-                                                        <div class="nav-cart-item clearfix">
-                                                            <div class="nav-cart-img">
-                                                                <a href="">
-                                                                    <img src="img/productos/producto1.jpg" alt="" width="50">
-                                                                </a>
-                                                            </div>
-                                                            <div class="nav-cart-title">
-                                                                <a href="#">
-                                                                    Promoción 3
-                                                                </a>
-                                                                <div class="nav-cart-price">
-                                                                    <span>1 x</span>
-                                                                    <span>7.990</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nav-cart-remove">
-                                                                <a href="#"><i class="icon icon_close"></i></a>
-                                                            </div>
-                                                        </div>
+                                                        
 
-                                                        <div class="nav-cart-item clearfix">
-                                                            <div class="nav-cart-img">
-                                                                <a href="#">
-                                                                    <img src="img/productos/producto2.jpg" alt="" width="50">
-                                                                </a>
-                                                            </div>
-                                                            <div class="nav-cart-title">
-                                                                <a href="#">
-                                                                    Promoción 2
-                                                                </a>
-                                                                <div class="nav-cart-price">
-                                                                    <span>1 x</span>
-                                                                    <span>9.990</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nav-cart-remove">
-                                                                <a href="#"><i class="icon icon_close"></i></a>
-                                                            </div>
-                                                        </div>
+                                                    </div>  end cart items -->
 
-                                                    </div> <!-- end cart items -->
-
-                                                    <div class="nav-cart-summary">
+<!--                                                    <div class="nav-cart-summary">
                                                         <span>Subtotal</span>
                                                         <span class="total-price">$</span>
-                                                    </div>
+                                                    </div>-->
 
                                                     <div class="nav-cart-actions mt-20">
                                                         <a href="shop-cart.jsp" class="btn btn-md btn-dark"><span>Ver Carro</span></a>
@@ -198,7 +157,7 @@
                                             <div class="menu-cart-amount right">
                                                 <span>
                                                     Carrito /
-                                                    <a href="#"> $ </a>
+                                                    <a href="#"></a>
                                                 </span>
                                             </div>
                                         </div> <!-- end cart -->
@@ -224,7 +183,7 @@
                                             <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                                             <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                                             <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                                            <li class="dropdown"><a href="#">Blog</a></li>
+                                            
                                             <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                                             <li class="mobile-links">

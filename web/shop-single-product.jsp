@@ -70,7 +70,7 @@
                   <li class="top-bar-link"><a href="shop-cart.jsp">Carrito</a></li>
                   <li class="top-bar-link"><a href="faq.jsp">Preguntas Frecuentes</a></li>
                   <li class="top-bar-link"><a href="contact.jsp">Contacto</a></li>
-                  <li class="top-bar-link"><a href="Mantenedores.jsp">Administración</a></li>
+                  
                 </ul>
 
                 <ul class="col-sm-4 text-right top-bar-currency-language">
@@ -121,10 +121,8 @@
                   <!-- Search -->
                   <div class="nav-search hidden-sm hidden-xs">
                     <form method="get">
-                      <input type="search" class="form-control" placeholder="Buscar...">
-                      <button type="submit" class="search-button">
-                        <i class="icon icon_search"></i>
-                      </button>
+                      
+                     
                     </form>
                   </div>
 
@@ -143,7 +141,7 @@
                     <div class="nav-cart right">
                       <div class="nav-cart-outer">
                         <div class="nav-cart-inner">
-                          <a href="#" class="nav-cart-icon">2</a>
+                          <a href="#" class="nav-cart-icon"></a>
                         </div>
                       </div>
                       <div class="nav-cart-container">
@@ -231,7 +229,7 @@
                     <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                     <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                     <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                    <li class="dropdown"><a href="blog-standard.jsp">Blog</a></li>
+                    
                     <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                     <li class="mobile-links">
@@ -317,9 +315,7 @@
                   <button type="submit" class="btn btn-color btn-lg add-to-cart left"><span>Agregar al carro</span></button>
               </li>
               <li>
-                <div class="icon-add-to-wishlist left">
-                  <a href="#"><i class="icon icon_heart_alt"></i></a>
-                </div>
+                
               </li>
               <li>
                 <div class="quantity buttons_added">
@@ -447,12 +443,7 @@
               </div>
             </div>
 
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="widget">
-                <h5 class="widget-title uppercase">SUSHI FUKUSUKE</h5>
-                <p class="mb-0">A-ha Shop is a very slick and clean e-commerce template with endless possibilities. Creating an awesome clothes store with this Theme is easy than you can imagine.</p>
-              </div>
-            </div>
+            
 
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="widget footer-get-in-touch">

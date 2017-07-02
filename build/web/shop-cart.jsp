@@ -74,7 +74,7 @@
                                         <li class="top-bar-link"><a href="shop-cart.jsp">Carrito</a></li>
                                         <li class="top-bar-link"><a href="faq.jsp">Preguntas Frecuentes</a></li>
                                         <li class="top-bar-link"><a href="contact.jsp">Contacto</a></li>
-                                        <li class="top-bar-link"><a href="Mantenedores.jsp">Administración</a></li>
+                                        
                                     </ul>
 
                                     <ul class="col-sm-4 text-right top-bar-currency-language">
@@ -125,10 +125,7 @@
                                         <!-- Search -->
                                         <div class="nav-search hidden-sm hidden-xs">
                                             <form method="get">
-                                                <input type="search" class="form-control" placeholder="Buscar...">
-                                                <button type="submit" class="search-button">
-                                                    <i class="icon icon_search"></i>
-                                                </button>
+                                                
                                             </form>
                                         </div>
 
@@ -148,57 +145,20 @@
                                             <div class="nav-cart right">
                                                 <div class="nav-cart-outer">
                                                     <div class="nav-cart-inner">
-                                                        <a href="#" class="nav-cart-icon">2</a>
+                                                        <a href="#" class="nav-cart-icon"></a>
                                                     </div>
                                                 </div>
                                                 <div class="nav-cart-container">
                                                     <div class="nav-cart-items">
 
-                                                        <div class="nav-cart-item clearfix">
-                                                            <div class="nav-cart-img">
-                                                                <a href="#">
-                                                                    <img src="img/shop/cart_small_1.jpg" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="nav-cart-title">
-                                                                <a href="#">
-                                                                    Ladies Bag
-                                                                </a>
-                                                                <div class="nav-cart-price">
-                                                                    <span>1 x</span>
-                                                                    <span>1250.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nav-cart-remove">
-                                                                <a href="#"><i class="icon icon_close"></i></a>
-                                                            </div>
-                                                        </div>
+                                                        
 
-                                                        <div class="nav-cart-item clearfix">
-                                                            <div class="nav-cart-img">
-                                                                <a href="#">
-                                                                    <img src="img/shop/cart_small_2.jpg" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="nav-cart-title">
-                                                                <a href="#">
-                                                                    Sequin Suit longer title
-                                                                </a>
-                                                                <div class="nav-cart-price">
-                                                                    <span>1 x</span>
-                                                                    <span>1250.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nav-cart-remove">
-                                                                <a href="#"><i class="icon icon_close"></i></a>
-                                                            </div>
-                                                        </div>
+                                                        
 
                                                     </div> <!-- end cart items -->
 
                                                     <div class="nav-cart-summary">
-                                                        <span>Subtotal</span>
-                                                        <span class="total-price">$1799.00</span>
+                                                        
                                                     </div>
 
                                                     <div class="nav-cart-actions mt-20">
@@ -209,8 +169,8 @@
                                             </div>
                                             <div class="menu-cart-amount right">
                                                 <span>
-                                                    Cart /
-                                                    <a href="#"> $1299.50</a>
+                                                    Carrito /
+                                                    
                                                 </span>
                                             </div>
                                         </div> <!-- end cart -->
@@ -236,7 +196,7 @@
                                             <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                                             <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                                             <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                                            <li class="dropdown"><a href="blog-standard.jsp">Blog</a></li>
+                                            
                                             <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                                             <li class="mobile-links">
@@ -339,7 +299,7 @@
                                             </td>
                                             <td class="product-quantity">
                                                 <div class="quantity buttons_added">
-                                                    <input type="button" value="-" class="minus" /><input type="number" step="1" min="0" value="<%= a.getCantidad()%>" title="Qty" class="input-text qty text" /><input type="button" value="+" class="plus">
+                                                    <input type="number" step="1" min="0" value="<%= a.getCantidad()%>" title="Qty" class="input-text qty text" />
                                                 </div>
                                             </td>
                                             <td class="product-subtotal">
@@ -386,33 +346,9 @@
                     </div> <!-- end row -->
 
                     <div class="row">
-                        <div class="col-md-6 shipping-calculator-form">
-                            <h2 class="heading relative heading-small uppercase mb-30">Calcular el envío</h2>
-                            <p class="form-row form-row-wide">
-                                <select disabled="disabled" name="calc_shipping_country" id="calc_shipping_country" class="country_to_state" rel="calc_shipping_state">
-                                    <option>Seleccionar Comuna</option>
-                                </select>
-                            </p>
+                        <!-- end col shipping calculator -->
 
-                            <div class="row row-20">
-                                <div class="col-sm-12">
-                                    <p class="form-row form-row-wide">
-                                        <input disabled="disabled" type="text" class="input-text" value placeholder="Dirección" name="calc_shipping_state" id="calc_shipping_state">
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <p>
-                                <button type="submit" name="calc_shipping" value="1" class="btn btn-md btn-dark mt-20 mb-mdm-40">Actualizar total</button>
-                            </p>
-                            <div class="alert alert-info fade in alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                <strong>¡Información!</strong> </br>En estos momentos, sólo estamos realizando envíos dentro de la comuna de Maipú (3 KM. a la redonda) y el costo es $0 CLP.
-                            </div>
-                        </div> <!-- end col shipping calculator -->
-
-                        <div class="col-md-4 col-md-offset-2">
+                        <div class="col-md-4 col-md-offset-2 pull-right">
                             <div class="cart_totals">
                                 <h2 class="heading relative heading-small uppercase mb-30">Detalle del carrito</h2>
 
@@ -501,12 +437,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="widget">
-                                    <h5 class="widget-title uppercase">SUSHI FUKUSUKE</h5>
-                                    <p class="mb-0">A-ha Shop is a very slick and clean e-commerce template with endless possibilities. Creating an awesome clothes store with this Theme is easy than you can imagine.</p>
-                                </div>
-                            </div>
+                            
 
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="widget footer-get-in-touch">

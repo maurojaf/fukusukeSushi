@@ -112,7 +112,7 @@
                                     <div class="nav-cart mobile-cart hidden-lg hidden-md">
                                         <div class="nav-cart-outer">
                                             <div class="nav-cart-inner">
-                                                <a href="#" class="nav-cart-icon">2</a>
+                                                <a href="#" class="nav-cart-icon"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -124,10 +124,7 @@
                                         <!-- Search -->
                                         <div class="nav-search hidden-sm hidden-xs">
                                             <form method="get">
-                                                <input type="search" class="form-control" placeholder="Buscar...">
-                                                <button type="submit" class="search-button">
-                                                    <i class="icon icon_search"></i>
-                                                </button>
+                                               
                                             </form>
                                         </div>
 
@@ -145,57 +142,20 @@
                     <div class="nav-cart right">
                       <div class="nav-cart-outer">
                         <div class="nav-cart-inner">
-                          <a href="#" class="nav-cart-icon">2</a>
+                          <a href="#" class="nav-cart-icon"></a>
                         </div>
                       </div>
                       <div class="nav-cart-container">
                         <div class="nav-cart-items">
 
-                          <div class="nav-cart-item clearfix">
-                            <div class="nav-cart-img">
-                              <a href="">
-                                <img src="img/productos/producto1.jpg" alt="" width="50">
-                              </a>
-                            </div>
-                            <div class="nav-cart-title">
-                              <a href="#">
-                               Promoción 3
-                              </a>
-                              <div class="nav-cart-price">
-                                <span>1 x</span>
-                                <span>7.990</span>
-                              </div>
-                            </div>
-                            <div class="nav-cart-remove">
-                              <a href="#"><i class="icon icon_close"></i></a>
-                            </div>
-                          </div>
+                          
 
-                          <div class="nav-cart-item clearfix">
-                            <div class="nav-cart-img">
-                              <a href="#">
-                                <img src="img/productos/producto2.jpg" alt="" width="50">
-                              </a>
-                            </div>
-                            <div class="nav-cart-title">
-                              <a href="#">
-                                Promoción 2
-                              </a>
-                              <div class="nav-cart-price">
-                                <span>1 x</span>
-                                <span>9.990</span>
-                              </div>
-                            </div>
-                            <div class="nav-cart-remove">
-                              <a href="#"><i class="icon icon_close"></i></a>
-                            </div>
-                          </div>
+                          
 
                         </div> <!-- end cart items -->
 
                         <div class="nav-cart-summary">
-                          <span>Subtotal</span>
-                          <span class="total-price">$</span>
+                          
                         </div>
 
                         <div class="nav-cart-actions mt-20">
@@ -207,7 +167,7 @@
                     <div class="menu-cart-amount right">
                       <span>
                         Carrito /
-                        <a href="#"> $ </a>
+                        
                       </span>
                     </div>
                   </div> <!-- end cart -->
@@ -233,7 +193,7 @@
                                             <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                                             <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                                             <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                                            <li class="dropdown"><a href="#">Blog</a></li>
+                                            
                                             <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                                             <li class="mobile-links">
@@ -439,8 +399,12 @@
                                         <label for="correo">Correo electrónico
                                             <abbr class="required" title="required">*</abbr>
                                         </label>
-                                        <input type="email" class="input-text" placeholder="" value="" name="txtCorreo" id="txtCorreo">
+                                        <input type="email" class="input-text" placeholder="" value="" name="txtCorreo" id="correo">
                                     </p>
+                                    <p class="form-row form-row-wide">
+                                        <button type="button" id="verificador1" class="btn btn-primary" style="margin-top: 24px">Verificar Correo</button>
+                                    </p>
+                                    
                                     <p class="form-row form-row-wide">
                                         <label for="telefono">Número de contacto
                                             <abbr class="required" title="required">*</abbr>
@@ -453,7 +417,7 @@
                                         </label>
                                         <input type="password" class="input-text" placeholder="" value="" name="txtContrasena" id="txtContrasena" >
                                     </p>
-                                    <button class="btn btn-primary" type="submit">Registrarse</button>
+                                    <button class="btn btn-primary" id="botonVerificado" type="submit" disabled>Registrarse</button>
                                 </form>
                             </div>
                             <%}%>
@@ -576,6 +540,62 @@
         <script type="text/javascript" src="js/scripts.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        
+    <script type="text/javascript">
+
+                                $(document).ready(function () {
+                                    $( "#correo" ).keyup(function() {
+                                        //alert( "Handler for .keyup() called." );
+                                        if(!$("#botonVerificado").prop('disabled')){
+                                            //alert("asd");
+                                            $("#botonVerificado").prop('disabled',true);
+                                            
+                                        }
+//                                        if (!$("#botonVerificado").prop('disabled'))
+//                                        {
+//                                            $("#botonVerificado").attr('disabled');
+//                                        }
+                                        
+                                        
+                                      });
+                                    
+                                    
+                                    
+                                    
+                                    $("#verificador1").click(function () {
+                                        var correo = $("#correo").val();
+                                        $.post("http://apilayer.net/api/check?access_key=7ee4434c7dc4b78fa1d642acf8555183&email=" + correo + "&smtp=1&format=1",
+                                                function (data) {
+                                                    
+                                                    
+                                                    if (data.smtp_check) {
+                                                        
+                                                        alert("Correo verificado, ahora puedes registrarte ");
+                                                        $("#botonVerificado").removeAttr('disabled');
+                                                        
+
+
+                                                    } else
+                                                    {
+                                                        alert("Correo no existe, necesitas ingrasar un correo valido para continuar registrandote");
+                                                    }
+                                                    
+
+                                                });
+                                    });
+                                });
+
+
+
+                                function mouseoverPass(obj) {
+                                    var obj = document.getElementById('myPassword');
+                                    obj.type = "text";
+                                }
+                                function mouseoutPass(obj) {
+                                    var obj = document.getElementById('myPassword');
+                                    obj.type = "password";
+                                }
+    </script>
 
     </body>
 </html>

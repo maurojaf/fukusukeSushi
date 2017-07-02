@@ -67,7 +67,7 @@
                   <li class="top-bar-link"><a href="shop-cart.jsp">Carrito</a></li>
                   <li class="top-bar-link"><a href="faq.jsp">Preguntas Frecuentes</a></li>
                   <li class="top-bar-link"><a href="contact.jsp">Contacto</a></li>
-                  <li class="top-bar-link"><a href="Mantenedores.jsp">Administración</a></li>
+                  
                 </ul>
 
                 <ul class="col-sm-4 text-right top-bar-currency-language">
@@ -106,7 +106,7 @@
                 <div class="nav-cart mobile-cart hidden-lg hidden-md">
                   <div class="nav-cart-outer">
                     <div class="nav-cart-inner">
-                      <a href="#" class="nav-cart-icon">2</a>
+                      <a href="#" class="nav-cart-icon"></a>
                     </div>
                   </div>
                 </div>
@@ -118,10 +118,7 @@
                   <!-- Search -->
                   <div class="nav-search hidden-sm hidden-xs">
                     <form method="get">
-                      <input type="search" class="form-control" placeholder="Buscar...">
-                      <button type="submit" class="search-button">
-                        <i class="icon icon_search"></i>
-                      </button>
+                      
                     </form>
                   </div>
 
@@ -139,58 +136,19 @@
                     <div class="nav-cart right">
                       <div class="nav-cart-outer">
                         <div class="nav-cart-inner">
-                          <a href="#" class="nav-cart-icon">2</a>
+                          <a href="#" class="nav-cart-icon"></a>
                         </div>
                       </div>
                       <div class="nav-cart-container">
                         <div class="nav-cart-items">
 
-                          <div class="nav-cart-item clearfix">
-                            <div class="nav-cart-img">
-                              <a href="#">
-                                <img src="img/shop/cart_small_1.jpg" alt="">
-                              </a>
-                            </div>
-                            <div class="nav-cart-title">
-                              <a href="#">
-                                Ladies Bag
-                              </a>
-                              <div class="nav-cart-price">
-                                <span>1 x</span>
-                                <span>1250.00</span>
-                              </div>
-                            </div>
-                            <div class="nav-cart-remove">
-                              <a href="#"><i class="icon icon_close"></i></a>
-                            </div>
-                          </div>
+                          
 
-                          <div class="nav-cart-item clearfix">
-                            <div class="nav-cart-img">
-                              <a href="#">
-                                <img src="img/shop/cart_small_2.jpg" alt="">
-                              </a>
-                            </div>
-                            <div class="nav-cart-title">
-                              <a href="#">
-                                Sequin Suit longer title
-                              </a>
-                              <div class="nav-cart-price">
-                                <span>1 x</span>
-                                <span>1250.00</span>
-                              </div>
-                            </div>
-                            <div class="nav-cart-remove">
-                              <a href="#"><i class="icon icon_close"></i></a>
-                            </div>
-                          </div>
+                          
 
                         </div> <!-- end cart items -->
 
-                        <div class="nav-cart-summary">
-                          <span>Subtotal</span>
-                          <span class="total-price">$1799.00</span>
-                        </div>
+                        
 
                         <div class="nav-cart-actions mt-20">
                           <a href="shop-cart.jsp" class="btn btn-md btn-dark"><span>Ver Carro</span></a>
@@ -200,8 +158,8 @@
                     </div>
                     <div class="menu-cart-amount right">
                       <span>
-                        Cart /
-                        <a href="#"> $1299.50</a>
+                        Carrito /
+                        
                       </span>
                     </div>
                   </div> <!-- end cart -->
@@ -227,7 +185,7 @@
                     <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                     <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                     <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                    <li class="dropdown"><a href="blog-standard.jsp">Blog</a></li>
+                    
                     <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                     <li class="mobile-links">
@@ -366,12 +324,7 @@
               </div>
             </div>
 
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="widget">
-                <h5 class="widget-title uppercase">SUSHI FUKUSUKE</h5>
-                <p class="mb-0">A-ha Shop is a very slick and clean e-commerce template with endless possibilities. Creating an awesome clothes store with this Theme is easy than you can imagine.</p>
-              </div>
-            </div>
+            
 
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="widget footer-get-in-touch">

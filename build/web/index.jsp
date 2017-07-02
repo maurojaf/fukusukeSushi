@@ -140,7 +140,7 @@
                                                 
                                                 <div class="nav-cart-outer">
                                                     <div class="nav-cart-inner">
-                                                        <a href="#" class="nav-cart-icon">2</a>
+                                                        <a href="#" class="nav-cart-icon"></a>
                                                     </div>
                                                 </div>
                                                 <div class="nav-cart-container">
@@ -231,7 +231,7 @@
                                             <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                                             <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                                             <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                                            <li class="dropdown"><a href="#">Blog</a></li>
+                                            
                                             <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                                             <li class="mobile-links">
