@@ -68,7 +68,7 @@ public class Usuario {
         return comuna;
     }
 
-    public void setComuna(String Comuna) {
+    public void setComuna(String comuna) {
         this.comuna = comuna;
     }
 
@@ -134,5 +134,10 @@ public class Usuario {
         this.telefono = telefono;
         this.contrasena = contrasena;
     }
+
+    public Usuario() {
+    }
+    
+    
 
 }

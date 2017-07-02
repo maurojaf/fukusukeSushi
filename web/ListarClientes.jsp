@@ -102,7 +102,7 @@
                     </c:if>
                 
                 <div class="pull-right" id="botonAgregar" hidden="">
-                    <a class="btn btn-lg btn-info"  href="agregar" ><i class="fa fa-plus"></i>  Agregar Nuevo Registro</a>
+                    <a class="btn btn-lg btn-info"  href="agregarCliente" ><i class="fa fa-plus"></i>  Agregar Nuevo Registro</a>
                 </div>
                  <br></br>
                 
@@ -112,9 +112,9 @@
                     <thead>
                     <tr>
                         <th>Nombre</th>
+                        <th>Rut</th>
                         <th>Direccion</th>
-                        <th>Comuna</th>
-                        <th>Region</th>                        
+                        <th>Comuna</th>                        
                         <th>Provincia</th>
                         <th>Region</th>
                         <th>Fecha Nacimiento</th>
@@ -166,8 +166,8 @@
                             
                             <td> 
 
-                                <a class="btn btn-xs btn-info" href="editar?prod=${item.id}" ><i class="fa fa-pencil"></i> </a>
-                                <a class="btn btn-xs btn-danger" href="borrar?prod=${item.id}"><i class="fa fa-close"></i></a>
+                                <a class="btn btn-xs btn-info" href="editarClientes?cliente=${item.id}" ><i class="fa fa-pencil"></i> </a>
+                                <a class="btn btn-xs btn-danger" href="borrarClientes?cliente=${item.id}"><i class="fa fa-close"></i></a>
 
                             </td>
                         </tr>

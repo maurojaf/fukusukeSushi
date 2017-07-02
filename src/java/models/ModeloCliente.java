@@ -44,6 +44,52 @@ public class ModeloCliente extends Conexion {
 
         }
     }
+    
+    public boolean guardarUsuario(Usuario usuario) {
+        boolean resultado = false;
+        PreparedStatement pst = null;
+
+        try {
+            String sql = "INSERT INTO clientes (nombre, rut, direccion, comuna, provincia, region, fecha_nacimiento, sexo, correo, telefono, contrasena) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            pst = getConnection().prepareStatement(sql);
+         
+           
+            
+            pst.setString(1, usuario.getNombre());
+            pst.setString(2, usuario.getRut());
+            pst.setString(3, usuario.getDireccion());
+            pst.setString(4, usuario.getComuna());
+            pst.setString(5, usuario.getProvincia());
+            pst.setString(6, usuario.getRegion());
+            pst.setString(7, usuario.getFecha_nacimiento());
+            pst.setString(8, usuario.getSexo());
+            pst.setString(9, usuario.getCorreo());
+            pst.setString(10, usuario.getTelefono());
+            pst.setString(11, usuario.getContrasena());
+            
+
+            pst.execute();
+            resultado = true;
+
+        } catch (Exception e) {
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (pst != null) {
+                    pst.close();
+                }
+                if (!getConnection().isClosed()) {
+                    getConnection().close();
+                }
+            } catch (Exception e) {
+                System.out.println(e.getStackTrace());
+                System.out.println(e.getMessage());
+            }
+        }
+        return resultado;
+    }
+    
 
     public Usuario login(String correo, String contrasena) {
         Usuario cliente = null;
@@ -111,6 +157,40 @@ public class ModeloCliente extends Conexion {
 
         return usuarios;
     }
+    
+    public Usuario listaUsuario(int id) {
+        Usuario usuario = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+            String sql = "SELECT * FROM clientes WHERE id_cliente = ?";            
+            pst = getConnection().prepareStatement(sql);
+            pst.setInt(1, id);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                usuario = new Usuario(rs.getInt("id_cliente"), rs.getString("nombre"), rs.getString("rut"), rs.getString("direccion"), rs.getString("comuna"), rs.getString("provincia"), rs.getString("region"),rs.getString("fecha_nacimiento"), rs.getString("sexo"), rs.getString("correo"), rs.getString("telefono"), rs.getString("contrasena"));
+            }
+
+        } catch (Exception e) {
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pst != null) {
+                    rs.close();
+                }
+                if (getConnection() != null) {
+                    getConnection().close();
+                }
+            } catch (Exception e) {
+            }
+        }
+
+        return usuario;
+    }
+    
 
     public boolean borrarClientes(Usuario usuario) {
         boolean resultado = false;
