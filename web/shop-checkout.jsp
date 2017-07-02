@@ -18,12 +18,12 @@
     ArrayList<Articulo> articulos = sesion.getAttribute("carrito") == null ? null : (ArrayList) sesion.getAttribute("carrito");
     Boolean autenticated = (session.getAttribute("Autentificacion") instanceof Usuario);
     Usuario cliente = null;
-    
-    if(autenticated){
+
+    if (autenticated) {
         cliente = (Usuario) session.getAttribute("Autentificacion");
     }
-            
-    
+
+
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -219,7 +219,7 @@
                                             <div class="menu-cart-amount right">
                                                 <span>
                                                     Carrito /
-                                                    <a href="#"> $ </a>
+
                                                 </span>
                                             </div>
                                         </div> <!-- end cart -->
@@ -245,7 +245,7 @@
                                             <li class="dropdown"><a href="about-us.jsp">Nosotros</a></li>
                                             <li class="dropdown"><a href="shop-catalog.jsp">Productos</a></li>
                                             <li class="dropdown"><a href="faq.jsp">Preguntas Frecuentes</a></li>
-                                            <li class="dropdown"><a href="#">Blog</a></li>
+
                                             <li class="dropdown"><a href="contact.jsp">Contacto</a></li>
 
                                             <li class="mobile-links">
@@ -288,175 +288,179 @@
                 <div class="container relative">
                     <div class="row">
 
-                            <% if (session.getAttribute("Autentificacion") instanceof Usuario) { }else{%>
-                            <div class="ecommerce col-xs-12">
-                                <div class="alert alert-info fade in alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                    <strong>¡Información!</strong> </br>Para poder realizar un pedido, debes estar registrado.
+                        <% if (session.getAttribute("Autentificacion") instanceof Usuario) {
+                                } else {%>
+                        <div class="ecommerce col-xs-12">
+                            <div class="alert alert-info fade in alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <strong>¡Información!</strong> </br>Para poder realizar un pedido, debes estar registrado.
+                            </div>
+
+                            <div class="row mb-30">
+                                <div class="col-md-8">
+                                    <p class="ecommerce-info">
+                                        ¿No estás registrado?</br>
+                                        <a href="login.jsp" class="showlogin">Haz clic aquí para Registrarte</a>
+                                    </p>
                                 </div>
+                            </div>
 
-                                <div class="row mb-30">
-                                    <div class="col-md-8">
-                                        <p class="ecommerce-info">
-                                            ¿No estás registrado?</br>
-                                            <a href="login.jsp" class="showlogin">Haz clic aquí para Registrarte</a>
-                                        </p>
-                                    </div>
-                                </div>
 
-                                
-                                <div class="col-md-8" id="customer_details">
-                                    <div>
-                                        <!--  <h2 class="heading uppercase mb-30">Dirección de Envío</h2>-->
+                            <div class="col-md-8" id="customer_details">
+                                <div>
+                                    <!--  <h2 class="heading uppercase mb-30">Dirección de Envío</h2>-->
 
-                                        <section class="section-wrap login-register pt-0 pb-40">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-sm-5 col-sm-offset-1 mb-40">
-                                                        <div class="login">
-                                                            <form action="accesoCliente" method="post">
-                                                                <h4 class="uppercase" >Iniciar Sesión</h4>
-                                                                <p class="form-row form-row-wide">
-                                                                    <label for="email">Correo
-                                                                        <abbr class="required" title="required">*</abbr>
-                                                                    </label>
-                                                                    <input type="email" class="input-text" placeholder="" value="" id="email" name="email">
-                                                                </p>
-                                                                <p class="form-row form-row-wide">
-                                                                    <label for="pass">contraseña
-                                                                        <abbr class="required" title="required">*</abbr>
+                                    <section class="section-wrap login-register pt-0 pb-40">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-5 col-sm-offset-1 mb-40">
+                                                    <div class="login">
+                                                        <form action="accesoCliente" method="post">
+                                                            <h4 class="uppercase" >Iniciar Sesión</h4>
+                                                            <p class="form-row form-row-wide">
+                                                                <label for="email">Correo
+                                                                    <abbr class="required" title="required">*</abbr>
+                                                                </label>
+                                                                <input type="email" class="input-text" placeholder="" value="" id="email" name="email">
+                                                            </p>
+                                                            <p class="form-row form-row-wide">
+                                                                <label for="pass">contraseña
+                                                                    <abbr class="required" title="required">*</abbr>
 
 
 
 
-                                                                    </label>
-                                                                    <input type="password" class="input-text" placeholder="" value=""  name="pass">
-                                                                </p>
-                                                                <input type="submit" value="Iniciar Sesión" class="btn" name="btnIngresar">
-                                                                <input type="checkbox" class="input-checkbox" id="remember" name="remember" value="1">
-                                                            </form>
+                                                                </label>
+                                                                <input type="password" class="input-text" placeholder="" value=""  name="pass">
+                                                            </p>
+                                                            <input type="submit" value="Iniciar Sesión" class="btn" name="btnIngresar">
+                                                            <input type="checkbox" class="input-checkbox" id="remember" name="remember" value="1">
+                                                        </form>
 
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section>
-                                        <div class="clear"></div>
-                                    </div>
-                                </div> <!-- end col -->
-                                <% } %>
+                                        </div>
+                                    </section>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> <!-- end col -->
+                            <% } %>
 
-                            
-                                <div class="col-md-12">    
-                                    <div class="order-review-wrap ecommerce-checkout-review-order" id="order_review">
-                                        <h2 class="heading uppercase mb-30">Detalle de la Orden</h2>
-                                        <table class="table shop_table ecommerce-checkout-review-order-table">
-                                            <tbody>
-                                                <%
-                                                    ControladorProducto cp = new ControladorProducto();
-                                                    int total = 0;
-                                                    if (articulos != null) {
-                                                        for (Articulo a : articulos) {
-                                                            Products producto = cp.getProducto(a.getIdProducto());
 
-                                                            total += a.getCantidad() * producto.getProductPrice();
+                            <div class="col-md-12">    
+                                <div class="order-review-wrap ecommerce-checkout-review-order" id="order_review">
+                                    <h2 class="heading uppercase mb-30">Detalle de la Orden</h2>
+                                    <table class="table shop_table ecommerce-checkout-review-order-table">
+                                        <tbody>
+                                            <%
+                                                ControladorProducto cp = new ControladorProducto();
+                                                int total = 0;
+                                                if (articulos != null) {
+                                                    for (Articulo a : articulos) {
+                                                        Products producto = cp.getProducto(a.getIdProducto());
 
-                                                %>
-                                                <tr>
-                                                    <th><%=producto.getProductName()%><span class="count"> &nbsp; &nbsp; &nbsp; x <%= a.getCantidad()%></span></th>
-                                                    <td>
-                                                        <span class="amount">$ <%=producto.getProductPrice() * a.getCantidad()%></span>
-                                                    </td>
-                                                </tr>
-                                                <%}
+                                                        total += a.getCantidad() * producto.getProductPrice();
+
+                                            %>
+                                            <tr>
+                                                <th><%=producto.getProductName()%><span class="count"> &nbsp; &nbsp; &nbsp; x <%= a.getCantidad()%></span></th>
+                                                <td>
+                                                    <span class="amount">$ <%=producto.getProductPrice() * a.getCantidad()%></span>
+                                                </td>
+                                            </tr>
+                                            <%}
                                                     }%>
 
-                                                <tr class="cart-subtotal">
-                                                    <th>Subtotal</th>
-                                                    <td>
-                                                        <span class="amount">$ <%=total%></span>
-                                                    </td>
-                                                </tr>
-                                                <tr class="shipping">
-                                                    <th>Envío</th>
-                                                    <td>
-                                                        <span>Gratis</span>
-                                                    </td>
-                                                </tr>
-                                                <tr class="order-total">
-                                                    <th><strong>Total</strong></th>
-                                                    <td>
-                                                        <strong><span class="amount">$ <%=total%></span></strong>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
+                                            <tr class="cart-subtotal">
+                                                <th>Subtotal</th>
+                                                <td>
+                                                    <span class="amount">$ <%=total%></span>
+                                                </td>
+                                            </tr>
+                                            <tr class="shipping">
+                                                <th>Envío</th>
+                                                <td>
+                                                    <span>Gratis</span>
+                                                </td>
+                                            </tr>
+                                            <tr class="order-total">
+                                                <th><strong>Total</strong></th>
+                                                <td>
+                                                    <strong><span class="amount">$ <%=total%></span></strong>
+                                                </td>
+                                            </tr>
+                                        </tbody>
 
-                                        </table>
+                                    </table>
 
-                                        <div id="payment" class="ecommerce-checkout-payment">
-                                            <h2 class="heading uppercase mb-30">Método de Pago</h2>
-                                            <ul class="payment_methods methods">
+                                    <div id="payment" class="ecommerce-checkout-payment">
+                                        <h2 class="heading uppercase mb-30">Método de Pago</h2>
+                                        <ul class="payment_methods methods">
 
-                                                <!-- <li class="payment_method_bacs">
-                                                   <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked">
-                                                   <label for="payment_method_bacs">Trasnferencia electrónica.</label>
-                                                   <div class="payment_box payment_method_bacs">
-                                                     <p>Realice su pago directamente en nuestra cuenta bancaria. Utilice su ID de pedido como referencia de pago. Su orden no será enviada hasta que los fondos se hayan reflejado en nuestra cuenta.</p>
-                                                     <div class="form-row place-order">
-                                                       <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" id="place_order" value="Place order">
-                                                     </div>
-                                                   </div>
-                                                 </li>-->
+                                            <!-- <li class="payment_method_bacs">
+                                               <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked">
+                                               <label for="payment_method_bacs">Trasnferencia electrónica.</label>
+                                               <div class="payment_box payment_method_bacs">
+                                                 <p>Realice su pago directamente en nuestra cuenta bancaria. Utilice su ID de pedido como referencia de pago. Su orden no será enviada hasta que los fondos se hayan reflejado en nuestra cuenta.</p>
+                                                 <div class="form-row place-order">
+                                                   <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" id="place_order" value="Place order">
+                                                 </div>
+                                               </div>
+                                             </li>-->
 
 
 
-                                                <li class="payment_method_paypal">
-<!--                                                    <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal">
-                                                    <label for="payment_method_paypal">Tarjeta de Crédito o Débito</label>-->
+                                            <li class="payment_method_paypal">
+                                                <!--                                                    <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal">
+                                                                                                    <label for="payment_method_paypal">Tarjeta de Crédito o Débito</label>-->
 
-                                                    <!-- <img src="img/shop/paypal.png" alt="">-->
-                                                    <div class="payment_box payment_method_paypal">
-<!--                                                        <p>Pague directamente con su tarjeta de Crédito o Débito, a través de XXXXXXX.</p>-->
-                                                        <div class="form-row place-order">
-                                                            <form action="http://www.checkbox.cl/PaymentGateway/pay.php" method="post">
-                                                                <input type=hidden name="comercio_id" value="136">
-                                                                <input type=hidden name="comercio_logo" value="">
+                                                <!-- <img src="img/shop/paypal.png" alt="">-->
+                                                <div class="payment_box payment_method_paypal">
+                                                    <!--                                                        <p>Pague directamente con su tarjeta de Crédito o Débito, a través de XXXXXXX.</p>-->
+                                                    <div class="form-row place-order">
+                                                        <form action="http://www.checkbox.cl/PaymentGateway/pay.php" method="post">
+                                                            <input type=hidden name="comercio_id" value="136">
+                                                            <input type=hidden name="comercio_logo" value="">
 
-                                                                <input type=hidden name="item_nombre" value="pedido de sushi">
-                                                                <input type=hidden name="item_id" value="1016">
-                                                                <input type=hidden name="item_precio" value="<%=total%>">
+                                                            <input type=hidden name="item_nombre" value="pedido de sushi">
+                                                            <input type=hidden name="item_id" value="1016">
+                                                            <input type=hidden name="item_precio" value="<%=total%>">
 
-                                                                <input type=hidden name="url_return" value="">
-                                                                <input type=hidden name="url_cancel" value="">
-                                                                <input type=hidden name="url_h2h" value="">
+                                                            <input type=hidden name="url_return" value="">
+                                                            <input type=hidden name="url_cancel" value="">
+                                                            <input type=hidden name="url_h2h" value="">
 
-                                                                <input type=hidden name="cliente_nombres" value="<%= autenticated ? cliente.getNombre() : "" %>">
-                                                                <input type=hidden name="cliente_rut" value="<%= autenticated ? cliente.getRut():"" %>">
-                                                                <input type=hidden name="cliente_email" value="<%= autenticated ? cliente.getCorreo() : "" %>">
-                                                                
-                                                                <input type="submit" value="Pagar Online" class="btn btn-lg"/>
-                                                            </form>
-<!--                                                            <form action="obtenerOrden" method="POST">
-                                                                <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" value="Finalizar Compra" >
-                                                            </form>-->
-                                                        </div>
+                                                            <input type=hidden name="cliente_nombres" value="<%= autenticated ? cliente.getNombre() : ""%>">
+                                                            <input type=hidden name="cliente_rut" value="<%= autenticated ? cliente.getRut() : ""%>">
+                                                            <input type=hidden name="cliente_email" value="<%= autenticated ? cliente.getCorreo() : ""%>">
+
+                                                            <input type="submit" value="Pagar Online" class="btn btn-md-12 "/>
+                                                        </form>
+                                                        
                                                     </div>
+                                                            <div class="col-md6 pull-right" >    
+                                                            <form action="obtenerOrden" method="POST">
+                                                                <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" value="Retiro En local" >
+                                                            </form>
+                                                        </div>
+                                                </div>
 
 
-                                                </li>
+                                            </li>
 
-                                            </ul>
+                                        </ul>
 
-                                        </div>
                                     </div>
-                                </div> <!-- end order review -->
+                                </div>
+                            </div> <!-- end order review -->
 
-                                </form>
+                            </form>
 
-                            </div> <!-- end ecommerce -->
+                        </div> <!-- end ecommerce -->
 
-                        </div> <!-- end row -->
-                    </div> <!-- end container -->
+                    </div> <!-- end row -->
+                </div> <!-- end container -->
             </section> <!-- end checkout -->
 
 

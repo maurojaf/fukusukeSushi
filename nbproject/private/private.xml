@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/web/shop-cart.jsp</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/web/shop-single-product.jsp</file>
-            <file>file:/Users/mauricioatenas/ProyectoSushi/web/404.jsp</file>
+            <file>file:/Users/mauricioatenas/ProyectoSushi/web/PaginaBoleta.jsp</file>
+            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/administracion/ListarOrdenes.java</file>
+            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/ObtenerOrden.java</file>
+            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/PaginaBoleta.java</file>
             <file>file:/Users/mauricioatenas/ProyectoSushi/web/shop-checkout.jsp</file>
+            <file>file:/Users/mauricioatenas/ProyectoSushi/src/java/servlets/administracion/EditarOrden.java</file>
         </group>
     </open-files>
 </project-private>

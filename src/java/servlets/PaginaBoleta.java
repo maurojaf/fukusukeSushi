@@ -5,28 +5,20 @@
  */
 package servlets;
 
-import classes.Articulo;
-import classes.Cliente;
-import classes.Orders;
-import classes.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import models.ModeloOrders;
 
 /**
  *
  * @author mauricioatenas
  */
-@WebServlet(name = "ObtenerOrden", urlPatterns = {"/obtenerOrden"})
-public class ObtenerOrden extends HttpServlet {
+@WebServlet(name = "PaginaBoleta", urlPatterns = {"/paginaBoleta"})
+public class PaginaBoleta extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,8 +31,10 @@ public class ObtenerOrden extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        response.sendRedirect("shop-cart.jsp");
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            request.getRequestDispatcher("/PaginaBoleta.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -55,7 +49,10 @@ public class ObtenerOrden extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
+        
+        
+        
         processRequest(request, response);
     }
 
@@ -70,41 +67,6 @@ public class ObtenerOrden extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        ArrayList<Articulo> articulos = (ArrayList<Articulo>) request.getSession().getAttribute("carrito");
-
-        if (request.getSession().getAttribute("Autentificacion") != null) {
-            Usuario usuario = (Usuario) request.getSession().getAttribute("Autentificacion");
-            Orders orden = new Orders();
-            orden.setDetalles(articulos);
-            orden.setOrderIDCliente(usuario.getId());
-            orden.setOrderEmail(usuario.getCorreo());
-            orden.setOrderPhone(usuario.getTelefono());
-            orden.setOrderShipAddress(usuario.getDireccion());
-
-            ModeloOrders modeloOrder = new ModeloOrders();
-            boolean resultado = modeloOrder.guardarOrden(orden);
-
-            if (resultado) {
-                request.getSession().removeAttribute("carrito");
-                request.setAttribute("success", "Gracias por su compra.");
-                //request.getRequestDispatcher("/PaginaBoleta.jsp").forward(request, response);
-                ServletContext context = getServletContext();
-                RequestDispatcher rd = context.getRequestDispatcher("/paginaBoleta");
-                rd.forward(request, response);
-            } else {
-                request.setAttribute("error", "No se ha podido procesar su compra. Intente nuevamente.");
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
-            }
-            //response.sendRedirect("shop-chekout.jsp");    
-            //request.getRequestDispatcher("/index.jsp").forward(request, response);
-        } else {
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
-        }
-
-//        ServletContext context = getServletContext();
-//        RequestDispatcher rd = context.getRequestDispatcher("/mostrarBoleta'");
-//        rd.forward(request, response);
         processRequest(request, response);
     }
 
