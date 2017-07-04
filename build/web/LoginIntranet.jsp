@@ -48,7 +48,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Ingreso Intranet</a>
+                    <a class="navbar-brand" href="#">Ingreso Administracion</a>
                     <a class="navbar-brand" href="#">-</a>
                     <a class="navbar-brand" href="index.jsp">Volver a la p&aacute;gina</a>
                     
@@ -85,7 +85,7 @@
             <div class="col-md-6 col-md-offset-3 panel panel-default" style="padding-bottom: 20px">
                 
                 
-                <h2> Bienvenido a la Intranet</h2>
+                <h2> Bienvenido a Administracion</h2>
                 <form action="login" method="POST" id="InicioSesion">
                     <div class="form-group">                  
                         <label for="email">Email:</label>

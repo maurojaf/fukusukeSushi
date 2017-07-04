@@ -26,19 +26,20 @@ public class ModeloReporte extends Conexion {
             String sql = "SELECT a.OrderAmount, "
                     + "a.OrderDate, "
                     + "b.DetailOrderID, "
+                    + "b.DetailQuantity, "
                     + "c.ProductName, "
                     + "c.ProductPrice "
                     + "FROM orders AS a "
                     + "INNER JOIN OrderDetails AS b ON a.OrderID = b.DetailOrderID "
                     + "INNER JOIN products AS c ON b.DetailProductID = c.ProductID "
-                    + "WHERE CONVERT( OrderDate , DATE)"                    
-                    + "= ? AND ?";
+                    + "WHERE CONVERT( OrderDate , DATE) BETWEEN"                    
+                    + " ? AND ?";
             pst = getConnection().prepareStatement(sql);
             pst.setString(1, fInicio);
             pst.setString(2, fFin);
             rs = pst.executeQuery();
             while (rs.next()) {
-                reportes.add (new Reporte(rs.getInt("OrderAmount"), rs.getString("OrderDate"), rs.getInt("DetailOrderID"), rs.getString("ProductName"), rs.getInt("ProductPrice")));
+                reportes.add (new Reporte( rs.getInt("OrderAmount"), rs.getString("OrderDate"), rs.getInt("DetailOrderID"), rs.getString("ProductName"), rs.getInt("ProductPrice"), rs.getInt("DetailQuantity")));
             }
 
         } catch (Exception e) {

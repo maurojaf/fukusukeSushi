@@ -19,11 +19,10 @@ public class Orders {
     private int OrderAmount;
     private String OrderShipName;
     private String OrderShipAddress;
-    //private String OrderCity;
-    //private String OrderCountry;
+    
     private String OrderPhone;
     private int OrderShipping;
-    //private int OrderTax;
+   
     private String OrderEmail	;
     private String OrderDate;
     private boolean OrderShipped;

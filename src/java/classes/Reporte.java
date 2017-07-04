@@ -18,17 +18,23 @@ public class Reporte {
     private int DetailOrderID;
     private String ProductName;
     private int ProductPrice;
+    private int DetailQuantity;
 
-    public Reporte(int OrderAmount, String OrderDate, int DetailOrderID, String ProductName, int ProductPrice) {
+    public Reporte(int OrderAmount, String OrderDate, int DetailOrderID, String ProductName, int ProductPrice, int DetailQuantity) {
         this.OrderAmount = OrderAmount;
         this.OrderDate = OrderDate;
         this.DetailOrderID = DetailOrderID;
         this.ProductName = ProductName;
         this.ProductPrice = ProductPrice;
+        this.DetailQuantity = DetailQuantity;
     }
     
     public Reporte(){}
 
+   
+
+    
+    
     public int getOrderAmount() {
         return OrderAmount;
     }
@@ -69,6 +75,13 @@ public class Reporte {
         this.ProductPrice = ProductPrice;
     }
     
+     public int getDetailQuantity() {
+        return DetailQuantity;
+    }
+
+    public void setDetailQuantity(int DetailQuantity) {
+        this.DetailQuantity = DetailQuantity;
+    }
     
     
     

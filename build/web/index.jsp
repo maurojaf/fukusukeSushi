@@ -453,7 +453,7 @@
             <section class="section-wrap pb-0">
                 <div class="container">
 
-                    <div class="row heading-row">
+<!--                    <div class="row heading-row">
                         <div class="col-md-12 text-center">
                             <h2 class="heading uppercase"><small>LOS MÁS VENDIDO</small></h2>
                         </div>
@@ -468,7 +468,7 @@
                                         <img src="img/productos/producto6.jpg" alt="">
                                         <img src="img/productos/producto6.jpg" alt="" class="back-img">
                                     </a>
-                                    <!-- <a href="#" class="product-quickview">Ver Detalles</a>-->
+                                     <a href="#" class="product-quickview">Ver Detalles</a>
                                 </div>
 
                                 <div class="product-details">
@@ -491,7 +491,7 @@
                                         <img src="img/productos/producto7.jpg" alt="">
                                         <img src="img/productos/producto7.jpg" alt="" class="back-img">
                                     </a>
-                                    <!-- <a href="#" class="product-quickview">Ver Detalles</a>-->
+                                     <a href="#" class="product-quickview">Ver Detalles</a>
                                 </div>
 
                                 <div class="product-details">
@@ -515,7 +515,7 @@
                                         <img src="img/productos/producto3.jpg" alt="">
                                         <img src="img/productos/producto3.jpg" alt="" class="back-img">
                                     </a>
-                                    <!-- <a href="#" class="product-quickview">Ver Detalles</a>-->
+                                     <a href="#" class="product-quickview">Ver Detalles</a>
                                 </div>
 
                                 <div class="product-details">
@@ -539,7 +539,7 @@
                                         <img src="img/productos/producto5.jpg" alt="">
                                         <img src="img/productos/producto5.jpg" alt="" class="back-img">
                                     </a>
-                                    <!-- <a href="#" class="product-quickview">Ver Detalles</a>-->
+                                     <a href="#" class="product-quickview">Ver Detalles</a>
                                 </div>
 
                                 <div class="product-details">
@@ -560,7 +560,7 @@
 
 
                     </div>
-                </div>
+                </div>-->
 
                 </div> <!-- end row -->
                 </div>

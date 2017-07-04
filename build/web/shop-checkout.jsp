@@ -289,7 +289,7 @@
                     <div class="row">
 
                         <% if (session.getAttribute("Autentificacion") instanceof Usuario) {
-                                } else {%>
+                            } else {%>
                         <div class="ecommerce col-xs-12">
                             <div class="alert alert-info fade in alert-dismissible" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -370,7 +370,7 @@
                                                 </td>
                                             </tr>
                                             <%}
-                                                    }%>
+                                                }%>
 
                                             <tr class="cart-subtotal">
                                                 <th>Subtotal</th>
@@ -437,13 +437,13 @@
 
                                                             <input type="submit" value="Pagar Online" class="btn btn-md-12 "/>
                                                         </form>
-                                                        
+
                                                     </div>
-                                                            <div class="col-md6 pull-right" >    
-                                                            <form action="obtenerOrden" method="POST">
-                                                                <input type="submit" name="ecommerce_checkout_place_order" class="btn btn-lg" value="Retiro En local" >
-                                                            </form>
-                                                        </div>
+                                                    <div class="col-md6 pull-right" >    
+                                                        <form action="obtenerOrden" method="POST">
+                                                            <input type="submit" id="target" name="ecommerce_checkout_place_order" class="btn btn-lg" value="Generacion orden de Prueba" >
+                                                        </form>
+                                                    </div>
                                                 </div>
 
 
@@ -575,5 +575,10 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
+        <script type="text/javascript">
+            $("#target").click(function () {
+                alert("Orden generada, Gracias por su compra. Ahora será redireccionado a la pagina de inicio");
+            });
+        </script>
     </body>
 </html>

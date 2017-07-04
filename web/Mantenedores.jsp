@@ -21,7 +21,7 @@
     <meta name="description" content=""> </meta>
     <meta name="author" content=""> </meta>
 
-    <title>Intranet - Fukusuke sushi</title>
+    <title>Administracion - Fukusuke sushi</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -40,7 +40,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Intranet</title>
+        <title>Administracion</title>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -53,7 +53,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Intranet FukusukeSushi</a>
+                    <a class="navbar-brand" href="#">Administracion FukusukeSushi</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

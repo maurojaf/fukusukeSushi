@@ -299,7 +299,7 @@
                                             </td>
                                             <td class="product-quantity">
                                                 <div class="quantity buttons_added">
-                                                    <input type="number" step="1" min="0" value="<%= a.getCantidad()%>" title="Qty" class="input-text qty text" />
+                                                    <input type="number" step="1" min="0" value="<%= a.getCantidad()%>" title="Qty" class="input-text qty text" disabled/>
                                                 </div>
                                             </td>
                                             <td class="product-subtotal">
